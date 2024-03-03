@@ -1,6 +1,6 @@
 # PoE Selling
 
-PoE (Path of Exile) Selling is a minimal project to create a webpage using React for frontend a Kotlin with Springboot for backend.
+PoE (Path of Exile) Selling is a minimal project to create a webpage using React for frontend and Kotlin with Springboot for backend.
 
 Following architecture below
 
