@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        pirata: ["Pirata One", "system-ui"],
+      },
+      boxShadow: {
+        'selling': "-12px 15px 0 -8px white, -12px 15px 0 0px black",
+        'selling-hover': "-12px 15px 0 -8px hsl(222.2deg 47.4% 11.2% / .5%), -12px 15px 0 0px hsl(222.2deg 47.4% 11.2% / 90%)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
