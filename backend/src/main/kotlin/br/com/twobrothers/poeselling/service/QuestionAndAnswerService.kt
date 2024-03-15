@@ -1,0 +1,37 @@
+package br.com.twobrothers.poeselling.service
+
+import br.com.twobrothers.poeselling.domain.QuestionAndAnswer
+import br.com.twobrothers.poeselling.domain.User
+import br.com.twobrothers.poeselling.repository.QuestionAndAnswerRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.stereotype.Service
+
+@Service
+class QuestionAndAnswerService(
+    val questionAndAnswerRepository: QuestionAndAnswerRepository
+) {
+    // Retrieves all QuestionAndAnswer objects based on the provided pageable parameters.
+    fun gelAll (pageable: Pageable) : Page<QuestionAndAnswer>{
+        return questionAndAnswerRepository.findAll(pageable)
+    }
+
+    fun get (id: Int) : QuestionAndAnswer{
+        return questionAndAnswerRepository.findById(id).get()
+    }
+
+    fun save (qa: QuestionAndAnswer) : QuestionAndAnswer{
+        return questionAndAnswerRepository.save(qa)
+    }
+
+    fun delete (id: Int, username: String) {
+        questionAndAnswerRepository.delete(
+            QuestionAndAnswer(
+                id = id,
+                createdBy = User(
+                    username = username
+                )
+            )
+        )
+    }
+}
