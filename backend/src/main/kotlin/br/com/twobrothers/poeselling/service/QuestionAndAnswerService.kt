@@ -17,7 +17,11 @@ class QuestionAndAnswerService(
     }
 
     fun get (id: Int) : QuestionAndAnswer{
-        return questionAndAnswerRepository.findById(id).get()
+        return try {
+            questionAndAnswerRepository.findById(id).get()
+        } catch (ex: Exception) {
+            throw RuntimeException("Question and Answer not found")
+        }
     }
 
     fun save (qa: QuestionAndAnswer) : QuestionAndAnswer{

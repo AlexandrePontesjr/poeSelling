@@ -12,7 +12,7 @@ class LoginService(
          userRepository.findById(user.username).apply {
              if (this.isPresent) {
                  val recoveredUser = this.get()
-                if (user.password == recoveredUser.password) {
+                 if (user.password == recoveredUser.password) {
                      return user
                  } else {
                      throw RuntimeException("password incorrect")
