@@ -21,7 +21,11 @@ class ProductService(
     }
 
     fun get (id: Int) : Product{
-        return productRepository.findById(id).get()
+        return try {
+            productRepository.findById(id).get()
+        } catch (ex: Exception) {
+            throw RuntimeException("Product not found")
+        }
     }
 
     fun save (product: Product) : Product{
