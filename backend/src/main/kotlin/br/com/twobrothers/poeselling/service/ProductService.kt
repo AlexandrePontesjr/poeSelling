@@ -1,6 +1,7 @@
 package br.com.twobrothers.poeselling.service
 
 import br.com.twobrothers.poeselling.domain.Product
+import br.com.twobrothers.poeselling.domain.Product.Type.ALL
 import br.com.twobrothers.poeselling.domain.User
 import br.com.twobrothers.poeselling.repository.ProductRepository
 import org.springframework.data.domain.Page
@@ -12,19 +13,26 @@ class ProductService(
     val productRepository: ProductRepository
 ) {
 
-    fun gelAll(pageable: Pageable): Page<Product>{
-        return productRepository.findAll(pageable)
+    fun gelAll (pageable: Pageable, type: Product.Type) : Page<Product>{
+        return when(type){
+            ALL -> productRepository.findAll(pageable)
+            else -> productRepository.findAllByType(pageable, type)
+        }
     }
 
-    fun get(id: Int): Product{
-        return productRepository.findById(id).get()
+    fun get (id: Int) : Product{
+        return try {
+            productRepository.findById(id).get()
+        } catch (ex: Exception) {
+            throw RuntimeException("Product not found")
+        }
     }
 
-    fun save(product: Product): Product{
+    fun save (product: Product) : Product{
         return productRepository.save(product)
     }
 
-    fun delete(id: Int, username: String){
+    fun delete (id: Int, username: String) {
         productRepository.delete(
             Product(
                 id = id,
