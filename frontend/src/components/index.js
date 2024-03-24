@@ -11,6 +11,8 @@ import Hero from "./Hero";
 import Sidebar from "./Sidebar";
 import { SidebarItem } from "./Sidebar";
 import ProductTableItem from "./ProductTableItem"
+import CrudModal from "./CrudModal";
+import Button from "./Button";
 
 export {
   Navbar,
@@ -18,6 +20,8 @@ export {
   CardDeal,
   Business,
   Clients,
+  CrudModal,
+  Button,
   CTA,
   Stats,
   Sidebar,

@@ -1,7 +1,7 @@
 import { Eye, PencilLine, Trash2 } from "lucide-react";
 
 //{`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
-export default function QATableItem({isLast, name, price, image, status}) {
+export default function QATableItem({isLast, name, price, image, status, openModal}) {
     return (
         <tr>
                         <td
@@ -14,10 +14,7 @@ export default function QATableItem({isLast, name, price, image, status}) {
                         </td>
                         <td class={`${ isLast ? " " : "border-b border-[#eee]" } px-4 py-5`}>
                           <div class="flex items-center space-x-3.5">
-                            <button class="hover:text-primary">
-                              <Eye className="w-6 h-6"/>
-                            </button>
-                            <button class="hover:text-primary">
+                            <button class="hover:text-primary" onClick={openModal}>
                               <PencilLine className="w-6 h-6"/>
                             </button>
                             <button class="hover:text-primary">
