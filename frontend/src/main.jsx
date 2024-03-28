@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import App from './App.jsx'
-import './index.css'
-import LoginAdmin from './layouts/LoginAdmin.jsx'
 import { AuthProvider } from './backend/contexts/auth.jsx'
-import HomeAdminV0 from './layouts/HomeAdminV0.jsx'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './index.css'
 import { ProductLayout, QALayout, ServiceLayout } from './layouts'
+import LoginAdmin from './layouts/LoginAdmin.jsx'
 
 export default function Main() {
   return (

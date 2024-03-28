@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 
 const AuthContext = React.createContext();
 
 export function useAuth() {
   return useContext(AuthContext);
 }
-
-
 
 export function AuthProvider(props) {
   const [authUser, setAuthUser] = useState(null)
@@ -16,7 +14,7 @@ export function AuthProvider(props) {
     authUser,
     setAuthUser,
     isLoggedIn,
-    setIsLoggedIn   
+    setIsLoggedIn
   }
 
   return (

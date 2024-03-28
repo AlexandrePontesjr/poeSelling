@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*
 @RestController(value = "Products")
 @RequestMapping(name = "Product", value = ["products"])
 class ProductController (
-    val productService: ProductService,
+    private val productService: ProductService,
 ) {
 
     @GetMapping

@@ -18,6 +18,22 @@ class ExceptionAdviceController {
         val logger: Logger = LoggerFactory.getLogger(ExceptionAdviceController::class.java)
     }
 
+    @ExceptionHandler(BusinessException::class)
+    fun businessException (exception: BusinessException) : ResponseEntity<ErrorResponse> {
+        logger.error("Business exception")
+        return ResponseEntity
+            .status(exception.statusCode)
+            .body(
+                ErrorResponse(
+                    message = exception.message,
+                    error = ErrorResponse.Error(
+                        code = "USR001",
+                        details = exception.cause?.message.toString()
+                    )
+                )
+            )
+    }
+
     @ExceptionHandler(ExpiredJwtException::class)
     fun handleTokenExpired (exception: ExpiredJwtException) : ResponseEntity<ErrorResponse> {
         logger.error("Token expired")

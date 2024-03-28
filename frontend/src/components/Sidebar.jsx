@@ -1,28 +1,28 @@
-import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react"
-import { useContext, createContext, useState } from "react"
-import { Link } from "react-router-dom"
+import { ChevronFirst, ChevronLast, DoorOpen } from "lucide-react";
+import { createContext, useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const SidebarContext = createContext()
 
 export default function Sidebar({ children }) {
   const [expanded, setExpanded] = useState(true)
+
+  function logout() {
+    localStorage.removeItem("token")
+    window.location.reload();
+  }
   
   return (
     <aside className="h-screen">
-      <nav className={`h-full flex flex-col bg-white border-r shadow-sm ${
-          expanded ? "wl-52" : "w-16"
+      <nav className={`h-full flex flex-col bg-black border-r shadow-sm ${
+          expanded ? "wl-52" : "w-21"
         }`}>
         <div className="p-4 pb-2 flex justify-between items-center">
-          <img
-            src="https://img.logoipsum.com/243.svg"
-            className={`overflow-hidden transition-all ${
-              expanded ? "w-32" : "w-0"
-            }`}
-            alt=""
-          />
+        <img className={` mx-auto ${expanded ? "wl-52 h-32" : "w-8 h-8"}`} src={logo} alt="logo"/>
           <button
             onClick={() => setExpanded((curr) => !curr)}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
+            className="p-1.5 rounded-lg bg-white hover:bg-gray-100"
           >
             {expanded ? <ChevronFirst /> : <ChevronLast />}
           </button>
@@ -34,9 +34,9 @@ export default function Sidebar({ children }) {
 
         <div className="border-t flex p-3">
           <img
-            src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
+            src="https://upload.wikimedia.org/wikipedia/en/0/08/Path_of_Exile_Logo.png"
             alt=""
-            className="w-10 h-10 rounded-md"
+            className="w-14 h-10 rounded-md"
           />
           <div
             className={`
@@ -45,10 +45,9 @@ export default function Sidebar({ children }) {
           `}
           >
             <div className="leading-4">
-              <h4 className="font-semibold">John Doe</h4>
-              <span className="text-xs text-gray-600">johndoe@gmail.com</span>
+              <h4 className="font-semibold text-white">{localStorage.username}</h4>
             </div>
-            <MoreVertical size={20} />
+            <DoorOpen onClick={logout} className="text-white cursor-pointer" size={20} />
           </div>
         </div>
       </nav>
@@ -71,8 +70,8 @@ export function SidebarItem({ icon, text, active, alert, path }) {
         }
         ${
           active
-            ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
-            : "hover:bg-indigo-50 text-gray-600"
+            ? "bg-gradient-to-tr from-yellow-400 to-white text-black"
+            : "hover:bg-yellow-400 text-gray-600"
         }
     `}
     >
@@ -97,7 +96,7 @@ export function SidebarItem({ icon, text, active, alert, path }) {
         <div
           className={`
           absolute left-full rounded-md px-3 py-1 ml-3
-          bg-indigo-100 text-indigo-800 text-sm
+          bg-black text-white text-sm
           invisible opacity-20 -translate-x-3 transition-all
           group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
       `}
