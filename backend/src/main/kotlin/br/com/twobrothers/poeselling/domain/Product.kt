@@ -18,6 +18,7 @@ data class Product(
     val image: String = "",
     val isPromotion: Boolean = false,
     val promotionExpiration: Date = Date(),
+    val discount: BigDecimal = BigDecimal.ZERO,
     val status: String = "active",
     @ManyToOne
     val createdBy: User = User(),

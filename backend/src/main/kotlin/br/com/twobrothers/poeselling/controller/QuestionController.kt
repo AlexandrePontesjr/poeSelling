@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*
 @RestController(value = "QA")
 @RequestMapping(name = "Question and Answers", value = ["questions"])
 class QuestionController(
-    val questionAndAnswerService: QuestionAndAnswerService
+    private val questionAndAnswerService: QuestionAndAnswerService
 ) {
 
     @GetMapping
