@@ -1,6 +1,7 @@
 import styles from "../styles";
 import { useEffect, useState, useCallback, useRef } from "react";
-// import { arrowUp } from "../assets";
+import { logoPoe } from "../assets";
+import { Button } from "../components"
 
 
 
@@ -69,8 +70,8 @@ const Items = () => {
     const countDownDate = new Date(
       customDate.getFullYear(),
       customDate.getMonth(),
-      customDate.getDate() + 50,
-      customDate.getHours() + 18,
+      customDate.getDate() + 1,
+      customDate.getHours() + 3,
       customDate.getMinutes() + 25,
       customDate.getSeconds() + 5
     );
@@ -81,21 +82,33 @@ const Items = () => {
   useEffect(() => {
     startCountDown();
   }, [startCountDown]);
-  
-  return <div className={`${styles.flexCenter} w-[300px] h-[380px] rounded-lg bg-yellow-500 p-2 cursor-pointer`}>
-     <div className={`${styles.flexCenter} flex-col bg-yellow-300 w-[100%] h-[100%] rounded-lg`}>
-      <div className={`${styles.flexStart} flex-row`}>
-        <p className="font-pirata font-medium text-[18px] leading-[23.4px]">
-          <span className="text-black">50 divine Orbs</span>
-        </p>
-        {/* <img src={arrowUp} alt="arrow-up" className="w-[23px] h-[23px] object-contain" /> */}
-      </div>
-      
-      <p className="font-pirata font-medium text-[18px] leading-[200px]">
-        <span className="text-black">{countDownTime?.days} days: {countDownTime?.hours}hrs: {countDownTime?.minutes}min {countDownTime?.seconds}sec</span>
-      </p>
-    </div>
-    {/* <div className={`${styles.itemsCard}`}></div> */}
+
+  return <div className={`cursor-pointer`}>
+      <div href="#" className={`bg-white max-w-[450px] rounded-lg sm:px-4 sm:py-4 lg:px-4 mr-2`}>
+
+          <div className={`bg-yellow-500 p-6 rounded-lg`}>
+              <img
+                src={logoPoe}
+                alt=""
+                className="rounded-lg h-[250px] w-[340px] bg-white"
+              />
+
+              <div className="rounded-lg p-2 mt-3">
+                <h3
+                  className="text-white font-pirata text-[50px] group-hover:underline group-hover:underline-offset-4 ml-auto"
+                >
+                  Item em Raro
+                </h3>
+
+              <p className={`font-poppins text-white text-[26px] mb-6 mt-6`}>
+                <span>{countDownTime?.days} days: {countDownTime?.hours}hrs: {countDownTime?.minutes}min {countDownTime?.seconds}sec</span>
+              </p>
+
+                <p className="mt-2 text-[40px] text-white">$150</p>
+              </div>
+              <Button/>
+          </div>
+        </div>
   </div>
 }
 

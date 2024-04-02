@@ -13,9 +13,16 @@ import { SidebarItem } from "./Sidebar";
 import ProductTableItem from "./ProductTableItem"
 import CrudModal from "./CrudModal";
 import Button from "./Button";
+import SearchBar from "./SearchBar";
+import Items from "./Items";
+import Carousel from "./Carousel";
+
 
 export {
   Navbar,
+  Items,
+  Carousel,
+  SearchBar,
   Billing,
   CardDeal,
   Business,

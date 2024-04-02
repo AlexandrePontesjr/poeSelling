@@ -1,31 +1,61 @@
-import { apple, bill, google } from "../assets";
+import { pix, google } from "../assets";
+import { SearchBar } from "../components";
 import styles, { layout } from "../styles";
+import  { Carousel } from "../components";
+
+let slides = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+    title: "Poe Selling",
+    description: "Poe Selling is a website that allows you to sell your PoE items.",
+    link: "https://poeselling.herokuapp.com/",
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+    title: "Poe Selling",
+    description: "Poe Selling is a website that allows you to sell your PoE items.",
+    link: "https://poeselling.herokuapp.com/",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+    title: "Poe Selling",
+    description: "Poe Selling is a website that allows you to sell your PoE items.",
+    link: "https://poeselling.herokuapp.com/",
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+    title: "Poe Selling",
+    description: "Poe Selling is a website that allows you to sell your PoE items.",
+    link: "https://poeselling.herokuapp.com/",
+  }
+];
 
 const Billing = () => (
-  <section id="product" className={layout.sectionReverse}>
-    <div className={layout.sectionImgReverse}>
-      <img src={bill} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
+  <section id="items" className={``}>
+    <SearchBar />
+    <div className="">
+      <div className={``}>
+        {/* gradient start */}
+        <div className="absolute z-[3] -left-1/2 top-0 w-[50%] h-[50%] rounded-full white__gradient" />
+        <div className="absolute z-[0] w-[50%] h-[50%] -left-1/2 bottom-0 rounded-full pink__gradient" />
+        {/* gradient end */}
+      </div>
+      <div className={layout.sectionInfo}>
+        <h2 className={styles.heading2}>
+          Tome controle do Game <br className="sm:block hidden" /> Compre &
+          Use Items da loja.
+        </h2>
+        <p className={`${styles.paragraph} max-w-[650px] mt-5`}>
+          Procure pelos melhores items no nosso site
+        </p>
+      </div>
+      <div className={layout.sectionInfo}>
 
-      {/* gradient start */}
-      <div className="absolute z-[3] -left-1/2 top-0 w-[50%] h-[50%] rounded-full white__gradient" />
-      <div className="absolute z-[0] w-[50%] h-[50%] -left-1/2 bottom-0 rounded-full pink__gradient" />
-      {/* gradient end */}
-    </div>
-
-    <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
-        Easily control your <br className="sm:block hidden" /> billing &
-        invoicing
-      </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio
-        aenean neque. Fusce ipsum orci rhoncus aliporttitor integer platea
-        placerat.
-      </p>
-
-      <div className="flex flex-row flex-wrap sm:mt-10 mt-6">
-        <img src={apple} alt="google_play" className="w-[128.86px] h-[42.05px] object-contain mr-5 cursor-pointer" />
-        <img src={google} alt="google_play" className="w-[144.17px] h-[43.08px] object-contain cursor-pointer" />
+        <Carousel slides={slides}/>
       </div>
     </div>
   </section>

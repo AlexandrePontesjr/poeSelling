@@ -13,7 +13,7 @@ import star from "./Star.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import google from "./google.svg";
-import apple from "./apple.svg";
+import pix from "./pix.svg";
 import arrowUp from "./arrow-up.svg";
 import discount from "./Discount.svg";
 import facebook from "./facebook.svg";
@@ -23,8 +23,14 @@ import twitter from "./twitter.svg";
 import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
+import logoPoe from "./logoPoe.png";
+import poe_bg_hb from "./poe_bg_hb.png";
+import search from "./search.svg";
 
 export {
+  logoPoe,
+  search,
+  poe_bg_hb,
   airbnb,
   bill,
   binance,
@@ -40,7 +46,7 @@ export {
   menu,
   close,
   google,
-  apple,
+  pix,
   arrowUp,
   discount,
   facebook,

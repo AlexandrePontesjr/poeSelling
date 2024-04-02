@@ -9,15 +9,14 @@ const App = () => (
       </div>
     </div>
 
-    <div className={`backgroundImage ${styles.flexStart} skew-y-12`}>
+    <div className={`backgroundImage ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
     </div>
-      <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`backgroundImageItems ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
-      <Hero />
-      <Hero />
+        <Billing />
         {/* <Stats />
         <Business />
         <Billing />
