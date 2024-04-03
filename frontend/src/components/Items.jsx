@@ -1,12 +1,9 @@
 import styles from "../styles";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { logoPoe } from "../assets";
-import { Button } from "../components"
+import { Button } from "../components";
 
-
-
-const Items = () => {
-
+const Items = ({ product }) => {
   const [countDownTime, setCountDownTIme] = useState({
     days: 0,
     hours: 0,
@@ -83,33 +80,45 @@ const Items = () => {
     startCountDown();
   }, [startCountDown]);
 
-  return <div className={`cursor-pointer`}>
-      <div href="#" className={`bg-white max-w-[450px] rounded-lg sm:px-4 sm:py-4 lg:px-4 mr-2`}>
+  return (
+    <div className={`cursor-pointer`}>
+      <div
+        href="#"
+        className={`bg-white max-w-[450px] rounded-lg sm:px-4 sm:py-4 lg:px-4 mr-2`}
+      >
+        <div className={`bg-yellow-500 p-6 rounded-lg`}>
+          <img
+            src={product ? product.image : logoPoe}
+            alt=""
+            className="rounded-lg h-[250px] w-[340px] bg-white"
+          />
 
-          <div className={`bg-yellow-500 p-6 rounded-lg`}>
-              <img
-                src={logoPoe}
-                alt=""
-                className="rounded-lg h-[250px] w-[340px] bg-white"
-              />
+          <div className="rounded-lg p-2 mt-3">
+            <h3 className="text-white font-pirata text-[50px] group-hover:underline group-hover:underline-offset-4 ml-auto">
+              {product ? product.name : "Product Name"}
+            </h3>
 
-              <div className="rounded-lg p-2 mt-3">
-                <h3
-                  className="text-white font-pirata text-[50px] group-hover:underline group-hover:underline-offset-4 ml-auto"
-                >
-                  Item em Raro
-                </h3>
+            {product ? (
+              product.isPromotion === true ? (
+                // need to check if is a promotion
+                <p className={`font-poppins text-white text-[26px] mb-6 mt-6`}>
+                  <span>
+                    {countDownTime?.days} days: {countDownTime?.hours}hrs:{" "}
+                    {countDownTime?.minutes}min {countDownTime?.seconds}sec
+                  </span>
+                </p>
+              ) : null
+            ) : null}
 
-              <p className={`font-poppins text-white text-[26px] mb-6 mt-6`}>
-                <span>{countDownTime?.days} days: {countDownTime?.hours}hrs: {countDownTime?.minutes}min {countDownTime?.seconds}sec</span>
-              </p>
-
-                <p className="mt-2 text-[40px] text-white">$150</p>
-              </div>
-              <Button/>
+            <p className="mt-2 text-[40px] text-white">
+              ${product ? product.price : "--"}
+            </p>
           </div>
+          <Button />
         </div>
-  </div>
-}
+      </div>
+    </div>
+  );
+};
 
 export default Items;
