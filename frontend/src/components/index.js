@@ -16,6 +16,7 @@ import Button from "./Button";
 import SearchBar from "./SearchBar";
 import Items from "./Items";
 import Carousel from "./Carousel";
+import DoubleButton from "./DoubleButton";
 
 
 export {
@@ -27,6 +28,7 @@ export {
   CardDeal,
   Business,
   Clients,
+  DoubleButton,
   CrudModal,
   Button,
   CTA,

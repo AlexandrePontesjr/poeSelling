@@ -13,21 +13,21 @@ import axios from "axios";
 //       });
 // }
 
+// const baseURL = `http://localhost:3601`;
+const baseURL = `https://run.mocky.io/v3/`;
 
-
-const baseURL = `http://localhost:3601`;
 let headers = {
-  'Accept': 'application/json',
-  'Content-Type': 'application/json'
-}
+  Accept: "application/json",
+  "Content-Type": "application/json",
+};
 
 if (localStorage.token) {
-  headers.Authorization = `Bearer ${localStorage.token}`
+  headers.Authorization = `Bearer ${localStorage.token}`;
 }
 
 const axiosInstance = axios.create({
   baseURL,
-  headers
-})
+  headers,
+});
 
 export default axiosInstance;
