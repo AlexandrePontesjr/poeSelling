@@ -1,0 +1,13 @@
+name: Frontend User Story
+description: History template for Frontend user story
+title: "[Frontend]: "
+labels: ["user-story"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: Descreva a sua historia aqui.
+      placeholder: "Como [persona], eu [quero], [para que]."
+    validations:
+      required: true
