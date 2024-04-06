@@ -10,5 +10,6 @@ data class ProductResponse (
     val price: BigDecimal = BigDecimal.ZERO,
     val description: String = "",
     val image: String = "",
+    val isPromotion: Boolean = false,
     val createdBy: String,
 )

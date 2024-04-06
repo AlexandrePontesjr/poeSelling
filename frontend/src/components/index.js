@@ -3,7 +3,6 @@ import Billing from "./Billing";
 import CardDeal from "./CardDeal";
 import Business from "./Business";
 import Clients from "./Clients";
-import CTA from "./CTA";
 import Stats from "./Stats";
 import Footer from "./Footer";
 import Testimonials from "./Testimonials";
@@ -16,6 +15,8 @@ import Button from "./Button";
 import SearchBar from "./SearchBar";
 import Items from "./Items";
 import Carousel from "./Carousel";
+import DoubleButton from "./DoubleButton";
+import Cta from "./CTA";
 
 
 export {
@@ -27,9 +28,10 @@ export {
   CardDeal,
   Business,
   Clients,
+  DoubleButton,
   CrudModal,
   Button,
-  CTA,
+  Cta,
   Stats,
   Sidebar,
   SidebarItem,

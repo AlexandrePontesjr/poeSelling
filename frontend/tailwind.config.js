@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html","./src/**/*.{js,jsx}"],
@@ -13,6 +15,10 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         pirata: ["Pirata One", "sans-serif"],
       },
+      boxShadow: {
+        'selling': "-12px 15px 0 -8px black, -12px 15px 0 0px white",
+        'selling-hover': "-12px 15px 0 -8px hsl(222.2deg 47.4% 11.2% / .5%), -12px 15px 0 0px hsl(222.2deg 47.4% 11.2% / 90%)",
+      },
     },
     screens: {
       xs: "480px",
@@ -23,6 +29,18 @@ export default {
       xl: "1700px",
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.no-scrollbar::-webkit-scrollbar': {
+          'display': 'none',
+        },
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        }
+      })
+    })
+  ],
 }
 

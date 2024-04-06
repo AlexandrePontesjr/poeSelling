@@ -1,5 +1,5 @@
+import { Billing, Navbar, Hero } from "./components";
 import styles from "./styles";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
 
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -8,14 +8,13 @@ const App = () => (
         <Navbar />
       </div>
     </div>
-
     <div className={`backgroundImage ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
     </div>
-      <div className={`backgroundImageItems ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
+    <div className={`backgroundImageItems ${styles.flexStart}`}>
+      <div className={`h-full ${styles.boxWidth}`}>
         <Billing />
         {/* <Stats />
         <Business />

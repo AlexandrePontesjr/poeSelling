@@ -4,6 +4,7 @@ import br.com.twobrothers.poeselling.controller.request.ProductRequest
 import br.com.twobrothers.poeselling.controller.response.ProductResponse
 import br.com.twobrothers.poeselling.domain.Product
 import br.com.twobrothers.poeselling.domain.Product.Type.ALL
+import br.com.twobrothers.poeselling.exception.ExceptionAdviceController.Companion.logger
 import br.com.twobrothers.poeselling.mapper.decodeUsernameFromJWT
 import br.com.twobrothers.poeselling.mapper.toDomain
 import br.com.twobrothers.poeselling.mapper.toResponse
@@ -23,6 +24,7 @@ class ProductController (
 
     @GetMapping
     fun listAll (pageable: Pageable, @Param("type") type: Product.Type = ALL) : ResponseEntity<Page<ProductResponse>> {
+        logger.info("Starting to list all products by type: $type")
         return ResponseEntity.ok(productService.gelAll(pageable, type).map { it.toResponse() })
     }
 
