@@ -1,5 +1,3 @@
-import React from "react";
-
 const DoubleButton = ({ url, children, onClickEvent, color, textColor }) => (
   <a
     href={url}

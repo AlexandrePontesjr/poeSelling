@@ -1,5 +1,4 @@
-import styles from "../styles";
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { logoPoe } from "../assets";
 import { DoubleButton } from "../components";
 

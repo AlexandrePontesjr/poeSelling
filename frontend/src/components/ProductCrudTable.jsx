@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const ProductCrudTable = () => {
   const [products, setProducts] = useState([]);
-  const [formData, setFormData] = useState({ name: '', price: '', description: '', image_url: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    price: "",
+    description: "",
+    image_url: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,19 +17,43 @@ const ProductCrudTable = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setProducts([...products, formData]);
-    setFormData({ name: '', price: '', description: '', image_url: '' });
+    setFormData({ name: "", price: "", description: "", image_url: "" });
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
-        <input type="text" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
-        <input type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Description" />
-        <input type="text" name="image_url" value={formData.image_url} onChange={handleChange} placeholder="Image URL" />
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Name"
+        />
+        <input
+          type="text"
+          name="price"
+          value={formData.price}
+          onChange={handleChange}
+          placeholder="Price"
+        />
+        <input
+          type="text"
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          placeholder="Description"
+        />
+        <input
+          type="text"
+          name="image_url"
+          value={formData.image_url}
+          onChange={handleChange}
+          placeholder="Image URL"
+        />
         <button type="submit">Add Product</button>
       </form>
-      
+
       <table>
         <thead>
           <tr>

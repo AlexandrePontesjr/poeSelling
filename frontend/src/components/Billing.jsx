@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProducts } from "../api/products/products";
 import { Carousel, SearchBar } from "../components";
 import styles, { layout } from "../styles";
