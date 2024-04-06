@@ -9,9 +9,9 @@ on:
       - "./frontend/**"
     branches: [ "main" ]
   pull_request:
-    # paths:
-    #   - "./frontend/**"
-    # branches: [ "main" ]
+    paths:
+      - "./frontend/**"
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -20,9 +20,9 @@ jobs:
 
     steps:
     
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4.1.1
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4.0.2
       with:
         node-version: 21.x
         cache: 'npm'
