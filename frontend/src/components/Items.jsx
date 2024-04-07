@@ -83,10 +83,10 @@ const Items = () => {
     startCountDown();
   }, [startCountDown]);
 
-  return <div className={`cursor-pointer`}>
-      <div href="#" className={`bg-white max-w-[450px] rounded-lg sm:px-4 sm:py-4 lg:px-4 mr-2`}>
+  return <div className={`cursor-pointer `}>
+      <div href="#" className={` bg-white max-w-[450px] rounded-lg sm:px-4 sm:py-4 lg:px-4 mr-2`}>
 
-          <div className={`bg-yellow-500 p-6 rounded-lg`}>
+          <div className={`bg-yellow-500 p-6  rounded-lg`}>
               <img
                 src={logoPoe}
                 alt=""
@@ -100,9 +100,9 @@ const Items = () => {
                   Item em Raro
                 </h3>
 
-              <p className={`font-poppins text-white text-[26px] mb-6 mt-6`}>
+              {/* <p className={`font-poppins text-white text-[26px] mb-6 mt-6`}>
                 <span>{countDownTime?.days} days: {countDownTime?.hours}hrs: {countDownTime?.minutes}min {countDownTime?.seconds}sec</span>
-              </p>
+              </p> */}
 
                 <p className="mt-2 text-[40px] text-white">$150</p>
               </div>

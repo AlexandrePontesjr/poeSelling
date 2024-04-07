@@ -15,13 +15,15 @@ import CrudModal from "./CrudModal";
 import Button from "./Button";
 import SearchBar from "./SearchBar";
 import Items from "./Items";
-import Carousel from "./Carousel";
-
-
+import Services from "./Services";
+import ServicesItems from "./ServicesItems";
+import SliderCards from "./SliderCards";
 export {
   Navbar,
+  Services,
+  SliderCards,
   Items,
-  Carousel,
+  ServicesItems,
   SearchBar,
   Billing,
   CardDeal,

@@ -48,7 +48,7 @@ const Hero = () => {
       </div>
       <div className={layout.sectionImgReverse}>
 
-      <Items/>
+      {/* <Items/> */}
       </div>
       {/* <div className={`ss:hidden ${styles.flexCenter}`}>
         <GetStarted />
