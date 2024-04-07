@@ -13,8 +13,8 @@ import axios from "axios";
 //       });
 // }
 
-// const baseURL = `http://localhost:3601`;
-const baseURL = `https://run.mocky.io/v3/`;
+console.log(import.meta.env.VITE_BACKEND_URL);
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 let headers = {
   Accept: "application/json",
