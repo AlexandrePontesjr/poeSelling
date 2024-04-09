@@ -80,10 +80,10 @@ const Items = ({ product }) => {
   }, [startCountDown]);
 
   return (
-    <div className={`flex sm:flex-col`}>
+    <div className={`flex sm:flex-col p-3 rounded-xl  hover:bg-yellow-400`}>
       <div className="w-56 sm:w-96 rounded-3xl bg-[#010005]">
         <div className="pt-5 sm:pt-10 flex w-full sm:h-full place-content-center">
-          <div className="bg-[#343434] rounded-3xl w-36 h-36 sm:w-72 sm:h-72 place-content-center">
+          <div className="bg-[#343434] rounded-3xl w-36 h-36 sm:w-72 sm:h-72 place-content-center ">
             <a
               href={
                 `https://api.whatsapp.com/send?` +
@@ -94,7 +94,7 @@ const Items = ({ product }) => {
               <img
                 src={product ? product.image : logoPoe}
                 alt=""
-                className="rounded-lg h-full w-full"
+                className="rounded-xl h-full w-full"
               />
             </a>
           </div>
@@ -104,7 +104,7 @@ const Items = ({ product }) => {
             {product ? product.name : "Product Name"}
           </h3>
 
-          <p className="font-pirata text-sm sm:text-1xl text-white">
+          <p className="font-pirata text-[26px] sm:text-1xl text-white">
             Preço: ${product ? product.price : "--"}
           </p>
         </div>
@@ -124,11 +124,11 @@ const Items = ({ product }) => {
           <DoubleButton
             url={
               `https://api.whatsapp.com/send?` +
-              `phone=351912537986&` +
+              `phone=559285896410&` +
               `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`
             }
           >
-            Compre!
+            Fale Conosco
           </DoubleButton>
         </div>
       </div>

@@ -38,6 +38,7 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  background-color: #000000;
 }
 
 .backgroundImageItems{
@@ -45,6 +46,25 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: rgb(129, 129, 94);
+}
+
+.backgroundImageService{
+  background-image: url("./assets/BackgroundServices.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f8f8f8;
+  
+}
+
+.backgroundImageTestemonial{
+  background-image: url("./assets/BackgroundItems.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff !important;
+  
 }
 
 .text-gradient {

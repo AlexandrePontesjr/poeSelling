@@ -26,10 +26,13 @@ import people03 from "./people03.png";
 import logoPoe from "./logoPoe.png";
 import poe_bg_hb from "./poe_bg_hb.png";
 import search from "./search.svg";
-
+import BackgroundServices from "./BackgroundServices.jpg";
+import BackgroundItems from "./BackgroundItems.jpg";
 export {
   logoPoe,
   search,
+  BackgroundServices,
+  BackgroundItems,
   poe_bg_hb,
   airbnb,
   bill,

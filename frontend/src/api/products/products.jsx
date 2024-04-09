@@ -2,9 +2,9 @@ import { toast } from "react-toastify";
 import axiosInstance from "../axios.jsx";
 
 export async function getProducts() {
-  // return axiosInstance.get('/products?type=ITEM')
-  return axiosInstance
-    .get("/6ee9e3b5-0e27-4e18-894e-a54ca5d853c4")
+  return axiosInstance.get('/products?type=ITEM')
+  // return axiosInstance
+    // .get("/6ee9e3b5-0e27-4e18-894e-a54ca5d853c4")
     .then(function (response) {
       return response.data;
     })

@@ -17,11 +17,16 @@ import Items from "./Items";
 import Carousel from "./Carousel";
 import DoubleButton from "./DoubleButton";
 import Cta from "./CTA";
-
+import Services from "./Services";
+import CarouselService from "./CarouselService";
+import ListService from "./ListService";
 
 export {
   Navbar,
   Items,
+  Services,
+  CarouselService,
+  ListService,
   Carousel,
   SearchBar,
   Billing,

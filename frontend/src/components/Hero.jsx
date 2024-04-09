@@ -8,13 +8,6 @@ const Hero = () => {
       <div
         className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
       >
-        {/* <div className="flex flex-row items-center py-[8px] px-6 bg-discount-gradient rounded-[10px] mb-3">
-          <img src={discount} alt="discount" className="w-[32px] h-[32px]" />
-          <p className={`${styles.paragraph} ml-2`}>
-            <span className="text-white">20%</span> Discount For{" "}
-            <span className="text-white">1 Month</span> Account
-          </p>
-        </div> */}
 
         <div className="flex flex-row justify-between items-center w-full">
           <h1 className="font-pirata flex-1 font-semibold ss:text-[72px] text-[52px] text-yellow-400 ss:leading-[100.8px] leading-[75px]">
@@ -22,7 +15,6 @@ const Hero = () => {
             <span className="text-sky-200"> with Best Price</span>{" "}
           </h1>
         </div>
-        {/* </div> */}
 
         <h1 className="font-pirata font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
           of Path of Exile Market

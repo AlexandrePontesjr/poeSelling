@@ -3,6 +3,7 @@ const styles = {
 
     heading2: "font-pirata font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] w-full",
     paragraph: "font-pirata font-normal text-dimWhite text-[18px] leading-[30.8px]",
+    paragraph2: "font-pirata font-normal text-white text-[26px] leading-[30.8px]",
 
     flexCenter: "flex gap-8 justify-center items-center",
     flexTop: "flex justify-center items-top",
