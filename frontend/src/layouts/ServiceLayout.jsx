@@ -44,7 +44,7 @@ function ServiceLayout() {
             <SidebarItem path={"/admin/products"} icon={<Package size={20} />} text="Products" />
             <SidebarItem path={"/admin/qas"} icon={<MessageCircleQuestion size={20} />} text="Q&A" />
         </Sidebar>
-        <div className="w-full bg-black text-white overflow-scroll">
+        <div className="font-poppins text-[20px] w-full bg-slate-900 text-white overflow-scroll">
             <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
               <div
                   className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
@@ -52,7 +52,7 @@ function ServiceLayout() {
                   <h1 className="text-xl font-bold">
                     Services
                   </h1>
-                  <Button color="bg-white" textColor={"text-black"} className="w-full sm:w-auto" onClickEvent={() => Toggle("Create Service")}>New ++</Button>
+                  <Button color="bg-green-400" textColor={"text-black"} className="w-full  sm:w-auto" onClickEvent={() => Toggle("Create Service")}>ADICIONAR NOVO</Button>
               </div>
               <CrudModal type="service" entity={modalEntity} show={modal} nameAction={modalAction} close={() => Toggle()}>Create Product</CrudModal>
               <div className="flex flex-col gap-10">

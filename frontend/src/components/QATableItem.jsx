@@ -21,10 +21,10 @@ export default function QATableItem({isLast, entityId, name, answer, openModal})
                         </td>
                         <td className={`${ isLast ? " " : "border-b border-[#eee]" } px-4 py-5`}>
                           <div className="flex items-center space-x-3.5">
-                            <button className="hover:text-primary" onClick={openModal}>
+                            <button className="hover:text-yellow-400" onClick={openModal}>
                               <PencilLine className="w-6 h-6"/>
                             </button>
-                            <button onClick={deleteClicked} className="hover:text-gray-400">
+                            <button onClick={deleteClicked} className="hover:text-red-500">
                               <Trash2 className="w-6 h-6"/>
                             </button>
                           </div>

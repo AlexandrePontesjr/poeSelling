@@ -15,7 +15,7 @@ export default function Sidebar({ children }) {
   
   return (
     <aside className="h-screen">
-      <nav className={`h-full flex flex-col bg-black border-r shadow-sm ${
+      <nav className={`h-full flex flex-col bg-slate-950 border-r shadow-sm ${
           expanded ? "wl-52" : "w-21"
         }`}>
         <div className="p-4 pb-2 flex justify-between items-center">
@@ -71,7 +71,7 @@ export function SidebarItem({ icon, text, active, alert, path }) {
         ${
           active
             ? "bg-gradient-to-tr from-yellow-400 to-white text-black"
-            : "hover:bg-yellow-400 text-gray-600"
+            : "hover:bg-yellow-300 text-slate-600"
         }
     `}
     >

@@ -74,7 +74,7 @@ const LoginAdmin = () => {
                 onChange={(e) => setUsername(e.target.value)}
                 type="text"
                 id="username"
-                className="border-0 font-poppins w-full text-base px-2 py-1 focus:outline-none focus:ring-0 "
+                className="rounded-md border-0 font-poppins w-full text-base px-2 py-1 focus:outline-none focus:ring-0 "
                 placeholder="Enter Username..."
               />
             </div>
@@ -86,7 +86,7 @@ const LoginAdmin = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 id="password"
-                className="font-poppins border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-yellow-400"
+                className="rounded-md font-poppins border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-yellow-400"
                 placeholder="Enter Password..."
               />
 
@@ -96,7 +96,7 @@ const LoginAdmin = () => {
             <div className="mt-5">
               {/* <Link className="font-pirata text-white py-1 w-full rounded-md font-semibold" to="/admin/products">Login</Link> */}
               <button
-                className="font-poppins  text-black py-1 w-full rounded-md font-semibold bg-yellow-400"
+                className="font-poppins  text-black py-1 w-full rounded-md font-semibold bg-yellow-400 hover:bg-yellow-600"
                 onClick={logIn}
               >
                 login
