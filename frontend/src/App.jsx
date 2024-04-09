@@ -1,4 +1,5 @@
 import { Billing, Navbar, Hero } from "./components";
+import { Faq } from "./components/sections";
 import styles from "./styles";
 
 const App = () => (
@@ -8,24 +9,25 @@ const App = () => (
         <Navbar />
       </div>
     </div>
-    <div className={`backgroundImage ${styles.flexStart}`}>
+    {/* <div className={`backgroundImage ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
-    </div>
-    <div className={`backgroundImageItems ${styles.flexStart}`}>
+    </div> */}
+    {/* <div className={`backgroundImageItems ${styles.flexStart}`}>
       <div className={`h-full ${styles.boxWidth}`}>
         <Billing />
-        {/* <Stats />
+        <Stats />
         <Business />
         <Billing />
         <CardDeal />
         <Testimonials />
         <Clients />
         <CTA />
-        <Footer /> */}
+        <Footer />
       </div>
-    </div>
+    </div> */}
+    <Faq />
   </div>
 );
 
