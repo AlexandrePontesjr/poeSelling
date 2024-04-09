@@ -41,12 +41,22 @@
   background-color: #868585;
 }
 
+.backgroundImageHero{
+  background-image: url("./assets/poe_bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000000;
+  height: 100vh;
+}
+
 .backgroundImageItems{
   background-image: url("./assets/poe_bg_hb.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgb(129, 129, 94);
+  height: 100vh;
 }
 
 .backgroundImageService{
@@ -55,6 +65,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: #f8f8f8;
+  height: 100vh;
   
 }
 
@@ -64,6 +75,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffffff !important;
+  height: 100vh;
   
 }
 
