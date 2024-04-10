@@ -9,14 +9,14 @@ const App = () => (
         <Navbar />
       </div>
     </div>
-    {/* <div className={`backgroundImage ${styles.flexStart}`}>
+    <div className={`backgroundImage ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
-    </div> */}
-    {/* <div className={`backgroundImageItems ${styles.flexStart}`}>
+    </div>
+    <div className={`backgroundImageItems ${styles.flexStart}`}>
       <div className={`h-full ${styles.boxWidth}`}>
-        <Billing />
+        {/*<Billing />
         <Stats />
         <Business />
         <Billing />
@@ -24,10 +24,9 @@ const App = () => (
         <Testimonials />
         <Clients />
         <CTA />
-        <Footer />
+        <Footer /> */}
       </div>
-    </div> */}
-    <Faq />
+    </div>
   </div>
 );
 
