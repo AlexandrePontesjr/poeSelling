@@ -1,5 +1,4 @@
-import { Billing, Navbar, Hero } from "./components";
-import { Faq } from "./components/sections";
+import { Billing, Hero, Navbar } from "./components";
 import styles from "./styles";
 
 const App = () => (
@@ -16,8 +15,8 @@ const App = () => (
     </div>
     <div className={`backgroundImageItems ${styles.flexStart}`}>
       <div className={`h-full ${styles.boxWidth}`}>
-        {/*<Billing />
-        <Stats />
+        <Billing />
+        {/*<Stats />
         <Business />
         <Billing />
         <CardDeal />
