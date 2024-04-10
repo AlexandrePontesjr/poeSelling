@@ -25,7 +25,9 @@ class ProductController (
     @GetMapping
     fun listAll (pageable: Pageable, @Param("type") type: Product.Type = ALL) : ResponseEntity<Page<ProductResponse>> {
         logger.info("Starting to list all products by type: $type")
-        return ResponseEntity.ok(productService.gelAll(pageable, type).map { it.toResponse() })
+        return ResponseEntity.ok(productService.gelAll(pageable, type).map { it.toResponse() }).also {
+            logger.info("Done to list products count: ${it.body?.totalElements}")
+        }
     }
 
     @PostMapping
@@ -33,20 +35,26 @@ class ProductController (
         @RequestBody productRequest: ProductRequest,
         @RequestHeader("Authorization") token: String,
     ) : ResponseEntity<ProductResponse> {
+        logger.info("Starting to create a product: $productRequest")
         return ResponseEntity(
             productService.save(
                 productRequest.toDomain(token.decodeUsernameFromJWT())
             ).toResponse(), HttpStatus.CREATED
-        )
+        ).also {
+            logger.info("Done to create product with id: ${it.body?.id}")
+        }
     }
 
     @PutMapping(value = ["/{id}"])
     fun edit (@PathVariable id: Int, @RequestBody productRequest: ProductRequest) : ResponseEntity<ProductResponse> {
+        logger.info("Starting to edit a product: $productRequest")
         return ResponseEntity(
             productService.save(
                 productRequest.toDomain("yan", id)
             ).toResponse(), HttpStatus.OK
-        )
+        ).also {
+            logger.info("Done to edit product with id: ${it.body?.id}")
+        }
     }
 
     @DeleteMapping(value = ["/{id}"])
@@ -54,7 +62,10 @@ class ProductController (
         @PathVariable id: Int,
         @RequestHeader("Authorization") token: String
     ) : ResponseEntity<Any> {
-        productService.delete(id, token.decodeUsernameFromJWT())
+        logger.info("Starting to delete product with id: $id")
+        productService.delete(id, token.decodeUsernameFromJWT()).also {
+            logger.info("Done to delete product with id: $id")
+        }
         return ResponseEntity(HttpStatus.OK)
     }
 

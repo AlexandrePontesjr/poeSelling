@@ -8,6 +8,5 @@ body:
     attributes:
       label: Descrição
       description: Descreva a sua historia aqui.
-      placeholder: "Como [persona], eu [quero], [para que]."
     validations:
       required: true
