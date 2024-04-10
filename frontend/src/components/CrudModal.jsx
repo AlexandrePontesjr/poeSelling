@@ -1,11 +1,12 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NumericFormat } from "react-number-format";
-import { createProduct } from "../api/products/products";
+import { createProduct, editProduct } from "../api/products/products";
 import { createQuestion } from "../api/qas/qas";
 import Button from "./Button";
 
-const CrudModal = ({ show, type, close, nameAction, entity }) => {
+const CrudModal = ({ show, type, close, nameAction, action, entity }) => {
+  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image_url, setImageUrl] = useState("");
@@ -16,11 +17,19 @@ const CrudModal = ({ show, type, close, nameAction, entity }) => {
   useEffect(() => {
     const fetchEntity = async () => {
       if (entity != null) {
+        setId(entity.id);
         setName(entity.name);
         setPrice(entity.price);
         setImageUrl(entity.image);
         setQuestion(entity.question);
         setAnswer(entity.answer);
+      } else {
+        setId("");
+        setName("");
+        setPrice("");
+        setImageUrl("");
+        setQuestion("");
+        setAnswer("");
       }
     };
     fetchEntity();
@@ -65,8 +74,24 @@ const CrudModal = ({ show, type, close, nameAction, entity }) => {
   };
 
   function handleSubmit() {
-    console.log();
-    type == "qa"
+    console.log("action: " + action);
+    action == "edit"
+      ? type == "qa"
+        ? createQuestion({
+            id: id,
+            question: question,
+            answer: answer,
+          })
+        : editProduct({
+            id: id,
+            name: name,
+            price: getPrice(),
+            type: type == "service" ? "SERVICE" : "ITEM",
+            description: "description",
+            image: image_url,
+            createdBy: localStorage.username,
+          })
+      : type == "qa"
       ? createQuestion({
           question: question,
           answer: answer,
@@ -276,7 +301,7 @@ const CrudModal = ({ show, type, close, nameAction, entity }) => {
                   {nameAction.split(" ")[0]}
                 </Button>
                 <Button
-                  onClickEvent={() => close()}
+                  onClickEvent={() => close("cancel")}
                   textColor={"text-white"}
                   color={"bg-red-500"}
                   className="w-full sm:w-auto"
