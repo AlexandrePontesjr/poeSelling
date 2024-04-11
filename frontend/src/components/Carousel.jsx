@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Items } from "../components";
+import { Items,Items2 } from "../components";
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 const Carousel = ({ slides }) => {
@@ -15,21 +15,18 @@ const Carousel = ({ slides }) => {
       if (current === slides.length - 1) setCurrent(0);
       else setCurrent(current + 1);
     }
- return (<div className="relative w-full flex overflow-hidden no-scrollbar gap-8 items-center flex-col sm:flex-row">
-      <div className={`flex items-center`}>
+ return (
+    <div className="mt-10 flex flex-wrap justify-start w-full feedback-container gap-2">
+
           {slides.map((slide, index) => {
             return <Items key={index} product={slide} />;
           })}
-      <div className="inset-0 justify-between flex text-white text-[30px]">
-          <button onClick={previousSlide}>
-            <BsFillArrowLeftCircleFill />
-          </button>
-          <button onClick={nextSlide}>
-            <BsFillArrowRightCircleFill />
-          </button>
-      </div>
-      </div>
-</div>
+    <div className="mt-10 items-center flex flex-wrap justify-start w-full feedback-container gap-2">
+          {slides.map((slide, index) => {
+            return <Items2 key={index} product={slide} />;
+          })}
+    </div>
+    </div>
 )};
 
 export default Carousel;

@@ -28,8 +28,11 @@ import poe_bg_hb from "./poe_bg_hb.png";
 import search from "./search.svg";
 import BackgroundServices from "./BackgroundServices.jpg";
 import BackgroundItems from "./BackgroundItems.jpg";
+import loots from "./loots.png";
+
 export {
   logoPoe,
+  loots,
   search,
   BackgroundServices,
   BackgroundItems,

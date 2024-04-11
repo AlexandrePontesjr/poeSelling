@@ -38,7 +38,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className={`relative z-50`}>
+    <section id="services" className={``}>
       <div className="">
         <div className={``}>
         </div>

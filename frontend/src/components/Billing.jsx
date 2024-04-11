@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/products/products";
-import { Carousel, SearchBar } from "../components";
+import { Carousel, SearchBar } from ".";
 import styles, { layout } from "../styles";
 
 const Billing = () => {
@@ -40,12 +40,6 @@ const Billing = () => {
   return (
     <section id="items" className={``}>
       <div className="">
-        <div className={``}>
-          {/* gradient start */}
-          <div className="absolute z-[3] -left-1/2 top-0 w-[50%] h-[50%] rounded-full white__gradient" />
-          <div className="absolute z-[0] w-[50%] h-[50%] -left-1/2 bottom-0 rounded-full pink__gradient" />
-          {/* gradient end */}
-        </div>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <div className="text-center sm:text-left">
@@ -66,10 +60,10 @@ const Billing = () => {
               />
             </div>
           </div>
-
-          <div className={layout.sectionInfo}>
+          <div className="">
             <Carousel slides={filteredProducts} />
           </div>
+
         </div>
       </div>
     </section>
