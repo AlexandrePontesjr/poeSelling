@@ -5,14 +5,13 @@ import styles, { layout } from "../styles";
 
 const Billing = () => {
   const [products, setProducts] = useState([]);
-  const [game, setGame] = useState(1);
   const [searchItem, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await getProducts(game);
+        const res = await getProducts(1);
         setProducts(res.content);
         setFilteredProducts(res.content);
       } catch (error) {
