@@ -10,7 +10,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image_url, setImageUrl] = useState("");
-  // const [description, setDescription] = useState("");
+  const [description, setDescription] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
 
@@ -19,6 +19,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
       if (entity != null) {
         setId(entity.id);
         setName(entity.name);
+        setDescription(entity.description);
         setPrice(entity.price);
         setImageUrl(entity.image);
         setQuestion(entity.question);
@@ -26,6 +27,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
       } else {
         setId("");
         setName("");
+        setDescription("");
         setPrice("");
         setImageUrl("");
         setQuestion("");
@@ -89,7 +91,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
             name: name,
             price: getPrice(),
             type: type == "service" ? "SERVICE" : "ITEM",
-            description: "description",
+            description: description,
             image: image_url,
             createdBy: localStorage.username,
             gameId: game,
@@ -104,7 +106,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
           name: name,
           price: getPrice(),
           type: type == "service" ? "SERVICE" : "ITEM",
-          description: "description",
+          description: description,
           image: image_url,
           createdBy: localStorage.username,
           gameId: game,
@@ -194,7 +196,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                   </div>
                 ) : (
                   <div className="grid gap-4">
-                    <div className="grid gap-1.5">
+                    <div id="name" className="grid gap-1.5">
                       <label
                         className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
                         htmlFor="name"
@@ -221,7 +223,38 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                         />
                       )}
                     </div>
-                    <div className="grid gap-1.5">
+                    <div id="description" className="grid gap-1.5">
+                      <label
+                        className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
+                        htmlFor="name"
+                      >
+                        {type == "service"
+                          ? "Service Description"
+                          : "Product Description"}
+                      </label>
+                      {entity != null ? (
+                        <input
+                          onChange={(e) => {
+                            setDescription(e.target.value);
+                            entity.description = e.target.value;
+                          }}
+                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          id="description"
+                          type="text"
+                          value={entity.description}
+                          placeholder="Enter the description"
+                        />
+                      ) : (
+                        <input
+                          onChange={(e) => setDescription(e.target.value)}
+                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          id="description"
+                          type="text"
+                          placeholder="Enter the description"
+                        />
+                      )}
+                    </div>
+                    <div id="price" className="grid gap-1.5">
                       <label
                         className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
                         htmlFor="email"
@@ -264,7 +297,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                         />
                       )}
                     </div>
-                    <div className="grid gap-1.5">
+                    <div id="image_url" className="grid gap-1.5">
                       <label
                         className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
                         htmlFor="email"
