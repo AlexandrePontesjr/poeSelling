@@ -5,4 +5,5 @@ data class QuestionAndAnswerResponse (
     val question: String,
     val answer: String,
     val createdBy: String,
+    val game: TenantResponse = TenantResponse()
 )

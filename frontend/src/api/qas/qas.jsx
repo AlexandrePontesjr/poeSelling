@@ -1,9 +1,8 @@
-import { toast } from "react-toastify";
 import axiosInstance from "../axios.jsx";
 
-export async function getQuestions() {
+export async function getQuestions(gameId) {
   return axiosInstance
-    .get("/questions")
+    .get("/questions?gameId=" + gameId)
     .then(function (response) {
       return response.data;
     })
@@ -12,9 +11,9 @@ export async function getQuestions() {
     });
 }
 
-export async function deleteQuestionById(id) {
+export async function deleteQuestionById(id, gameId) {
   return axiosInstance
-    .delete(`/questions/${id}`, {
+    .delete(`/questions/${id}?gameId=${gameId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -28,12 +27,6 @@ export async function deleteQuestionById(id) {
       if (error.response.status === 401) {
         localStorage.removeItem("token");
         window.location.reload();
-        toast("user session expire", {
-          bodyClassName: "font-pirata bg-black text-white text-center",
-          type: "error",
-          draggable: true,
-          position: "bottom-center",
-        });
       }
       throw error.response.data.message;
     });
@@ -48,13 +41,6 @@ export async function createQuestion(data) {
     })
     .then(function (response) {
       window.location.reload();
-      toast("Question created successfully", {
-        bodyClassName: "font-pirata bg-black text-white text-center",
-
-        type: "success",
-        draggable: true,
-        position: "bottom-center",
-      });
       return response.data;
     })
     .catch(function (error) {
@@ -63,12 +49,28 @@ export async function createQuestion(data) {
         localStorage.removeItem("token");
         console.log("token removed");
         window.location.reload();
-        toast("user session expire", {
-          bodyClassName: "font-pirata bg-black text-white text-center",
-          type: "error",
-          draggable: true,
-          position: "bottom-center",
-        });
+      }
+      throw error.response.data.message;
+    });
+}
+
+export async function editQuestion(data) {
+  console.log("starting to edit question");
+  return axiosInstance
+    .put(`/questions/${data.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    .then(function (response) {
+      window.location.reload();
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+      if (error.response.status === 401) {
+        localStorage.removeItem("token");
+        window.location.reload();
       }
       throw error.response.data.message;
     });

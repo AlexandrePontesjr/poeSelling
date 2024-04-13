@@ -23,9 +23,9 @@ class ProductController (
 ) {
 
     @GetMapping
-    fun listAll (pageable: Pageable, @Param("type") type: Product.Type = ALL) : ResponseEntity<Page<ProductResponse>> {
-        logger.info("Starting to list all products by type: $type")
-        return ResponseEntity.ok(productService.gelAll(pageable, type).map { it.toResponse() }).also {
+    fun listAll (pageable: Pageable, @Param("type") type: Product.Type = ALL, gameId: Int) : ResponseEntity<Page<ProductResponse>> {
+        logger.info("Starting to list all products by type: $type and gameId: $gameId")
+        return ResponseEntity.ok(productService.gelAll(pageable, type, gameId.toDomain()).map { it.toResponse() }).also {
             logger.info("Done to list products count: ${it.body?.totalElements}")
         }
     }
@@ -60,10 +60,11 @@ class ProductController (
     @DeleteMapping(value = ["/{id}"])
     fun delete (
         @PathVariable id: Int,
+        @RequestParam("gameId") gameId: Int,
         @RequestHeader("Authorization") token: String
     ) : ResponseEntity<Any> {
         logger.info("Starting to delete product with id: $id")
-        productService.delete(id, token.decodeUsernameFromJWT()).also {
+        productService.delete(id, gameId, token.decodeUsernameFromJWT()).also {
             logger.info("Done to delete product with id: $id")
         }
         return ResponseEntity(HttpStatus.OK)

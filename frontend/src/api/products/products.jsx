@@ -1,9 +1,9 @@
 import { toast } from "react-toastify";
 import axiosInstance from "../axios.jsx";
 
-export async function getProducts() {
+export async function getProducts(gameId) {
   return axiosInstance
-    .get("/products?type=ITEM")
+    .get("/products?type=ITEM&gameId=" + gameId)
     .then(function (response) {
       return response.data;
     })
@@ -12,9 +12,9 @@ export async function getProducts() {
     });
 }
 
-export async function getServices() {
+export async function getServices(gameId) {
   return axiosInstance
-    .get("/products?type=SERVICE")
+    .get("/products?type=SERVICE&gameId=" + gameId)
     .then(function (response) {
       return response.data;
     })
@@ -23,9 +23,9 @@ export async function getServices() {
     });
 }
 
-export async function deleteProductById(id) {
+export async function deleteProductById(id, gameId) {
   return axiosInstance
-    .delete(`/products/${id}`, {
+    .delete(`/products/${id}?gameId=${gameId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

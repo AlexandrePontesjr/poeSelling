@@ -12,4 +12,5 @@ data class ProductResponse (
     val image: String = "",
     val isPromotion: Boolean = false,
     val createdBy: String,
+    val game: TenantResponse = TenantResponse()
 )

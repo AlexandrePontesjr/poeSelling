@@ -2,6 +2,7 @@ package br.com.twobrothers.poeselling.service
 
 import br.com.twobrothers.poeselling.domain.Product
 import br.com.twobrothers.poeselling.domain.Product.Type.ALL
+import br.com.twobrothers.poeselling.domain.Tenant
 import br.com.twobrothers.poeselling.domain.User
 import br.com.twobrothers.poeselling.repository.ProductRepository
 import org.springframework.data.domain.Page
@@ -13,10 +14,10 @@ class ProductService(
     val productRepository: ProductRepository
 ) {
 
-    fun gelAll (pageable: Pageable, type: Product.Type) : Page<Product>{
+    fun gelAll (pageable: Pageable, type: Product.Type, tenant: Tenant) : Page<Product>{
         return when(type){
-            ALL -> productRepository.findAll(pageable)
-            else -> productRepository.findAllByType(pageable, type)
+            ALL -> productRepository.findAllByTenant(pageable, tenant)
+            else -> productRepository.findAllByTypeAndTenant(pageable, type, tenant)
         }
     }
 
@@ -32,12 +33,15 @@ class ProductService(
         return productRepository.save(product)
     }
 
-    fun delete (id: Int, username: String) {
+    fun delete (id: Int, gameId: Int, username: String) {
         productRepository.delete(
             Product(
                 id = id,
                 createdBy = User(
                     username = username
+                ),
+                tenant = Tenant(
+                    id = gameId
                 )
             )
         )

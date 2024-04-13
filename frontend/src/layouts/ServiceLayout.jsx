@@ -2,6 +2,7 @@ import { HandPlatter, MessageCircleQuestion, Package } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getServices } from "../api/products/products";
+import { getGames } from "../api/game/games";
 import {
   CrudModal,
   ProductTableItem,
@@ -12,6 +13,11 @@ import Button from "../components/Button";
 
 function ServiceLayout() {
   const [modal, setModal] = useState(false);
+  const [games, setGames] = useState(null);
+  const [game, setGame] = useState(1);
+  const [gameLogo, setGameLogo] = useState(
+    "https://upload.wikimedia.org/wikipedia/en/0/08/Path_of_Exile_Logo.png"
+  );
   const [modalAction, setModalAction] = useState("");
   const [action, setAction] = useState("");
   const [services, setServices] = useState([]);
@@ -21,14 +27,34 @@ function ServiceLayout() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await getServices();
+        const res = await getServices(game);
         setServices(res.content);
       } catch (error) {
         console.log(error);
       }
     };
+    const fetchGames = async () => {
+      try {
+        const gameRes = await getGames();
+        setGames(gameRes);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchProducts();
-  }, []);
+    fetchGames();
+  }, [game]);
+
+  const onChangeHandler = (e) => {
+    const index = e.target.selectedIndex;
+    const el = e.target.childNodes[index];
+    const option = el.getAttribute("id");
+    console.log(option);
+    setGame(option);
+    console.log(games[index].image);
+    setGameLogo(games[index].image);
+  };
 
   function Toggle(action, entity) {
     setModal(!modal);
@@ -45,7 +71,7 @@ function ServiceLayout() {
 
   return localStorage.token ? (
     <div className="flex">
-      <Sidebar>
+      <Sidebar gameLogo={gameLogo}>
         <SidebarItem
           path={"/admin/services"}
           icon={<HandPlatter size={20} />}
@@ -65,6 +91,22 @@ function ServiceLayout() {
       </Sidebar>
       <div className="w-full bg-black text-white overflow-scroll">
         <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+          <div className="flex flex-row justify-center items-center">
+            <h1 className="text-white ">Game:</h1>
+            <select onChange={onChangeHandler} className="ml-3 text-black">
+              {games == null ? (
+                <option>Loading...</option>
+              ) : (
+                games.map((game) => {
+                  return (
+                    <option key={game.id} id={game.id}>
+                      {game.name}
+                    </option>
+                  );
+                })
+              )}
+            </select>
+          </div>
           <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <h1 className="text-xl font-bold">Services</h1>
             <Button
@@ -79,6 +121,7 @@ function ServiceLayout() {
           <CrudModal
             type="service"
             entity={modalEntity}
+            game={game}
             show={modal}
             nameAction={modalAction}
             action={action}
@@ -112,6 +155,7 @@ function ServiceLayout() {
                           entityId={service.id}
                           name={service.name}
                           price={service.price}
+                          gameId={game}
                           image={service.image}
                           status="active"
                           isLast={true}
@@ -122,6 +166,7 @@ function ServiceLayout() {
                           key={service.id}
                           entityId={service.id}
                           name={service.name}
+                          gameId={game}
                           price={service.price}
                           image={service.image}
                           status="active"

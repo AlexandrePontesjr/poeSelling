@@ -11,7 +11,7 @@ const Billing = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await getProducts();
+        const res = await getProducts(1);
         setProducts(res.content);
         setFilteredProducts(res.content);
       } catch (error) {
@@ -19,7 +19,7 @@ const Billing = () => {
       }
     };
     fetchProducts();
-  }, []);
+  });
 
   const handleInputChange = (e) => {
     const searchTerm = e.target.value;

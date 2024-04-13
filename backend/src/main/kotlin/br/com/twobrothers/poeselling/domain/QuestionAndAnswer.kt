@@ -14,5 +14,7 @@ data class QuestionAndAnswer(
     val status: String = "",
     @ManyToOne
     val createdBy: User = User(),
+    @ManyToOne
+    val tenant: Tenant = Tenant(),
 ) {
 }
