@@ -22,6 +22,8 @@ data class Product(
     val status: String = "active",
     @ManyToOne
     val createdBy: User = User(),
+    @ManyToOne
+    val tenant: Tenant = Tenant(),
 ) {
     enum class Type{
         ITEM,

@@ -1,8 +1,6 @@
 import { PencilLine, Trash2 } from "lucide-react";
 import { deleteProductById } from "../api/products/products";
 
-
-
 //{`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
 export default function ProductTableItem({
   isLast,
@@ -11,11 +9,12 @@ export default function ProductTableItem({
   image,
   openModal,
   entityId,
+  gameId,
 }) {
   function deleteClicked() {
-    deleteProductById(entityId);
+    deleteProductById(entityId, gameId);
   }
-  
+
   return (
     <tr>
       <td
@@ -38,7 +37,7 @@ export default function ProductTableItem({
           <button className="hover:text-primary" onClick={openModal}>
             <PencilLine className="w-6 h-6 text-white" />
           </button>
-          <button onClick={deleteClicked}  className="hover:text-primary">
+          <button onClick={deleteClicked} className="hover:text-primary">
             <Trash2 className="w-6 h-6 text-white" />
           </button>
         </div>

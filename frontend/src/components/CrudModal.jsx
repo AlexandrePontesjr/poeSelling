@@ -2,10 +2,10 @@ import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NumericFormat } from "react-number-format";
 import { createProduct, editProduct } from "../api/products/products";
-import { createQuestion } from "../api/qas/qas";
+import { createQuestion, editQuestion } from "../api/qas/qas";
 import Button from "./Button";
 
-const CrudModal = ({ show, type, close, nameAction, action, entity }) => {
+const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -33,7 +33,7 @@ const CrudModal = ({ show, type, close, nameAction, action, entity }) => {
       }
     };
     fetchEntity();
-  });
+  }, [entity]);
 
   //TODO: Melhorar a experiencia do usuario, quando não tiver mais nada pra fazer kk
   // const handleClickOutside = (event) => {
@@ -75,12 +75,14 @@ const CrudModal = ({ show, type, close, nameAction, action, entity }) => {
 
   function handleSubmit() {
     console.log("action: " + action);
+    console.log("game" + game);
     action == "edit"
       ? type == "qa"
-        ? createQuestion({
+        ? editQuestion({
             id: id,
             question: question,
             answer: answer,
+            gameId: game,
           })
         : editProduct({
             id: id,
@@ -90,11 +92,13 @@ const CrudModal = ({ show, type, close, nameAction, action, entity }) => {
             description: "description",
             image: image_url,
             createdBy: localStorage.username,
+            gameId: game,
           })
       : type == "qa"
       ? createQuestion({
           question: question,
           answer: answer,
+          gameId: game,
         })
       : createProduct({
           name: name,
@@ -103,6 +107,7 @@ const CrudModal = ({ show, type, close, nameAction, action, entity }) => {
           description: "description",
           image: image_url,
           createdBy: localStorage.username,
+          gameId: game,
         });
   }
 

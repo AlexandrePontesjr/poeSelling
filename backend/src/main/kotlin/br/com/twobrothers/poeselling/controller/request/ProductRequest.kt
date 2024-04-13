@@ -9,4 +9,5 @@ data class ProductRequest (
     val price: BigDecimal,
     val description: String,
     val image: String,
+    val gameId: Int
 )

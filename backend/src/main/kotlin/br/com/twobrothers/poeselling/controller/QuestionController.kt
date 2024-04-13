@@ -20,8 +20,8 @@ class QuestionController(
 ) {
 
     @GetMapping
-    fun listAll(pageable: Pageable): ResponseEntity<Page<QuestionAndAnswerResponse>>{
-        return ResponseEntity.ok(questionAndAnswerService.gelAll(pageable).map { it.toResponse() })
+    fun listAll(pageable: Pageable, gameId: Int): ResponseEntity<Page<QuestionAndAnswerResponse>>{
+        return ResponseEntity.ok(questionAndAnswerService.gelAll(pageable, gameId.toDomain()).map { it.toResponse() })
     }
 
     @PostMapping
@@ -52,9 +52,10 @@ class QuestionController(
     @DeleteMapping(value = ["/{id}"])
     fun delete(
         @PathVariable id: Int,
+        @RequestParam gameId: Int,
         @RequestHeader("Authorization") token: String
     ): ResponseEntity<Any>{
-        questionAndAnswerService.delete(id, token.decodeUsernameFromJWT())
+        questionAndAnswerService.delete(id, gameId, token.decodeUsernameFromJWT())
         return ResponseEntity(OK)
     }
 
