@@ -68,11 +68,10 @@
 }
 
 .backgroundImageItems{
-  background-image: url("./assets/poe_bg_hb.png");
+  background-image: url("./assets/diablo4lilith.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgb(82, 82, 44);
 }
 
 .backgroundImageService{

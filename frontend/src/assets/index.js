@@ -29,9 +29,18 @@ import search from "./search.svg";
 import BackgroundServices from "./BackgroundServices.jpg";
 import BackgroundItems from "./BackgroundItems.jpg";
 import loots from "./loots.png";
-
+import whatsapp from "./whatsapp.svg";
+import moneyBag from "./moneyBag.svg";
+import diabloIcon from "./diabloIcon.svg";
+import lastEpocIcon from "./lastEpocIcon.svg";
+import poeIcon from "./poeIcon.svg";
 export {
   logoPoe,
+  lastEpocIcon,
+  poeIcon,
+  diabloIcon,
+  moneyBag,
+  whatsapp,
   loots,
   search,
   BackgroundServices,
@@ -61,5 +70,5 @@ export {
   twitter,
   people01,
   people02,
-  people03,
+  people03
 };

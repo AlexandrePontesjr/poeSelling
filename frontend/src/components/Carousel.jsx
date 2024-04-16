@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Items,Items2 } from "../components";
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
+import  styles  from "../styles"
+import { motion } from "framer-motion";
 
 const Carousel = ({ slides }) => {
 
@@ -16,16 +18,19 @@ const Carousel = ({ slides }) => {
       else setCurrent(current + 1);
     }
  return (
-    <div className="mt-10 flex flex-wrap justify-start w-full feedback-container gap-2">
-
-          {slides.map((slide, index) => {
-            return <Items key={index} product={slide} />;
-          })}
-    <div className="mt-10 items-center flex flex-wrap justify-start w-full feedback-container gap-2">
-          {slides.map((slide, index) => {
-            return <Items2 key={index} product={slide} />;
-          })}
-    </div>
+    <div className={`justify-center flex ${styles.boxWidth}`}>
+        <div className=" grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5">
+        {slides.map((slide, index) => (
+          <motion.div
+            key={index}
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: index * 0.2 }}
+          >
+            <Items key={index} product={slide} />
+          </motion.div>
+        ))}
+      </div>
     </div>
 )};
 

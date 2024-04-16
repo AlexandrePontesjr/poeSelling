@@ -5,29 +5,37 @@ import { BackgroundItems, BackgroundServices, logo } from "./assets";
 const App = () => (
   <div className="bg-primary w-full">
 
-<div className="backgroundImageItems">
-      <div className={` ${styles.flexStart}`}>
-        <div className={`h-full ${styles.boxWidth}`}>
-          <Billing />
-        </div>
-      </div>
-    </div>
 
-    {/* <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
     </div>
-    <div className={`backgroundImage ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
+    <div className={`${styles.flexStart} relative`}>
+    <video
+            autoPlay
+            muted
+            loop
+            style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+            }}
+          >
+            <source src='../../public/diabloV.mp4' type="" />
+          </video>
+      <div className={`${styles.boxWidth} relative`}>
+          <Navbar />
         <Hero/>
       </div>
-    </div> */}
+    </div>
 
-{/* 
-    <div className="backgroundImageItems">
-      <div className={` ${styles.flexStart}`}>
-        <div className={`h-full ${styles.boxWidth}`}>
+
+    <div className="">
+      <div className={`backgroundImageService ${styles.flexStart} `}>
+        <div className={`h-full ${styles.boxWidth} `}>
           <Billing />
         </div>
       </div>
@@ -55,7 +63,7 @@ const App = () => (
           <Footer />
         </div>
       </div>
-    </div> */}
+    </div>
 {/* <Stats />
         <Business />
         <Billing />
