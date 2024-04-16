@@ -19,7 +19,7 @@ const Billing = () => {
       }
     };
     fetchProducts();
-  });
+  }, []);
 
   const handleInputChange = (e) => {
     const searchTerm = e.target.value;

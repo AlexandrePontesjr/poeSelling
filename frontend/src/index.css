@@ -47,6 +47,10 @@
   background-position: center;
 }
 
+.animationQuestion {
+  animation: fadeIn 1s;
+}
+
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,

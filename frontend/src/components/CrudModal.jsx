@@ -150,7 +150,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                             setQuestion(e.target.value);
                             entity.question = e.target.value;
                           }}
-                          className="flex h-10 w-full rounded-md border border-input bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="question"
                           value={entity.question}
                           placeholder="Enter the question"
@@ -158,7 +158,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                       ) : (
                         <input
                           onChange={(e) => setQuestion(e.target.value)}
-                          className="flex h-10 w-full rounded-md border border-input bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="question"
                           placeholder="Enter the question"
                         />
@@ -177,7 +177,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                             setAnswer(e.target.value);
                             entity.answer = e.target.value;
                           }}
-                          className="flex h-10 w-full rounded-md border border-input bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="answer"
                           value={entity.answer}
                           placeholder="Enter the answer"
@@ -186,7 +186,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                       ) : (
                         <input
                           onChange={(e) => setAnswer(e.target.value)}
-                          className="flex h-10 w-full rounded-md border border-input bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="answer"
                           placeholder="Enter the answer"
                           type="text"
