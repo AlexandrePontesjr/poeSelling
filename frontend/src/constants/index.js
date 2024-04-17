@@ -101,33 +101,6 @@ export const feedback = [
     img: people03,
     star: 5,
   },
-  {
-    id: "7",
-    content:
-      "Estou completamente viciado nos serviços oferecidos! Melhor investimento que fiz.",
-    name: "Rafael Pinheiro",
-    title: "Founder & Leader",
-    img: people03,
-    star: 4,
-  },
-  {
-    id: "8",
-    content:
-    "Estou muito contente com o serviço.",
-    name: "Alexandre Silva",
-    title: "Founder & Leader",
-    img: people03,
-    star: 4,
-  },
-  {
-    id: "9",
-    content:
-      "Fantástico! O serviço tornou meu tempo livre muito mais emocionante.",
-    name: "Yan Cancam",
-    title: "Founder & Leader",
-    img: people03,
-    star: 5,
-  },
 ];
 
 export const stats = [

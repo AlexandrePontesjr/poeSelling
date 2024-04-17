@@ -21,6 +21,7 @@ import Cta from "./CTA";
 import Services from "./Services";
 import CarouselService from "./CarouselService";
 import ListService from "./ListService";
+import FAQ from "./FAQ";
 
 export {
   Navbar,
@@ -46,4 +47,5 @@ export {
   Footer,
   Testimonials,
   Hero,
+  FAQ,
 };

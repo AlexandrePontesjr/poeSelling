@@ -1,18 +1,12 @@
-import {  Hero, Navbar, Billing, Services, Testimonials , Footer, Clients } from "./components";
-import { Faq } from "./components/sections";
+import {  Hero, Navbar, Billing, Services, Testimonials , Footer, FAQ } from "./components";
+// import { Faq } from "./components/sections";
 import styles from "./styles";
 import { BackgroundItems, BackgroundServices, logo } from "./assets";
 
 const App = () => (
   <div className="bg-primary w-full">
 
-
-    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        {/* <Navbar /> */}
-      </div>
-    </div>
-    <div className={`${styles.flexStart} relative`}>
+    <div className={`${styles.flexCenter} relative`}>
     <video
             autoPlay
             muted
@@ -27,8 +21,8 @@ const App = () => (
           >
             <source src='../../public/diabloV.mp4' type="" />
           </video>
-      <div className={`${styles.boxWidth} relative`}>
-          <Navbar />
+      <div className={`${styles.boxWidth2} h-[960px] relative`}>
+        <Navbar />
         <Hero/>
       </div>
     </div>
@@ -36,7 +30,7 @@ const App = () => (
 
     <div className="">
       <div className={`backgroundImageService ${styles.flexStart} `}>
-        <div className={`h-full ${styles.boxWidth} `}>
+        <div className={`h-full ${styles.boxWidth2} `}>
           <Billing />
         </div>
       </div>
@@ -44,7 +38,7 @@ const App = () => (
 
     <div className="backgroundImageService">
       <div className={` ${styles.flexStart}`}>
-        <div className={`h-full ${styles.boxWidth}`}>
+        <div className={`h-full ${styles.boxWidth2}`}>
           <Services />
         </div>
       </div>
@@ -52,29 +46,24 @@ const App = () => (
 
     <div className="backgroundImageTestemonial">
       <div className={` ${styles.flexStart}`}>
-        <div className={`h-full ${styles.boxWidth}`}>
+        <div className={`h-full ${styles.boxWidth2}`}>
           <Testimonials />
         </div>
       </div>
     </div>
 
+    <div className={`backgroundImageItems ${styles.flexStart}`}>
+      <div className={`h-full ${styles.boxWidth2}`}>
+        <FAQ />
+      </div>
+      </div>
     <div className="-">
       <div className={` ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
+        <div className={`${styles.boxWidth2}`}>
           <Footer />
         </div>
       </div>
     </div>
-    <div className={`backgroundImageItems ${styles.flexStart}`}>
-      <div className={`h-full ${styles.boxWidth}`}>
-        <Billing />
-      </div>
-    </div>
-    <div className={`backgroundImageItems ${styles.flexStart}`}>
-      <div className={`h-full ${styles.boxWidth}`}>
-        <Faq />
-      </div>
-      </div> 
 
   </div>
 );

@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 // import Items from "./Items";
 import Button from '@mui/joy/Button';
 import Link from '@mui/joy/Link';
-import { whatsapp, lastEpocIcon,  poeIcon,  diabloIcon } from "../assets"
+import { whatsapp, lastEpocIcon,  poeIcon,  diabloIcon, carrinho } from "../assets"
 
 const Hero = () => {
 
   return (
-    <section id="home" className={`${layout.section2} flex` } style={{ position: 'relative' }}>
+    <section id="home" className={`${layout.section2} h-[820px] flex` } style={{ position: 'relative' }}>
 
-      <div className={` xl:px-0 sm:px-16 px-6 opacity-70 `  }>
+      <div className={`xl:px-0 sm:px-16 px-6 opacity-70 `  }>
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -29,37 +29,61 @@ const Hero = () => {
             Dan.
           </p> */}
           <p className={`text-white text-[26px] mt-2 `}>
-          Olá sou o Dan, Um veterano no ramo de vendas de jogos online,
-          oferecendo serviços e venda de itens dos ARPGs mais jogados do mercado,
-          garantindo transações
-          seguras e suporte pelo WhatsApp.
+          Somos veteranos no ramo de vendas de jogos online,
+          oferecendo serviços e venda de items dos ARPGs mais jogados do mercado,
+          garantindo transações seguras e suporte dedicado.
           </p>
 
         </motion.div>
-      <div className="grid gap-3 px-10 justify-center py-20">
+      <div className=" flex gap-10 justify-center mt-80">
+        <Button  variant="solid" color="" size="lg"
+            sx={{
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "scale(1.1)",
+              },
+            }}
+          style={{ backgroundColor: 'rgba(255, 190, 50, 0.5)', borderRadius: '20px'  }}>
 
-
-                <Button  variant="solid" color="" size="lg"
-                      sx={{
-                                transition: "transform 0.3s",
-                                "&:hover": {
-                                  transform: "scale(1.1)",
-                                },
-                      }}
-                style={{ backgroundColor: 'seagreen', borderRadius: '20px'  }}>
-                <img className=" h-12 mx-2" src={whatsapp} alt="" />
+          <img className="h-12 mx-2" src={carrinho} alt="" />
+              <a className="ml-1 text-white" href="#items">Compre Items</a>
+        </Button>
+        <Button  variant="solid" color="" size="lg"
+            sx={{
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "scale(1.1)",
+              },
+            }}
+              style={{ backgroundColor: 'seagreen', borderRadius: '20px'  }}>
+          <img className=" h-12 mx-2" src={whatsapp} alt="" />
             <p className="text-white">Entre em Contato</p>
-            <Link
-          href={`https://api.whatsapp.com/send?` +
-          `phone=559285896410&` +
-          `text=Olá, tenho interesse em comprar items ou serviços!`}
-          fontWeight="md"
-          color="neutral"
-          textColor="white"
-          overlay
-        >
-        </Link>
-            </Button>
+              <Link
+              href={`https://api.whatsapp.com/send?` +
+              `phone=559285896410&` +
+              `text=Olá, tenho interesse em comprar items ou serviços!`}
+              fontWeight="md"
+              color="neutral"
+              textColor="white"
+              overlay
+              >
+              </Link>
+        </Button>
+        <Button  variant="solid" color="" size="lg"
+            sx={{
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "scale(1.1)",
+              },
+            }}
+          style={{ backgroundColor: 'rgba(255, 190, 50, 0.5)', borderRadius: '20px'  }}>
+
+          <img className="h-12 mx-2" src={carrinho} alt="" />
+              <a className="ml-1 text-white" href="#services">Nossos Serviços</a>
+        </Button>
+
+
+
       </div>
       </div>
 
