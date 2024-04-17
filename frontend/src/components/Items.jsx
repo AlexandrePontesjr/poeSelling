@@ -1,139 +1,91 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { logoPoe } from "../assets";
-import { DoubleButton } from "../components";
+import { logoPoe, moneyBag, whatsapp } from "../assets";
+import AspectRatio from '@mui/joy/AspectRatio';
+import Button from '@mui/joy/Button';
+import Card from '@mui/joy/Card';
+import CardContent from '@mui/joy/CardContent';
+import CardOverflow from '@mui/joy/CardOverflow';
+import Chip from '@mui/joy/Chip';
+import Link from '@mui/joy/Link';
+import Typography from '@mui/joy/Typography';
+import Box from '@mui/joy/Box';
+// import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const Items = ({ product }) => {
-  const [countDownTime, setCountDownTIme] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  const minuteCircle = useRef();
-  const secondCircle = useRef();
-  const hourCircle = useRef();
-  const daysCircle = useRef();
-
-  const changeCircleoffset = (seconds, minutes, hours, days) => {
-    if (daysCircle.current) {
-      daysCircle.current.style.strokeDashoffset = `${
-        days > 0 ? 440 - (days * 440) / 365 : 440
-      }px`;
-      hourCircle.current.style.strokeDashoffset = `${
-        hours > 0 ? 451 - (hours * 451) / 24 : 451
-      }px`;
-      minuteCircle.current.style.strokeDashoffset = `${
-        minutes > 0 ? 451 - (minutes * 451) / 60 : 451
-      }px`;
-      secondCircle.current.style.strokeDashoffset = `${
-        seconds > 0 ? 451 - (seconds * 451) / 60 : 451
-      }px`;
-    }
-  };
-  const getTimeDifference = useCallback((countDownDate) => {
-    const currentTime = new Date().getTime();
-    const timeDiffrence = countDownDate - currentTime;
-    const days = Math.floor(timeDiffrence / (24 * 60 * 60 * 1000));
-    const hours = Math.floor(
-      (timeDiffrence % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor(
-      (timeDiffrence % (60 * 60 * 1000)) / (1000 * 60)
-    );
-    const seconds = Math.floor((timeDiffrence % (60 * 1000)) / 1000);
-    if (timeDiffrence < 0) {
-      changeCircleoffset(seconds, minutes, hours, days);
-      setCountDownTIme({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      });
-      clearInterval();
-    } else {
-      changeCircleoffset(seconds, minutes, hours, days);
-      setCountDownTIme({
-        days: days,
-        hours: hours,
-        minutes: minutes,
-        seconds: seconds,
-      });
-    }
-  }, []);
-  const startCountDown = useCallback(() => {
-    const customDate = new Date();
-    const countDownDate = new Date(
-      customDate.getFullYear(),
-      customDate.getMonth(),
-      customDate.getDate() + 1,
-      customDate.getHours() + 3,
-      customDate.getMinutes() + 25,
-      customDate.getSeconds() + 5
-    );
-    setInterval(() => {
-      getTimeDifference(countDownDate.getTime());
-    }, 1000);
-  }, [getTimeDifference]);
-  useEffect(() => {
-    startCountDown();
-  }, [startCountDown]);
 
   return (
-    <div className={`flex sm:flex-col`}>
-      <div className="w-56 sm:w-96 rounded-3xl bg-[#010005]">
-        <div className="pt-5 sm:pt-10 flex w-full sm:h-full place-content-center">
-          <div className="bg-[#343434] rounded-3xl w-36 h-36 sm:w-72 sm:h-72 place-content-center">
-            <a
-              href={
-                `https://api.whatsapp.com/send?` +
-                `phone=351912537986&` +
-                `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`
-              }
-            >
-              <img
-                src={product ? product.image : logoPoe}
-                alt=""
-                className="rounded-lg h-full w-full"
-              />
-            </a>
-          </div>
-        </div>
-        <div className="pt-5 sm:pt-10 ml-12 flex flex-col place-content-center">
-          <h3 className="max-w-72 ml- text-white font-pirata text-lg sm:text-3xl group-hover:underline group-hover:underline-offset-4">
-            {product ? product.name : "Product Name"}
-          </h3>
+  <div className="">
+    <Box
+      sx={{
+        width: 180,
+        // height: 300,
+        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba( 0, 0, 0, 0.6))",
+        maxWidth: "100%",
+        boxShadow: "lg",
+        borderRadius: "sm",
+        transition: "transform 0.2s",
+        "&:hover": {
+          transform: "scale(1.2)",
+        },
+      }}
+    >
+    <Card variant="plain" size="sm" sx={{ backgroundColor: 'transparent'}} >
 
-          <p className="font-pirata text-sm sm:text-1xl text-white">
-            Preço: ${product ? product.price : "--"}
-          </p>
-        </div>
-
-        {product ? (
-          product.isPromotion === true ? (
-            // need to check if is a promotion
-            <p className={`font-poppins text-white text-[26px] mb-6 mt-6`}>
-              <span>
-                {countDownTime?.days} days: {countDownTime?.hours}hrs:{" "}
-                {countDownTime?.minutes}min {countDownTime?.seconds}sec
-              </span>
-            </p>
-          ) : null
-        ) : null}
-        <div className="flex pt-5 sm:pt-10 pb-5 sm:pb-10 text-center w-full place-content-center">
-          <DoubleButton
-            url={
-              `https://api.whatsapp.com/send?` +
-              `phone=351912537986&` +
-              `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`
+      <CardContent>
+        {/* <Typography textColor="white" level="body-xs">Renewal</Typography> */}
+        <Link
+          href={`https://api.whatsapp.com/send?` +
+          `phone=559285896410&` +
+          `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`}
+          fontWeight="md"
+          color="neutral"
+          textColor="white"
+          overlay
+          // endDecorator={pix}
+        >
+          <p className="font-poppins uppercase">{product ? product.name : "Product Name"}</p>
+        </Link>
+        <CardOverflow>
+        <AspectRatio textColor="white" sx={{ }}>
+          <img
+            src={product ? product.image : logoPoe}
+            srcSet={product ? product.image : logoPoe}
+            loading="lazy"
+            alt=""
+          />
+        </AspectRatio>
+      </CardOverflow>
+        <p className="text-white">
+          Um item capaz de fazer inumeras façanhas fodas</p>
+          <Typography
+            level="title-lg"
+            textColor="white"
+            sx={{ mt: 1, fontWeight: 'xl' }}
+            endDecorator={
+              <img className=" h-10 mx-2" src={moneyBag} alt="" />
             }
           >
-            Compre!
-          </DoubleButton>
-        </div>
-      </div>
-    </div>
+        
+          Preço: ${product ? product.price : "--"}
+        </Typography>
+      </CardContent>
+      <CardOverflow >
+        <Button  variant="solid" color="" size="lg"
+                    url={
+                      `https://api.whatsapp.com/send?` +
+                      `phone=559285896410&` +
+                      `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`
+                    }
+        >
+        <img className=" h-6 mx-2" src={whatsapp} alt="" />
+        <p className="text-green-500">WhatsApp</p>
+        </Button>
+      </CardOverflow>
+      
+    </Card>
+  </Box>
+  </div>
   );
-};
+}
 
 export default Items;

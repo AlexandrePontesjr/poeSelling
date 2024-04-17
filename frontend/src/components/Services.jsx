@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../api/products/products";
-import { Carousel, SearchBar } from ".";
+import { getServices } from "../api/products/products";
+import { CarouselService, SearchBar } from ".";
 import styles, { layout } from "../styles";
 
-const Billing = () => {
+const Services = () => {
   const [products, setProducts] = useState([]);
   const [searchItem, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -11,7 +11,7 @@ const Billing = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await getProducts(1);
+        const res = await getServices();
         setProducts(res.content);
         setFilteredProducts(res.content);
       } catch (error) {
@@ -38,36 +38,38 @@ const Billing = () => {
   };
 
   return (
-    <section id="items" className={`relative`}>
+    <section id="services" className={``}>
       <div className="">
+        <div className={``}>
+        </div>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <div className="text-left sm:text-left">
+            <div className="text-center sm:text-left">
               <h2 className={styles.heading2}>
                 Tome controle do Game <br className="sm:block hidden" /> Compre
-                & Use Items da loja.
+                Nossos Serviços da loja.
               </h2>
 
-              <p className={`${styles.paragraph} mt-5`}>
+              <p className={`${styles.paragraph2} max-w-[650px] mt-5`}>
                 Procure pelos melhores items no nosso site
               </p>
             </div>
 
-          </div>
-            <div className="mx-auto justify-center items-center ">
+            <div className="mt-4 flex flex-col gap-4 sm:w-3/5 h-full w-full sm:mt-0 sm:flex-row sm:items-center">
               <SearchBar
                 searchTerm={searchItem}
                 changeFunction={handleInputChange}
               />
             </div>
-          <div className={`mt-10 ${styles.boxWidth}`}>
-            <Carousel slides={filteredProducts} />
           </div>
 
+          <div className={layout.sectionInfo}>
+            <CarouselService slides={filteredProducts} />
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default Billing;
+export default Services;

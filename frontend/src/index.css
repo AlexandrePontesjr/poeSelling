@@ -38,13 +38,59 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  background-color: #000000;
 }
 
-.backgroundImageItems{
-  background-image: url("./assets/poe_bg_hb.png");
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.backgroundFooter{
+  background-image: url("./assets/poe_bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #868585;
+  height: 50vh;
+}
+
+.backgroundImageHero{
+  background-image: url("./assets/poe_bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000000;
+  height: 100vh;
+}
+
+.backgroundImageItems{
+  background-image: url("./assets/diablo4lilith.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.backgroundImageService{
+  background-image: url("./assets/BackgroundServices.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f8f8f8;
+  height: 100vh;
+  
+}
+
+.backgroundImageTestemonial{
+  background-image: url("./assets/BackgroundItems.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff !important;
+  height: 100vh;
 }
 
 .animationQuestion {

@@ -3,7 +3,7 @@ const DoubleButton = ({ url, children, onClickEvent, color, textColor }) => (
     href={url}
     type="button"
     onClick={() => onClickEvent()}
-    className={`py-2 text-black shadow-selling w-[100px] sm:w-[210px] px-4 h-[40px] bg-white font-poppins font-medium text-[10px] sm:text-[16px] ${color} ${textColor} rounded-[20px] outline-none`}
+    className={`py-2 text-black shadow-selling  w-[100px] sm:w-[210px] px-4 h-[40px] bg-yellow-400 font-poppins font-medium text-[10px] sm:text-[16px] ${color} ${textColor} rounded-[20px] outline-none`}
   >
     {children}
   </a>

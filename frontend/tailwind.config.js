@@ -16,7 +16,7 @@ export default {
         pirata: ["Pirata One", "sans-serif"],
       },
       boxShadow: {
-        'selling': "-12px 15px 0 -8px black, -12px 15px 0 0px white",
+        'selling': "-12px 15px 0 -8px black, -12px 15px 0 0px yellow",
         'selling-hover': "-12px 15px 0 -8px hsl(222.2deg 47.4% 11.2% / .5%), -12px 15px 0 0px hsl(222.2deg 47.4% 11.2% / 90%)",
       },
       keyframes: {

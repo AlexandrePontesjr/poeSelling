@@ -81,7 +81,7 @@ function ProductLayout() {
   }
 
   return localStorage.token ? (
-    <div className="flex bg-black">
+    <div className="flex bg-slate-900">
       <Sidebar gameLogo={gameLogo}>
         <SidebarItem
           path={"/admin/services"}
@@ -121,11 +121,11 @@ function ProductLayout() {
           <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <h1 className="text-xl font-bold text-white">Products</h1>
             <Button
-              color="bg-white"
+              color="bg-green-400"
               className="w-full sm:w-auto"
               onClickEvent={() => Toggle("Create Product")}
             >
-              New ++
+              ADICIONAR NOVO ITEM ++
             </Button>
           </div>
           <CrudModal
@@ -140,19 +140,19 @@ function ProductLayout() {
             Create Product
           </CrudModal>
           <div className="flex flex-col gap-10">
-            <div className="rounded-sm border border-stroke bg-black px-5 pb-2.5 pt-6 shadow-default sm:px-7.5 xl:pb-1">
+            <div className="font-poppins text-[20px] rounded-sm border border-stroke bg-slate-900 px-5 pb-2.5 pt-6 shadow-default sm:px-7.5 xl:pb-1">
               <div className="max-w-full overflow-x-auto overflow-y-auto max-h-[600px]">
                 <table className="min-w-full table-auto">
                   <thead>
-                    <tr className="bg-gray-2 text-left">
+                    <tr className="bg-gray-2 text-left ">
                       <th className="min-w-[220px] px-4 py-4 font-medium text-white xl:pl-11">
-                        Product
+                        Items
                       </th>
                       <th className="min-w-[150px] px-4 py-4 font-medium text-white">
-                        Price
+                        Preço
                       </th>
                       <th className="min-w-[120px] px-4 py-4 font-medium text-white">
-                        Image
+                        Imagem
                       </th>
                       <th className="px-4 py-4 font-medium text-white">
                         Actions

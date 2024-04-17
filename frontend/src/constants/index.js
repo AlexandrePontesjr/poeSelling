@@ -1,4 +1,4 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { people01, people02, people03, instagram, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 
 export const navLinks = [
   {
@@ -49,28 +49,84 @@ export const features = [
 
 export const feedback = [
   {
-    id: "feedback-1",
-    content:
-      "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    name: "Herman Jensen",
-    title: "Founder & Leader",
+    id: "1",
+    content: "Estou muito satisfeito com o serviço ! Excelente experiência!",
+    name: "Adriana Silva",
+    title: "Engenheira",
     img: people01,
+    star: 5,
   },
   {
-    id: "feedback-2",
+    id: "2",
     content:
-      "Money makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Steve Mark",
-    title: "Founder & Leader",
+      "O serviço superou todas as minhas expectativas! Recomendo totalmente.",
+    name: "João Silva",
+    title: "Advogado",
     img: people02,
+    star: 4,
   },
   {
-    id: "feedback-3",
+    id: "3",
     content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
-    name: "Kenn Gallagher",
+      "Nunca pensei que jogos online poderiam ser tão envolventes! Estou impressionado com o serviço.",
+    name: "Mariana Santos",
+    title: "Designer",
+    img: people03,
+    star: 5,
+  },
+  {
+    id: "4",
+    content:
+      "Simplesmente incrível! O serviço me proporcionou horas de diversão sem fim.",
+    name: "Gabriel Lima",
     title: "Founder & Leader",
     img: people03,
+    star: 5,
+  },
+  {
+    id: "5",
+    content:
+      "Estou completamente viciado nos serviços oferecidos! Melhor investimento que fiz.",
+    name: "Rafael Junior",
+    title: "Founder & Leader",
+    img: people03,
+    star: 5,
+  },
+  {
+    id: "6",
+    content:
+      "Estou completamente viciado nos serviços oferecidos! Melhor investimento que fiz.",
+    name: "Pedro Teixeira",
+    title: "Founder & Leader",
+    img: people03,
+    star: 5,
+  },
+  {
+    id: "7",
+    content:
+      "Estou completamente viciado nos serviços oferecidos! Melhor investimento que fiz.",
+    name: "Rafael Pinheiro",
+    title: "Founder & Leader",
+    img: people03,
+    star: 4,
+  },
+  {
+    id: "8",
+    content:
+    "Estou muito contente com o serviço.",
+    name: "Alexandre Silva",
+    title: "Founder & Leader",
+    img: people03,
+    star: 4,
+  },
+  {
+    id: "9",
+    content:
+      "Fantástico! O serviço tornou meu tempo livre muito mais emocionante.",
+    name: "Yan Cancam",
+    title: "Founder & Leader",
+    img: people03,
+    star: 5,
   },
 ];
 
@@ -101,8 +157,8 @@ export const footerLinks = [
         link: "https://www.hoobank.com/content/",
       },
       {
-        name: "How it Works",
-        link: "https://www.hoobank.com/how-it-works/",
+        name: "Instagram",
+        link: "https://www.instagram.com/danilorosa_6/",
       },
       {
         name: "Create",
@@ -118,66 +174,56 @@ export const footerLinks = [
       },
     ],
   },
-  {
-    title: "Community",
-    links: [
-      {
-        name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
-      },
-      {
-        name: "Partners",
-        link: "https://www.hoobank.com/partners/",
-      },
-      {
-        name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
-      },
-      {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
-      },
-    ],
-  },
-  {
-    title: "Partner",
-    links: [
-      {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
-      },
-      {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
-      },
-    ],
-  },
+  // {
+  //   title: "Community",
+  //   links: [
+  //     {
+  //       name: "Help Center",
+  //       link: "https://www.hoobank.com/help-center/",
+  //     },
+  //     {
+  //       name: "Partners",
+  //       link: "https://www.hoobank.com/partners/",
+  //     },
+  //     {
+  //       name: "Suggestions",
+  //       link: "https://www.hoobank.com/suggestions/",
+  //     },
+  //     {
+  //       name: "Blog",
+  //       link: "https://www.hoobank.com/blog/",
+  //     },
+  //     {
+  //       name: "Newsletters",
+  //       link: "https://www.hoobank.com/newsletters/",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Partner",
+  //   links: [
+  //     {
+  //       name: "Our Partner",
+  //       link: "https://www.hoobank.com/our-partner/",
+  //     },
+  //     {
+  //       name: "Become a Partner",
+  //       link: "https://www.hoobank.com/become-a-partner/",
+  //     },
+  //   ],
+  // },
 ];
 
 export const socialMedia = [
   {
     id: "social-media-1",
     icon: instagram,
-    link: "https://www.instagram.com/",
-  },
-  {
-    id: "social-media-2",
-    icon: facebook,
-    link: "https://www.facebook.com/",
+    link: "https://www.instagram.com/danilorosa_6/",
   },
   {
     id: "social-media-3",
     icon: twitter,
     link: "https://www.twitter.com/",
-  },
-  {
-    id: "social-media-4",
-    icon: linkedin,
-    link: "https://www.linkedin.com/",
   },
 ];
 

@@ -14,14 +14,21 @@ import CrudModal from "./CrudModal";
 import Button from "./Button";
 import SearchBar from "./SearchBar";
 import Items from "./Items";
+import Items2 from "./Items2";
 import Carousel from "./Carousel";
 import DoubleButton from "./DoubleButton";
 import Cta from "./CTA";
-
+import Services from "./Services";
+import CarouselService from "./CarouselService";
+import ListService from "./ListService";
 
 export {
   Navbar,
   Items,
+  Items2,
+  Services,
+  CarouselService,
+  ListService,
   Carousel,
   SearchBar,
   Billing,

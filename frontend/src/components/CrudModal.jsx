@@ -118,15 +118,15 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
       {show ? (
         <div
           id="outside"
-          className="flex absolute inset-0 z-0 flex-1 items-center justify-center"
+          className="flex absolute inset-0 z-0 flex-1 items-center justify-center "
         >
-          <div className="grid gap-4 w-full max-w-5xl z-10 bg-black">
+          <div className="grid gap-4 w-full max-w-5xl z-10 bg-slate-950">
             <div
               className="rounded-lg border bg-card text-card-foreground shadow-sm"
               data-v0-t="card"
             >
               <div className="flex flex-row items-center justify-between space-x-2 border-gray-200 rounded-lg p-4">
-                <h3 className="whitespace-nowrap text-white tracking-tight text-lg font-bold">
+                <h3 className="whitespace-nowrap text-white tracking-tight text-[23px] font-poppins">
                   {nameAction}
                 </h3>
                 <X
@@ -134,7 +134,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                   className="text-sm text-white cursor-pointer text-muted-foreground"
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 ">
                 {type == "qa" ? (
                   <div className="grid gap-4">
                     <div className="grid gap-1.5">
@@ -198,7 +198,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                   <div className="grid gap-4">
                     <div id="name" className="grid gap-1.5">
                       <label
-                        className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
+                        className="font-medium text-white  peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-[16px] font-poppins"
                         htmlFor="name"
                       >
                         {type == "service" ? "Service Name" : "Product Name"}
@@ -209,7 +209,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                             setName(e.target.value);
                             entity.name = e.target.value;
                           }}
-                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full bg-slate-800 text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="name"
                           value={entity.name}
                           placeholder="Enter the name"
@@ -217,7 +217,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                       ) : (
                         <input
                           onChange={(e) => setName(e.target.value)}
-                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full bg-slate-800 text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="name"
                           placeholder="Enter the name"
                         />
@@ -263,7 +263,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                       </label>
                       {entity != null ? (
                         <NumericFormat
-                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full bg-slate-800 text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="price"
                           thousandSeparator={false}
                           allowNegative={false}
@@ -282,12 +282,12 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                         />
                       ) : (
                         <NumericFormat
-                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full bg-slate-800 text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="price"
                           thousandSeparator={false}
                           allowNegative={false}
                           decimalScale={2}
-                          prefix={"$"}
+                          prefix={"R$"}
                           type="text"
                           placeholder="0.00"
                           decimalSeparator="."
@@ -310,7 +310,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                             setImageUrl(e.target.value);
                             entity.image = e.target.value;
                           }}
-                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full bg-slate-800 text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="image_url"
                           value={entity.image}
                           placeholder="http://yourimage.com"
@@ -319,7 +319,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                       ) : (
                         <input
                           onChange={(e) => setImageUrl(e.target.value)}
-                          className="flex h-10 w-full bg-black text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-10 w-full bg-slate-800 text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                           id="image_url"
                           placeholder="http://yourimage.com"
                           type="text"

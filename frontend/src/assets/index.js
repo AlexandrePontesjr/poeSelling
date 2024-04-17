@@ -26,10 +26,25 @@ import people03 from "./people03.png";
 import logoPoe from "./logoPoe.png";
 import poe_bg_hb from "./poe_bg_hb.png";
 import search from "./search.svg";
-
+import BackgroundServices from "./BackgroundServices.jpg";
+import BackgroundItems from "./BackgroundItems.jpg";
+import loots from "./loots.png";
+import whatsapp from "./whatsapp.svg";
+import moneyBag from "./moneyBag.svg";
+import diabloIcon from "./diabloIcon.svg";
+import lastEpocIcon from "./lastEpocIcon.svg";
+import poeIcon from "./poeIcon.svg";
 export {
   logoPoe,
+  lastEpocIcon,
+  poeIcon,
+  diabloIcon,
+  moneyBag,
+  whatsapp,
+  loots,
   search,
+  BackgroundServices,
+  BackgroundItems,
   poe_bg_hb,
   airbnb,
   bill,
@@ -55,5 +70,5 @@ export {
   twitter,
   people01,
   people02,
-  people03,
+  people03
 };
