@@ -29,6 +29,7 @@ const ProductCrudTable = () => {
           value={formData.name}
           onChange={handleChange}
           placeholder="Name"
+          maxLength={30}
         />
         <input
           type="text"

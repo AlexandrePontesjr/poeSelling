@@ -40,14 +40,14 @@ const Billing = () => {
   return (
     <section id="items" className={`relative`}>
       <div className="">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div className="sm:flex sm:items-center sm:justify-between">
+        <div className=" mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+          <div className=" sm:flex sm:items-center sm:justify-between">
             <div className="text-left sm:text-left">
               <h2 className={styles.heading2}>
-                Tome controle do Game <br className="sm:block hidden" /> Compre
-                & Use Items da loja.
+                Tome controle {" "}
+                <span className="text-yellow-400">Compre & Use</span>{" "}
+                Items da loja.
               </h2>
-
               <p className={`${styles.paragraph} mt-5`}>
                 Procure pelos melhores items no nosso site
               </p>
