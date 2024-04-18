@@ -36,9 +36,13 @@ import lastEpocIcon from "./lastEpocIcon.svg";
 import poeIcon from "./poeIcon.svg";
 import carrinho from "./carrinho.svg";
 import dealItems from "./dealItems.png";
+import itemsHero from "./itemsHero.webp";
+import servicesImage from "./servicesImage.webp";
 
 export {
   carrinho,
+  servicesImage,
+  itemsHero,
   dealItems,
   logoPoe,
   lastEpocIcon,

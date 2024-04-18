@@ -5,20 +5,20 @@ import Add from '@mui/icons-material/Add';
 // import Items from "./Items";
 import Button from '@mui/joy/Button';
 import Link from '@mui/joy/Link';
-import { whatsapp, lastEpocIcon,  poeIcon,  diabloIcon, carrinho } from "../assets"
+import { whatsapp,itemsHero, lastEpocIcon,  poeIcon,  diabloIcon, servicesImage } from "../assets"
 
 const Hero = () => {
 
   return (
     <section id="home" className={`${layout.section2} h-[820px] flex` } style={{ position: 'relative' }}>
 
-      <div className={`xl:px-0 sm:px-16 px-6 opacity-70 `  }>
+      <div className={`py-12 xl:px-0 sm:px-16 px-6 opacity-70 `  }>
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-pirata flex-1 font-semibold ss:text-[72px] text-[52px] text-yellow-400 ss:leading-[100.8px] leading-[75px] hover:text-sky-200">
+          <h1 className=" font-pirata flex-1 font-semibold ss:text-[72px] text-[52px] text-yellow-400 ss:leading-[100.8px] leading-[75px] hover:text-sky-200">
             Bem Vindo {" "}<br/>
             <span className="text-sky-200 hover:text-yellow-400">Renewal Trade Shop</span>{" "}<br/>
           </h1>
@@ -29,7 +29,7 @@ const Hero = () => {
             Atenciosamente. <br/>
             Dan.
           </p> */}
-          <p className={`text-white text-[26px] mt-2 mb-44 text-pretty `}>
+          <p className={`text-white text-[20px] mt-2 mb-24 text-pretty `}>
           Somos veteranos no ramo de vendas de jogos online,
           oferecendo serviços e venda de items dos ARPGs mais jogados do mercado,
           garantindo transações seguras e suporte dedicado.
@@ -37,7 +37,16 @@ const Hero = () => {
 
         </motion.div>
       <div className=" flex gap-5 justify-center">
-        <Button startDecorator={<Add />}  variant="solid"  color="" size="lg"
+        <div className="relative">
+        <a className="mt-1 px-3 ml-2 absolute text-yellow-500 font-pirata text-[32px]" href="#items">Compre Items</a>
+          <img className="mt-1" src={itemsHero} alt="" />
+        </div>
+
+        <div className="relative">
+        <a className="mt-1 px-3 ml-2 absolute text-yellow-500 font-pirata text-[32px]" href="#services">Nossos Serviços</a>
+          <img className="mt-1" src={servicesImage} alt="" />
+        </div>
+        {/* <Button startDecorator={<Add />}  variant="solid"  color="" size="lg"
             sx={{
               transition: "transform 0.3s",
               "&:hover": {
@@ -49,8 +58,8 @@ const Hero = () => {
   
           <img className="h-12 mx-2" src={carrinho} alt="" />
               <a className="ml-1 text-white font-poppins text-[20px]" href="#items">Compre Items</a>
-        </Button>
-        <Button  variant="" color="" size="lg"
+        </Button> */}
+        {/* <Button  variant="" color="" size="lg"
             sx={{
               transition: "transform 0.3s",
               "&:hover": {
@@ -84,7 +93,7 @@ const Hero = () => {
 
           <img className="h-12 mx-2" src={carrinho} alt="" />
               <a className="ml-1 text-white font-poppins text-[20px]" href="#services">Nossos Serviços</a>
-        </Button>
+        </Button> */}
       </div>
       </div>
 
