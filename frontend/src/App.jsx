@@ -6,7 +6,7 @@ import { BackgroundItems, BackgroundServices, logo } from "./assets";
 const App = () => (
   <div className="bg-primary w-full">
 
-    {/* <div className={`${styles.flexCenter} relative`}>
+    <div className={`${styles.flexCenter} relative`}>
     <video
             autoPlay
             muted
@@ -25,8 +25,7 @@ const App = () => (
         <Navbar />
         <Hero/>
       </div>
-    </div> */}
-<Navbar />
+    </div>
 
     <div className="">
       <div className={`backgroundImageService ${styles.flexStart} `}>
@@ -57,7 +56,8 @@ const App = () => (
         <FAQ />
       </div>
       </div>
-    <div className="-">
+      
+    <div className="">
       <div className={` ${styles.flexStart}`}>
         <div className={`${styles.boxWidth2}`}>
           <Footer />
