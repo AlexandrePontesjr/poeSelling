@@ -10,9 +10,9 @@ import { whatsapp,itemsHero, lastEpocIcon,  poeIcon,  diabloIcon, servicesImage 
 const Hero = () => {
 
   return (
-    <section id="home" className={`${layout.section2} h-[820px] flex` } style={{ position: 'relative' }}>
-
-      <div className={`py-12 xl:px-0 sm:px-16 px-6 opacity-70 `  }>
+    <section id="home" className={`${layout.section2} h-[820px]` } style={{ position: 'relative' }}>
+      <div className="flex-col" >
+      <div className={`py-12 xl:px-0 sm:px-16 px-6 opacity-70`  }>
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -30,13 +30,17 @@ const Hero = () => {
             Dan.
           </p> */}
           <p className={`text-white text-[20px] mt-2 mb-24 text-pretty `}>
-          Somos veteranos no ramo de vendas de jogos online,
-          oferecendo serviços e venda de items dos ARPGs mais jogados do mercado,
+          Somos veteranos no ramo de vendas de jogos online,{" "}<br/>
+          oferecendo serviços e venda de items dos ARPGs mais jogados do mercado,{" "}<br/>
           garantindo transações seguras e suporte dedicado.
           </p>
 
         </motion.div>
-      <div className=" flex gap-5 justify-center">
+
+      </div>
+
+      <div className="flex mt-20 gap-20 justify-center">
+
         <div className="relative">
         <a className="mt-1 px-3 ml-2 absolute text-yellow-500 font-pirata text-[32px]" href="#items">Compre Items</a>
           <img className="mt-1" src={itemsHero} alt="" />
@@ -97,11 +101,12 @@ const Hero = () => {
       </div>
       </div>
 
-      <div className="flex flex-col w-full justify-center gap-16 ">
+      
+          <div className="ml-80 flex flex-col gap-16 -px-28 py-28 ">
               <Button  variant="solid" color="" size="lg" sx={{
                           transition: "transform 0.3s",
                           "&:hover": {
-                            transform: "scale(1.1)",
+                            transform: "scale(1.3)",
                           },
                 }}
                 >
@@ -110,7 +115,7 @@ const Hero = () => {
                 <Button  variant="solid" color="" size="lg"sx={{
                           transition: "transform 0.3s",
                           "&:hover": {
-                            transform: "scale(1.1)",
+                            transform: "scale(1.3)",
                           },
                 }}
                 >
@@ -119,13 +124,13 @@ const Hero = () => {
                 <Button  variant="solid" color="" size="lg"sx={{
                           transition: "transform 0.3s",
                           "&:hover": {
-                            transform: "scale(1.1)",
+                            transform: "scale(1.3)",
                           },
                 }}
                 >
                 <img className="h-24 mx-2" src={lastEpocIcon} alt="" />
                 </Button>
-      </div>
+          </div>
     </section>
   );
 };
