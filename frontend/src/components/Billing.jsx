@@ -40,27 +40,27 @@ const Billing = () => {
   return (
     <section id="items" className={`relative`}>
       <div className="">
-        <div className=" mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div className=" sm:flex sm:items-center sm:justify-between">
-            <div className="text-left sm:text-left">
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+          <div className=" sm:flex  sm:items-center sm:justify-between">
+            <div className="mt-20 text-left sm:text-left">
               <h2 className={styles.heading2}>
                 Tome controle {" "}
                 <span className="text-yellow-400">Compre & Use</span>{" "}
                 Items da loja.
               </h2>
-              <p className={`${styles.paragraph} mt-5`}>
-                Procure pelos melhores items no nosso site
+              <p className={`${styles.paragraph}`}>
+                Ao clica em comprar voce será redirecionado para o responsável do Trade
               </p>
-            </div>
 
+            </div>
           </div>
-            <div className="mx-auto justify-center items-center ">
+            <div className="-mt-12 justify-center items-center ">
               <SearchBar
                 searchTerm={searchItem}
                 changeFunction={handleInputChange}
               />
             </div>
-          <div className={`mt-10 ${styles.boxWidth}`}>
+          <div className={`bg-black mt-10 ${styles.boxWidth}`}>
             <Carousel slides={filteredProducts} />
           </div>
 
