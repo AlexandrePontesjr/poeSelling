@@ -22,6 +22,7 @@ const Items = ({ product }) => {
       >
     <p className="font-poppins text-wrap max-w-[250px]">{product ? product.name : "Product Name"}</p>
     </a>
+
     <div className="flex absolute mx-2 my-20">
         <img className="max-w-[60px]"
                 src={product ? product.image : logoPoe}
@@ -31,9 +32,10 @@ const Items = ({ product }) => {
               />
       <p className=" w-[150px] h-[70px] text-white  text-wrap overflow-hidden  absolute mx-16">
         {product ? product.description : "Product description"}</p>
+
       <div className="flex  h-[40px] w-[150px] absolute mx-16 my-20" >
-        <img className="h-8 mx-2" src={whatsapp} alt="" />
-          <a className="text-[14px] text-green-500">Compre Agora</a>
+        <img className="h-5 mx-2" src={whatsapp} alt="" />
+          <a className="text-[20px] text-green-500">R$ {product ? product.price : "--"}</a>
       </div>
     </div>
   </div>
