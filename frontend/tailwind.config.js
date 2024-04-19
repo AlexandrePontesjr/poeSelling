@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         pirata: ["Pirata One", "sans-serif"],
+        diablo: ["diablo", "sans-serif"],
       },
       boxShadow: {
         'selling': "-12px 15px 0 -8px black, -12px 15px 0 0px yellow",

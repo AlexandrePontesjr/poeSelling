@@ -38,9 +38,11 @@ import carrinho from "./carrinho.svg";
 import dealItems from "./dealItems.png";
 import itemsHero from "./itemsHero.webp";
 import servicesImage from "./servicesImage.webp";
+import ShopItemCoin from "./ShopItemCoin.png";
 
 export {
   carrinho,
+  ShopItemCoin,
   servicesImage,
   itemsHero,
   dealItems,

@@ -18,9 +18,8 @@ const Carousel = ({ slides }) => {
       else setCurrent(current + 1);
     }
  return (
-    <div className={`${styles.boxWidth} max-h-[520px]`}>
-        <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5">
-        {/* grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 */}
+    <div className={`gap-1 grid grid-cols-1 ss:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 overflow-scroll no-scrollbar `}>
+
         {slides.map((slide, index) => (
           <motion.div
             key={index}
@@ -28,11 +27,10 @@ const Carousel = ({ slides }) => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: index * 0.2 }}
           >
-            <Items key={index} product={slide} className="" />
+            <Items key={index} product={slide}  />
           </motion.div>
         ))}
       </div>
-    </div>
 )};
 
 export default Carousel;

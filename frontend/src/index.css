@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import url('https://fonts.cdnfonts.com/css/pirata-one');
-
+@font-face {
+  font-family: 'diablo' ;
+  src: url('./assets/fonts/diablo.ttf');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,6 +42,14 @@
   background-position: center;
   height: 100vh;
   background-color: #000000;
+}
+
+.bg-renew {
+  background-image: url('./assets/Discount.svg');
+  background-repeat: repeat;
+  background-position: center ;
+  /* background-size: contain; */
+  /* height:auto; */
 }
 
 .navbar {
@@ -209,17 +220,20 @@
   filter: blur(123px);
 }
 
-.pink__gradient {
-  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
-  filter: blur(900px);
+.card_image {
+  background-image: url('./assets/diabloIcon.svg') ;
+  background-size: 20px;
+  background-repeat: repeat;
 }
 
 .white__gradient {
-  background: rgba(255, 255, 255, 0.6);
-  filter: blur(750px);
+  background-size: 75px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
 }
 
 .gold-gradient {
   background: linear-gradient(360deg, rgba(255, 215, 0, 0) 0%, #ffd700 100%);
   filter: blur(200px);
 }
+

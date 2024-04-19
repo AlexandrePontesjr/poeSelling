@@ -39,7 +39,7 @@ const Billing = () => {
 
   return (
     <section id="items" className={`relative`}>
-      <div className="">
+      <div className="bg-black/70">
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div className=" sm:flex  sm:items-center sm:justify-between">
             <div className="mt-20 text-left sm:text-left">
@@ -54,13 +54,13 @@ const Billing = () => {
 
             </div>
           </div>
-            <div className="-mt-12 justify-center items-center ">
+            <div className="-mt-12 justify-center items-center  ">
               <SearchBar
                 searchTerm={searchItem}
                 changeFunction={handleInputChange}
               />
             </div>
-          <div className={`bg-black mt-10 ${styles.boxWidth}`}>
+          <div className={``}>
             <Carousel slides={filteredProducts} />
           </div>
 
