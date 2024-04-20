@@ -44,7 +44,7 @@ const App = ({ game }) => {
             <FAQ />
           </div>
         </div>
-        {/* 
+        {/*
     <div className="backgroundImageService">
       <div className={` ${styles.flexStart}`}>
         <div className={`h-full ${styles.boxWidth2}`}>
@@ -61,8 +61,10 @@ const App = ({ game }) => {
       </div>
     </div>
 
-    
-      
+
+
+
+
     <div className="">
       <div className={` ${styles.flexStart}`}>
         <div className={`${styles.boxWidth2}`}>
