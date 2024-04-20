@@ -1,5 +1,4 @@
-import { dealItems, logoPoe, ShopItemCoin, whatsapp } from "../assets";
-
+import { logoPoe, ShopItemCoin } from "../assets";
 
 const Items = ({ product }) => {
   // max-w-[250px]
@@ -9,36 +8,39 @@ const Items = ({ product }) => {
         <div className="">
           <div className="text-center text-[14px]">
             <div className="bg-red-950 ">
-            <span className="text-white font-diablo" >{product ? product.name : "Product Name"}</span>
+              <span className="text-white font-diablo">
+                {product ? product.name : "Product Name"}
+              </span>
             </div>
-            <div className=" relative grid grid-flow-col" >
-            <p className="bg-black/70 text-white font-poppins text-left text-[12px] w-44 h-32 overflow-scroll no-scrollbar">
+            <div className=" relative grid grid-flow-col">
+              <p className="bg-black/70 text-white font-poppins text-left text-[12px] w-44 h-32 overflow-scroll no-scrollbar">
                 {product ? product.description : "Product description"}
               </p>
-              <img className="white__gradient max-w-[60px]"
+              <img
+                className="white__gradient max-w-[60px]"
                 src={product ? product.image : logoPoe}
                 srcSet={product ? product.image : logoPoe}
                 loading="lazy"
                 alt=""
               />
             </div>
-            <div className="flex justify-center gap-2" >
-            <img className=" h-[35px]" src={ShopItemCoin} alt="" />
-            <p className="font-diablo text-white text-[30px]">
-            R${product ? product.price : "--"}
-                </p>
+            <div className="flex justify-center gap-2">
+              <img className=" h-[35px]" src={ShopItemCoin} alt="" />
+              <p className="font-diablo text-white text-[30px]">
+                R${product ? product.price : "--"}
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Items;
 
-
-{/* <img className="relative " src={dealItems} alt="" />
+{
+  /* <img className="relative " src={dealItems} alt="" />
     <a className="relative" href={`https://api.whatsapp.com/send?` +
       `phone=559285896410&` +
       `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`}
@@ -58,4 +60,5 @@ export default Items;
       <div className="flex  h-[40px] w-[150px] absolute mx-16 my-20">
           <a className="text-[24px] text-white">R$ {product ? product.price : "--"}</a>
       </div>
-    </div> */}
+    </div> */
+}
