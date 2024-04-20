@@ -39,9 +39,10 @@ import dealItems from "./dealItems.png";
 import itemsHero from "./itemsHero.webp";
 import servicesImage from "./servicesImage.webp";
 import ShopItemCoin from "./ShopItemCoin.png";
-
+import shop_item_bg from "./shop_item_bg.webp";
 export {
   carrinho,
+  shop_item_bg,
   ShopItemCoin,
   servicesImage,
   itemsHero,

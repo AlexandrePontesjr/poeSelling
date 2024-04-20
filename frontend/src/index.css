@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import url('https://fonts.cdnfonts.com/css/pirata-one');
-@font-face {
-  font-family: 'diablo' ;
-  src: url('./assets/fonts/diablo.ttf');
-}
+@font-face {font-family: 'diablo' ; src: url('./assets/fonts/diablo.ttf');}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -43,6 +40,9 @@
   height: 100vh;
   background-color: #000000;
 }
+
+
+
 
 .bg-renew {
   background-image: url('./assets/Discount.svg');
@@ -198,6 +198,16 @@
   }
 }
 
+@keyframes cssAnimation_0 {
+  from {
+    background-color: rgb(87, 36, 36);
+  }
+
+  to {
+    background-color: rgba(55, 55, 55, 0.7);
+  }
+}
+
 .feature-card:hover {
   background: var(--black-gradient);
   box-shadow: var(--card-shadow);
@@ -226,6 +236,11 @@
   background-repeat: repeat;
 }
 
+.backgroundShop_item_bg{
+  background-image: url("./assets/shop_item_bg.webp");
+  background-repeat: no-repeat;
+}
+
 .white__gradient {
   background-size: 75px;
   background: rgba(255, 255, 255, 0.05);
@@ -234,6 +249,30 @@
 
 .gold-gradient {
   background: linear-gradient(360deg, rgba(255, 215, 0, 0) 0%, #ffd700 100%);
-  filter: blur(200px);
+  filter: blur(100px);
+
 }
+.bg-black-items {
+
+  border: 4px outset rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow:
+    inset -52px 20px 36px 32px rgba(143, 4, 4, 0.356),
+    inset -13px 137px 55px 1px rgba(0, 0, 0, 0.644),
+    inset -3px 33px 12px 0px rgba(5, 5, 5, 0.28),
+    inset 0px 3px 3px 0px rgba(255, 255, 255, 0.15);
+  background-color: rgba(55, 55, 55, 0.7);
+  transition: background-color 459ms linear;
+  backdrop-filter: grayscale(100%);
+  -webkit-backdrop-filter: grayscale(100%);
+
+}
+
+.bg-black-items:hover {
+  background-color: rgba(117, 35, 35, 0.479);
+  animation: cssAnimation_0 700ms infinite linear;
+
+
+}
+
 
