@@ -1,7 +1,6 @@
 import { logoPoe, ShopItemCoin } from "../assets";
 
 const Items = ({ product }) => {
-  // max-w-[250px]
   return (
     <div className="bg-black card_image max-w-[275px] max-h-[190px] ">
       <div className="bg-black/90 grid grid-cols ">
