@@ -34,7 +34,7 @@ const App = () => (
         </div>
       </div>
     </div>
-{/* 
+{/*
     <div className="backgroundImageService">
       <div className={` ${styles.flexStart}`}>
         <div className={`h-full ${styles.boxWidth2}`}>

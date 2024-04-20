@@ -18,8 +18,7 @@ const Carousel = ({ slides }) => {
       else setCurrent(current + 1);
     }
  return (
-    <div className={`gap-1 grid grid-cols-1 ss:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 overflow-scroll no-scrollbar `}>
-
+    <div className={`gap-2 grid grid-cols-1 ss:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 overflow-scroll no-scrollbar h-[500px]`}>
         {slides.map((slide, index) => (
           <motion.div
             key={index}

@@ -1,36 +1,36 @@
-import { dealItems, logoPoe, ShopItemCoin, whatsapp } from "../assets";
+import { dealItems, logoPoe, ShopItemCoin, shop_item_bg } from "../assets";
 
 
 const Items = ({ product }) => {
-  // max-w-[250px]
+
   return (
-    <div className="bg-black card_image max-w-[275px] max-h-[190px] ">
-      <div className="bg-black/90 grid grid-cols ">
-        <div className="">
-          <div className="text-center text-[14px]">
-            <div className="bg-red-950 ">
-            <span className="text-white font-diablo" >{product ? product.name : "Product Name"}</span>
+    <div className="">
+        <div className="grid grid-cols bg-black-items px-2 rounded-lg ">
+        <div className="rounded-sm text-center">
+          <span className="text-[16px] text-white font-diablo" >{product ? product.name : "Product Name"}</span>
+        </div>
+          <div className="grid grid-flow-col  ">
+            <div className="w-52 h-[120px] py-1 px-1">
+            <p className="text-white line-clamp-3  font-diablo  text-[10px] h-[120px]  max-h-[120px]  overflow-scroll no-scrollbar">
+              {product ? product.description : "Product description"}
+            </p>
             </div>
-            <div className=" relative grid grid-flow-col" >
-            <p className="bg-black/70 text-white font-poppins text-left text-[12px] w-44 h-32 overflow-scroll no-scrollbar">
-                {product ? product.description : "Product description"}
-              </p>
-              <img className="white__gradient max-w-[60px]"
-                src={product ? product.image : logoPoe}
-                srcSet={product ? product.image : logoPoe}
-                loading="lazy"
-                alt=""
-              />
-            </div>
-            <div className="flex justify-center gap-2" >
-            <img className=" h-[35px]" src={ShopItemCoin} alt="" />
-            <p className="font-diablo text-white text-[30px]">
-            R${product ? product.price : "--"}
-                </p>
+            <div className="white__gradient mx-auto">
+            <img style={{maxBlockSize: 100}}
+              src={product ? product.image : logoPoe}
+              srcSet={product ? product.image : logoPoe}
+              loading="lazy"
+              alt=""
+            />
             </div>
           </div>
+            <div className="flex" >
+            <img className="" src={ShopItemCoin} alt=""/>
+            <p className="font-diablo text-white text-[26px]">
+              R${product ? product.price : "--"}
+            </p>
+            </div>
         </div>
-      </div>
     </div>
   );
 }
