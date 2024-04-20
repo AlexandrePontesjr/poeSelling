@@ -1,4 +1,4 @@
-import { Billing, FAQ, Hero, Navbar } from "./components";
+import { Billing, Hero, Navbar } from "./components";
 import styles from "./styles";
 
 const App = ({ game }) => {
@@ -40,8 +40,7 @@ const App = ({ game }) => {
           </div>
         </div>
       </div>
-    </div>
-{/*
+      {/*
     <div className="backgroundImageService">
       <div className={` ${styles.flexStart}`}>
         <div className={`h-full ${styles.boxWidth2}`}>
@@ -69,7 +68,6 @@ const App = ({ game }) => {
         </div>
       </div>
     </div> */}
-      </div>
     </>
   );
 };
