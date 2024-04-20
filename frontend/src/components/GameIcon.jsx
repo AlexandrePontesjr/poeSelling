@@ -1,14 +1,5 @@
-import { diabloIcon, poeIcon, lastEpocIcon } from "../assets"
-
-const GameIcon = ({ icone }) => {
-
-    return (
-        <img
-            className={`h-24 mx-2`}
-            src={
-                icone == "2" ? (diabloIcon) : icone == "1" ? (poeIcon) : (lastEpocIcon)
-            } alt="" />
-    )
-}
+const GameIcon = ({ game }) => {
+  return <img className={`h-24 mx-2`} src={game.icon} alt={game.name} />;
+};
 
 export default GameIcon;

@@ -93,14 +93,14 @@
   background-position: center;
 }
 
-.backgroundImagelastEpoch{
+.backgroundImageLastEpoch{
   background-image: url("./assets/lastEpochItems.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.backgroundImagepathExile{
+.backgroundImagePathExile{
   background-image: url("./assets/pathExile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
