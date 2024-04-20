@@ -11,7 +11,7 @@ const Billing = ({ game }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await getProducts(game);
+        const res = await getProducts(game.id);
         setProducts(res.content);
         setFilteredProducts(res.content);
       } catch (error) {

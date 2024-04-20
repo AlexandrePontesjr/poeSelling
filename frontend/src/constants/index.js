@@ -1,4 +1,9 @@
 import { people01, people02, people03, instagram, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { GameDetails } from "./games.js"
+
+export {
+  GameDetails,
+};
 
 export const navLinks = [
   {

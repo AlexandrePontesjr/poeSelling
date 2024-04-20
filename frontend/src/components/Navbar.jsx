@@ -1,70 +1,41 @@
 import { useState } from "react";
 import Button from "@mui/joy/Button";
 import { Link } from "react-router-dom";
-import { close, logo, menu} from "../assets";
-import { navLinks } from "../constants";
-import { GameIcon} from "../components";
+import { close, logo, menu } from "../assets";
+import { navLinks, GameDetails } from "../constants";
+import { GameIcon } from "../components";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
-  const isHomeSection = location.pathname == '/' ? true : false;
+  const isHomeSection = location.pathname == "/" ? true : false;
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-
       <img src={logo} alt="renew" className="w-[150px] h-[90px] ml-8" />
-{/*GAME 1 PATH OF EXILE, 2 DIABLO, 3 LAST EPOCH*/}
-    {!isHomeSection && (
-      <div className="w-full flex justify-center">
-        <Link to={"/diablo-4"}  relative="path">
-          <Button
-            variant="plain"
-            color=""
-            size=""
-            sx={{
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.3)",
-              },
-            }}
-          >
-          <GameIcon icone={2} />
-          </Button>
-        </Link>
-        <Link to={"/path-of-exile"}  relative="path">
-          <Button
-            variant="solid"
-            color=""
-            size=""
-            sx={{
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.3)",
-              },
-            }}
-          >
-            <GameIcon icone={1} />
-          </Button>
-        </Link>
-        <Link to={"/last-epoch"}  relative="path">
-          <Button
-            variant="solid"
-            color=""
-            size=" "
-            sx={{
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.3)",
-              },
-            }}
-          >
-            <GameIcon icone={3} />
-          </Button>
-        </Link>
-      </div>
-    )}
+      {/*GAME 1 PATH OF EXILE, 2 DIABLO, 3 LAST EPOCH*/}
+      {!isHomeSection && (
+        <div className="w-full flex justify-center">
+          {Object.entries(GameDetails).map((gameInfo, index) => (
+            <Link key={index} to={gameInfo.path} relative="path">
+              <Button
+                variant="plain"
+                color=""
+                size=""
+                sx={{
+                  transition: "transform 0.3s",
+                  "&:hover": {
+                    transform: "scale(1.3)",
+                  },
+                }}
+              >
+                <GameIcon game={gameInfo} />
+              </Button>
+            </Link>
+          ))}
+        </div>
+      )}
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-16">
         {navLinks.map((nav, index) => (
@@ -81,9 +52,11 @@ const Navbar = () => {
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
-        
-        <img src={toggle ? close : menu} alt="menu" className="w-[28px] h-[28px] object-contain"
-        onClick={() => setToggle(!toggle)}
+        <img
+          src={toggle ? close : menu}
+          alt="menu"
+          className="w-[28px] h-[28px] object-contain"
+          onClick={() => setToggle(!toggle)}
         />
 
         <div

@@ -6,15 +6,22 @@ import { AuthProvider } from "./backend/contexts/auth.jsx";
 import "./index.css";
 import { ProductLayout, QALayout, ServiceLayout } from "./layouts";
 import LoginAdmin from "./layouts/LoginAdmin.jsx";
+import { GameDetails } from "./constants";
 
 export default function Main() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App game={1} />} />
-        <Route path="/path-of-exile" element={<App game={1} />} />
-        <Route path="/diablo-4" element={<App game={2} />} />
-        <Route path="/last-epoch" element={<App game={3} />} />
+        <Route path="/" element={<App game={GameDetails.pathOfExile} />} />
+        <Route
+          path="/path-of-exile"
+          element={<App game={GameDetails.pathOfExile} />}
+        />
+        <Route path="/diablo-4" element={<App game={GameDetails.diablo} />} />
+        <Route
+          path="/last-epoch"
+          element={<App game={GameDetails.lastEpoch} />}
+        />
         <Route path="admin" element={<LoginAdmin />} />
         <Route path="admin/products" element={<ProductLayout />} />
         <Route path="admin/services" element={<ServiceLayout />} />
