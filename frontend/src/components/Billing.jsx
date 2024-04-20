@@ -54,13 +54,13 @@ const Billing = ({ game }) => {
               </p>
             </div>
           </div>
-          <div className="-mt-12 justify-center items-center  ">
-            <SearchBar
-              searchTerm={searchItem}
-              changeFunction={handleInputChange}
-            />
-          </div>
-          <div className={``}>
+            <div className="-mt-12 justify-center items-center  ">
+              <SearchBar
+                searchTerm={searchItem}
+                changeFunction={handleInputChange}
+              />
+            </div>
+          <div className={`${styles.boxWidth}`}>
             <Carousel slides={filteredProducts} />
           </div>
         </div>
