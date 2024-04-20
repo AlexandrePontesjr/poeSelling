@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../api/products/products";
 import { Carousel, SearchBar } from ".";
-import styles, { layout } from "../styles";
+import { getProducts } from "../api/products/products";
+import styles from "../styles";
 
-const Billing = () => {
+const Billing = ({ game }) => {
   const [products, setProducts] = useState([]);
   const [searchItem, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -11,7 +11,7 @@ const Billing = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await getProducts(1);
+        const res = await getProducts(game);
         setProducts(res.content);
         setFilteredProducts(res.content);
       } catch (error) {
@@ -19,7 +19,7 @@ const Billing = () => {
       }
     };
     fetchProducts();
-  }, []);
+  }, [game]);
 
   const handleInputChange = (e) => {
     const searchTerm = e.target.value;
@@ -44,26 +44,25 @@ const Billing = () => {
           <div className=" sm:flex  sm:items-center sm:justify-between">
             <div className="mt-20 text-left sm:text-left">
               <h2 className={styles.heading2}>
-                Tome controle {" "}
-                <span className="text-yellow-400">Compre & Use</span>{" "}
-                Items da loja.
+                Tome controle{" "}
+                <span className="text-yellow-400">Compre & Use</span> Items da
+                loja.
               </h2>
               <p className={`${styles.paragraph}`}>
-                Ao clica em comprar voce será redirecionado para o responsável do Trade
+                Ao clica em comprar voce será redirecionado para o responsável
+                do Trade
               </p>
-
             </div>
           </div>
-            <div className="-mt-12 justify-center items-center  ">
-              <SearchBar
-                searchTerm={searchItem}
-                changeFunction={handleInputChange}
-              />
-            </div>
+          <div className="-mt-12 justify-center items-center  ">
+            <SearchBar
+              searchTerm={searchItem}
+              changeFunction={handleInputChange}
+            />
+          </div>
           <div className={`${styles.boxWidth}`}>
             <Carousel slides={filteredProducts} />
           </div>
-
         </div>
       </div>
     </section>

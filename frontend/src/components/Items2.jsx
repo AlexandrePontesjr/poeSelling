@@ -1,9 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { logoPoe } from "../assets";
 import { DoubleButton } from ".";
+import { logoPoe } from "../assets";
 
 const Items2 = ({ product }) => {
-
   return (
     <div className={`flex sm:flex-col p-3 rounded-xl  hover:bg-yellow-400`}>
       <div className="w-56 sm:w-96 rounded-3xl bg-[#010005]">
