@@ -22,8 +22,9 @@ import Services from "./Services";
 import CarouselService from "./CarouselService";
 import ListService from "./ListService";
 import FAQ from "./FAQ";
-
+import GameIcon from "./GameIcon";
 export {
+  GameIcon,
   Navbar,
   Items,
   Items2,

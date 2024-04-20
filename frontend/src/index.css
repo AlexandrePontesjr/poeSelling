@@ -86,6 +86,28 @@
   background-position: center;
 }
 
+.backgroundImageItemsDiablo{
+  background-image: url("./assets/diablo4items.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.backgroundImagelastEpoch{
+  background-image: url("./assets/lastEpochItems.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.backgroundImagepathExile{
+  background-image: url("./assets/pathExile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
 .backgroundImageService{
   background-image: url("./assets/BackgroundServices.jpg");
   background-size: cover;
@@ -257,11 +279,27 @@
   border: 4px outset rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   box-shadow:
-    inset -52px 20px 36px 32px rgba(143, 4, 4, 0.356),
-    inset -13px 137px 55px 1px rgba(0, 0, 0, 0.644),
-    inset -3px 33px 12px 0px rgba(5, 5, 5, 0.28),
-    inset 0px 3px 3px 0px rgba(255, 255, 255, 0.15);
-  background-color: rgba(55, 55, 55, 0.7);
+    inset -52px 20px 36px 32px rgba(85, 67, 67, 0.356),
+    inset 0px 100px 55px 0px rgba(75, 71, 71, 0.644),
+    inset 2px 25px 12px 0px rgb(255, 81, 0),
+    inset 2px 3px 3px 0px rgb(87, 102, 1);
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 459ms linear;
+  backdrop-filter: grayscale(100%);
+  -webkit-backdrop-filter: grayscale(100%);
+
+}
+
+.bg-black-service {
+
+  border: 4px outset rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow:
+    inset -52px 20px 36px 32px rgba(85, 67, 67, 0.356),
+    inset 0px 100px 55px 0px rgba(75, 71, 71, 0.644),
+    inset 2px 25px 12px 0px rgb(255, 81, 0),
+    inset 2px 3px 3px 0px rgb(87, 102, 1);
+  background-color: rgba(0, 0, 0, 0.7);
   transition: background-color 459ms linear;
   backdrop-filter: grayscale(100%);
   -webkit-backdrop-filter: grayscale(100%);
@@ -270,9 +308,11 @@
 
 .bg-black-items:hover {
   background-color: rgba(117, 35, 35, 0.479);
-  animation: cssAnimation_0 700ms infinite linear;
+  /* animation: cssAnimation_0 700ms infinite linear; */
 
 
 }
+
+
 
 
