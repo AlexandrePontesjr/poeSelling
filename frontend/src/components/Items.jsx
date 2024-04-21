@@ -1,17 +1,35 @@
-import { ShopItemCoin, logoPoe } from "../assets";
+import { ShopItemCoin, logoPoe, pix, whatsapp, payPal } from "../assets";
+import Box from "@mui/joy/Box";
 
-const Items = ({ product }) => {
+const Items = ({ product , game }) => {
+  // console.log(game);
   return (
-    <div className="">
-      <div className="grid grid-cols bg-black-items px-2 rounded-lg ">
+      <Box
+      sx={{
+        maxWidth: "336px",
+        maxHeight: "216px",
+        transition: "transform 0.3s",
+        "&:hover": {
+          transform: "scale(1.1)",
+        },
+      }}
+      
+    >
+      <a className="relative" href={`https://api.whatsapp.com/send?` +
+      `phone=559285896410&` +
+      `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`}
+      >
+      
+    <div className={`${game.fontFamily} `}>
+      <div className="bg-items-name-top  bg-card-items grid grid-cols px-2 rounded-lg bg-items-name-bottom">
         <div className="rounded-sm text-center">
-          <span className="text-[16px] text-white font-diablo">
+          <span className="text-[16px] text-white ">
             {product ? product.name : "Product Name"}
           </span>
         </div>
-        <div className="grid grid-flow-col  ">
+        <div className="grid grid-flow-col">
           <div className="w-52 h-[120px] py-1 px-1">
-            <p className="text-white line-clamp-3  font-diablo  text-[10px] h-[120px]  max-h-[120px]  overflow-scroll no-scrollbar">
+            <p className="text-white line-clamp-3    text-[10px] h-[120px]  max-h-[120px]">
               {product ? product.description : "Product description"}
             </p>
           </div>
@@ -25,14 +43,23 @@ const Items = ({ product }) => {
             />
           </div>
         </div>
-        <div className="flex">
-          <img className="" src={ShopItemCoin} alt="" />
-          <p className="font-diablo text-white text-[26px]">
+        <div style={{ maxHeight: 40 }}  className=" white__gradient flex gap-2 mt-3 items-center relative">
+        <div style={{ maxHeight: 40 }} className=" flex w-full  justify-center">
+          <img style={{ maxHeight: 40 }}  className="" src={ShopItemCoin} alt="" />
+          <p className=" text-white text-[28px]">
             R${product ? product.price : "--"}
           </p>
         </div>
+          <div style={{ maxHeight: 40 }} className=" w-full  justify-between flex">
+          <img style={{ maxHeight: 40 }} className="" src={pix} alt="" />
+          <img style={{ maxHeight: 40 }} className="" src={whatsapp} alt="" />
+          <img style={{ maxHeight: 40 }} className="" src={payPal} alt="" />
+          </div>
+        </div>
       </div>
     </div>
+    </a>
+  </Box>
   );
 };
 

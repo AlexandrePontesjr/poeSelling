@@ -12,8 +12,8 @@ const Navbar = () => {
   const isHomeSection = location.pathname == "/" ? true : false;
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="renew" className="w-[150px] h-[90px] ml-8" />
+    <nav className="w-full flex py-6 lg:py-6 justify-between items-center navbar">
+      <img src={logo} alt="renew" className="w-[150px] h-[90px] ml-6 lg:ml-8" />
       {/*GAME 1 PATH OF EXILE, 2 DIABLO, 3 LAST EPOCH*/}
       {!isHomeSection && (
         <div className="w-full flex justify-center">
@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-16">
+      <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-18">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
@@ -51,7 +51,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div className="sm:hidden flex flex-1 justify-end items-center mr-6">
         <img
           src={toggle ? close : menu}
           alt="menu"

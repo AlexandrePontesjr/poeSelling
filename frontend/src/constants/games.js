@@ -4,25 +4,28 @@ export const GameDetails = {
     diablo: {
         id: 2,
         name: "Diablo",
-        videoSrc: "public/diabloV.mp4",
+        videoSrc: "/diabloV.mp4",
         path: "/diablo-4",
         icon: diabloIcon,
         cssClassBG: "backgroundImageItemsDiablo",
+        fontFamily: "font-diablo",
     },
     pathOfExile: {
         id: 1,
         name: "Path of Exile",
-        videoSrc: "public/poe_necropolis_trailer.mp4",
+        videoSrc: "/poe_necropolis_trailer.mp4",
         path: "/path-of-exile",
         icon: poeIcon,
         cssClassBG: "backgroundImagePathExile",
+        fontFamily: "font-pathOfExile",
     },
     lastEpoch: {
         id: 3,
         name: "Last Epoch",
-        videoSrc: "public/last_epoch_trailer.mp4",
+        videoSrc: "/last_epoch_trailer.mp4",
         path: "/last-epoch",
         icon: lastEpocIcon,
         cssClassBG: "backgroundImageLastEpoch",
+        fontFamily: "font-lastEpoch",
     }
 };

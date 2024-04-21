@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import url('https://fonts.cdnfonts.com/css/pirata-one');
-@font-face {font-family: 'diablo' ; src: url('./assets/fonts/diablo.ttf');}
+@font-face {font-family: 'diablo' ; src: url('./assets/fonts/Diablo.ttf');}
+@font-face {font-family: 'lastEpoch' ; src: url('./assets/fonts/LastEpoch.ttf');}
+@font-face {font-family: 'pathOfExile' ; src: url('./assets/fonts/PathOfExile.ttf');}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 @layer utilities {
-      
       .no-scrollbar::-webkit-scrollbar {
           display: none;
       }
-     
       .no-scrollbar {
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
@@ -25,12 +26,22 @@
     #6d6d6d -78.47%,
     #11101d 91.61%
   );
-  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  --card-shadow: 0px 20px 100px -10px rgba(255, 255, 255, 0.1);
+  --gold-shadow: 0px 20px 100px -10px rgba(255, 215, 0, 0.5);
+  --maxroll-color-dark-3: 10,10,10,0.9;
+  --maxroll-color-dark-5: 43,44,44;
+  --gold-gradient: linear-gradient(360deg, rgb(255, 255, 255) 0%, #ffd900 100%);
+  --filter-blur:  blur(100px);
 }
 
 * {
   scroll-behavior: smooth;
+  
 }
+section {
+  min-height: 800px;
+}
+
 
 .backgroundImage{
   background-image: url("./assets/poe_bg.png");
@@ -41,49 +52,12 @@
   background-color: #000000;
 }
 
-
-
-
-.bg-renew {
-  background-image: url('./assets/Discount.svg');
-  background-repeat: repeat;
-  background-position: center ;
-  /* background-size: contain; */
-  /* height:auto; */
-}
-
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-}
-
-
-.backgroundFooter{
-  background-image: url("./assets/poe_bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #868585;
-  height: 50vh;
-}
-
-.backgroundImageHero{
-  background-image: url("./assets/poe_bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #000000;
-  height: 100vh;
-}
-
-.backgroundImageItems{
-  background-image: url("./assets/diablo4lilith.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .backgroundImageItemsDiablo{
@@ -94,7 +68,7 @@
 }
 
 .backgroundImageLastEpoch{
-  background-image: url("./assets/lastEpochItems.png");
+  background-image: url("./assets/poe2fundo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -107,16 +81,6 @@
   background-position: center;
 }
 
-
-.backgroundImageService{
-  background-image: url("./assets/BackgroundServices.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #f8f8f8;
-  height: 100vh;
-  
-}
 
 .backgroundImageTestemonial{
   background-image: url("./assets/BackgroundItems.jpg");
@@ -162,10 +126,10 @@
 .bg-black-gradient {
   background: linear-gradient(
     144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
+    rgba(255, 255, 255, 0) -278.56%,
+    rgba(109, 109, 109, 0.5) -78.47%,
+    rgba(17, 16, 29, 1) 91.61%);
+
 }
 
 .bg-black-gradient-2 {
@@ -274,8 +238,9 @@
   filter: blur(100px);
 
 }
-.bg-black-items {
 
+.bg-black-item {
+  
   border: 4px outset rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   box-shadow:
@@ -287,6 +252,25 @@
   transition: background-color 459ms linear;
   backdrop-filter: grayscale(100%);
   -webkit-backdrop-filter: grayscale(100%);
+
+}
+
+.bg-black-items {
+  /* background-image: url('./assets/diabloIcon.svg') ; */
+  background-size: 20px;
+  background-repeat: repeat;
+  border: 4px outset rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow:
+    inset -52px 20px 36px 32px rgba(85, 67, 67, 0.356),
+    inset 0px 100px 55px 0px rgba(75, 71, 71, 0.644),
+    inset 2px 25px 12px 0px rgb(255, 81, 0),
+    inset 2px 3px 3px 0px rgb(87, 102, 1);
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 459ms linear;
+  backdrop-filter: grayscale(100%);
+  -webkit-backdrop-filter: grayscale(100%);
+  
 
 }
 
@@ -309,10 +293,40 @@
 .bg-black-items:hover {
   background-color: rgba(117, 35, 35, 0.479);
   /* animation: cssAnimation_0 700ms infinite linear; */
+}
 
-
+.bg-card-items:hover {
+  box-shadow: var(--gold-shadow);
 }
 
 
+.bg-card-items  {
+position: relative;
+box-sizing: border-box;
+margin: 0;
+padding: 10px 5px 8px;
+background: rgb(var(--maxroll-color-dark-3));
+border: 1px solid rgb(var(--maxroll-color-dark-5));
+border-radius: 8px;
+box-shadow: var(--card-shadow);
+}
+
+.bg-items-name-top  {
+  background-image: url('./assets/dividerMore.webp') ;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+
+.bg-items-name-bottom::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/dividerMore.webp');
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  z-index: 0;
+ }
 
 

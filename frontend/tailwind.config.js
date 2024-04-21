@@ -15,6 +15,8 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         pirata: ["Pirata One", "sans-serif"],
         diablo: ["diablo", "sans-serif"],
+        lastEpoch: ["lastEpoch", "sans-serif"],
+        pathOfExile: ["pathOfExile", "sans-serif"],
       },
       boxShadow: {
         'selling': "-12px 15px 0 -8px black, -12px 15px 0 0px yellow",

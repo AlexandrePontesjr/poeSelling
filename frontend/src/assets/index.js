@@ -31,6 +31,7 @@ import BackgroundItems from "./BackgroundItems.jpg";
 import loots from "./loots.png";
 import whatsapp from "./whatsapp.svg";
 import moneyBag from "./moneyBag.svg";
+import payPal from "./payPal.svg";
 import diabloIcon from "./diabloIcon.svg";
 import lastEpocIcon from "./lastEpocIcon.svg";
 import poeIcon from "./poeIcon.svg";
@@ -40,7 +41,12 @@ import itemsHero from "./itemsHero.webp";
 import servicesImage from "./servicesImage.webp";
 import ShopItemCoin from "./ShopItemCoin.png";
 import shop_item_bg from "./shop_item_bg.webp";
+import arrowNotch from "./arrowNotch.webp";
+import bullet from "./bullet.webp";
 export {
+  arrowNotch,
+  payPal,
+  bullet,
   carrinho,
   shop_item_bg,
   ShopItemCoin,

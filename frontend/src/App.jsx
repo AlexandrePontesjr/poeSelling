@@ -20,20 +20,16 @@ const App = ({ game }) => {
           >
             <source src={game.videoSrc} type="" />
           </video>
-          <div className={`${styles.boxWidth2} h-[960px] relative`}>
-            <Navbar game={game} />
-            <Hero />
+          <div className={`${styles.boxWidth2} relative`}>
+          <Navbar game={game} />
+            <Hero game={game} />
           </div>
         </div>
-
-        {/*GAME 1 PATH OF EXILE, 2 DIABLO, 3 LAST EPOCH*/}
-        <div className="">
           <div className={` ${game.cssClassBG} ${styles.flexStart} `}>
-            <div className={`h-full ${styles.boxWidth2} `}>
+            <div className={` ${styles.boxWidth2} `}>
               <Billing game={game} />
             </div>
           </div>
-        </div>
       </div>
       {/*
       <div className={`
