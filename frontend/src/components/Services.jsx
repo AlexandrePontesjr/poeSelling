@@ -3,7 +3,7 @@ import { CarouselService, SearchBar } from ".";
 import { getServices } from "../api/products/products";
 import styles from "../styles";
 
-const Services = ({game}) => {
+const Services = ({ game }) => {
   const [products, setProducts] = useState([]);
   const [searchItem, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -38,33 +38,31 @@ const Services = ({game}) => {
   };
 
   return (
-<section id="services" className={`relative`}>
-  <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-      <div className=" sm:flex  sm:items-center">
-        <div className=" text-left sm:text-left">
-          <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
-            Tome controle do Game <br className="sm:block hidden" /> Compre{" "}
-            <span className="text-yellow-400">Nossos Serviços</span>{" "}
-            da loja.
-          </h2>
-          <p className={`mt-4 ${game.fontFamily} ${styles.paragraphGame}`}>
-            Procure pelos melhores items no nosso site
-          </p>
-        </div>
-        <div className="w-[350px]  lg:w-[550px]">
-          <SearchBar
-            searchTerm={searchItem}
-            changeFunction={handleInputChange}
-          />
+    <section id="services" className={`relative`}>
+      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className="mb-6 lg:mb-8 sm:flex  sm:items-center">
+          <div className=" text-left sm:text-left">
+            <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
+              Tome controle do Game <br className="sm:block hidden" /> Compre{" "}
+              <span className="text-yellow-400">Nossos Serviços</span> da loja.
+            </h2>
+            <p className={`mt-4 ${game.fontFamily} ${styles.paragraphGame}`}>
+              Procure pelos melhores items no nosso site
+            </p>
+          </div>
+          <div className="w-[350px]  lg:w-[550px]">
+            <SearchBar
+              searchTerm={searchItem}
+              changeFunction={handleInputChange}
+            />
+          </div>
         </div>
 
+        <div className={`${styles.boxWidth}`}>
+          <CarouselService slides={filteredProducts} game={game} />
+        </div>
       </div>
-
-      <div className={`${styles.boxWidth}`}>
-        <CarouselService slides={filteredProducts} game={game} />
-      </div>
-    </div>
-</section>
+    </section>
   );
 };
 

@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-18">
+      <ul className="mr-6 lg:mr-8 list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}

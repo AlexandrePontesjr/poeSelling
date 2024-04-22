@@ -5,7 +5,7 @@ const SearchBar = ({ searchTerm, changeFunction }) => {
   return (
     <form className="w-full block rounded-lg sm:px-5 sm:py-3 text-sm font-medium transition focus:outline-none focus:ring ">
       <label
-        className=" w-[110%] h-full flex sm:p-4 items-center justify-center"
+        className="ml-6 w-[110%] h-full flex sm:p-4 justify-start"
         htmlFor="search-input"
       >
         <input
