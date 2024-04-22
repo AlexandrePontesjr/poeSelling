@@ -13,13 +13,13 @@ const Items = ({ product , game }) => {
           transform: "scale(1.1)",
         },
       }}
-      
+
     >
       <a className="relative" href={`https://api.whatsapp.com/send?` +
       `phone=559285896410&` +
       `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`}
       >
-      
+
     <div className={`${game.fontFamily} `}>
       <div className="bg-items-name-top  bg-card-items grid grid-cols px-2 rounded-lg bg-items-name-bottom">
         <div className="rounded-sm text-center">

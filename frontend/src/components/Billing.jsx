@@ -38,34 +38,33 @@ const Billing = ({ game }) => {
   };
 
   return (
-    <section id="items" className={`relative`}>
-      <div className=" ">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div className=" sm:flex  sm:items-center sm:justify-between">
-            <div className="mt-12 lg:mt-20  text-left sm:text-left">
-              <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
-                Tome controle{" "}
-                <span className="text-yellow-400">Compre & Use</span> Items da
-                loja.
-              </h2>
-              <p className={`mt-4 ${game.fontFamily} ${styles.paragraphGame}`}>
-                Ao clica em comprar voce será redirecionado para o responsável
-                do Trade
-              </p>
-            </div>
+<section id="items" className={`relative`}>
+      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className=" sm:flex  sm:items-center sm:justify-between">
+          <div className="mt-12 lg:mt-20  text-left sm:text-left">
+            <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
+              Tome controle{" "}
+              <span className="text-yellow-400">Compre & Use</span> Items da
+              loja.
+            </h2>
+            <p className={`mt-4 ${game.fontFamily} ${styles.paragraphGame}`}>
+              Ao clica em comprar voce será redirecionado para o responsável
+              do Trade
+            </p>
           </div>
-          <div className="lg:-mt-12 justify-center items-center">
-            <SearchBar
-              searchTerm={searchItem}
-              changeFunction={handleInputChange}
-            />
-          </div>
-          <div className={`${styles.boxWidth}`}>
-            <Carousel slides={filteredProducts} game={game} />
-          </div>
+        <div className="lg:-mt-12 justify-center items-center">
+          <SearchBar
+            searchTerm={searchItem}
+            changeFunction={handleInputChange}
+          />
+        </div>
+
+        </div>
+        <div className={`${styles.boxWidth}`}>
+          <Carousel slides={filteredProducts} game={game} />
         </div>
       </div>
-    </section>
+</section>
   );
 };
 

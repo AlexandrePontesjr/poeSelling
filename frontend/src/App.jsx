@@ -1,4 +1,4 @@
-import { Billing, Hero, Navbar } from "./components";
+import { Billing, Hero, Navbar, Services, Testimonials, Footer, FAQ } from "./components";
 import styles from "./styles";
 
 const App = ({ game }) => {
@@ -21,44 +21,39 @@ const App = ({ game }) => {
             <source src={game.videoSrc} type="" />
           </video>
           <div className={`${styles.boxWidth2} relative`}>
-          <Navbar game={game} />
+            <Navbar game={game} />
             <Hero game={game} />
           </div>
         </div>
-          <div className={` ${game.cssClassBG} ${styles.flexStart} `}>
-            <div className={` ${styles.boxWidth2} `}>
-              <Billing game={game} />
-            </div>
+        <div className={` ${game.cssClassBG} ${styles.flexStart} `}>
+          <div className={` ${styles.boxWidth2} `}>
+            <Billing game={game} />
           </div>
-      </div>
-      {/*
-      <div className={`
-      ${game == "2" ? ('backgroundImageItemsDiablo') : game == "1" ? ('backgroundImagepathExile') : ('backgroundImagelastEpoch')}
-      ${styles.flexStart}`}>
-        <div className={`h-full ${styles.boxWidth2}`}>
-          <Services game={game} />
         </div>
-      </div>
-
-
-      <div className={`
-      ${game == "2" ? ('backgroundImageItemsDiablo') : game == "1" ? ('backgroundImagepathExile') : ('backgroundImagelastEpoch')}
-      ${styles.flexStart}`}>
-        <div className={`h-full ${styles.boxWidth2}`}>
-          <Testimonials />
+        <div className={`${game.cssClassBG} ${styles.flexStart}`}>
+          <div className={`${styles.boxWidth2}`}>
+            <Services game={game} />
+          </div>
         </div>
-      </div>
-
+        <div className={`
+          ${game.cssClassBG}
+          ${styles.flexStart}`}>
+          <div className={`${styles.boxWidth2}`}>
+            <Testimonials game={game} />
+          </div>
+        </div>
+{/*
     <div className="backgroundImageTestemonial">
-      <div className={` ${styles.flexStart}`}>
-        <div className={`h-full ${styles.boxWidth2}`}>
-          <FAQ />
-        </div>
+    <div className={` ${styles.flexStart}`}>
+    <div className={`h-full ${styles.boxWidth2}`}>
+    <FAQ />
+    </div>
       </div>
     </div>
     <div className={`bg-black`}>
       <Footer />
     </div> */}
+  </div>
     </>
   );
 };

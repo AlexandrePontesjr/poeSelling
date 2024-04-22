@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getServices } from "../api/products/products";
 import { CarouselService, SearchBar } from ".";
-import styles, { layout } from "../styles";
+import { getServices } from "../api/products/products";
+import styles from "../styles";
 
-const Services = () => {
+const Services = ({game}) => {
   const [products, setProducts] = useState([]);
   const [searchItem, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -11,7 +11,7 @@ const Services = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await getServices();
+        const res = await getServices(game.id);
         setProducts(res.content);
         setFilteredProducts(res.content);
       } catch (error) {
@@ -19,7 +19,7 @@ const Services = () => {
       }
     };
     fetchProducts();
-  }, []);
+  }, [game]);
 
   const handleInputChange = (e) => {
     const searchTerm = e.target.value;
@@ -38,35 +38,33 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className={``}>
-      <div className="">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <div className="text-center sm:text-left">
-              <h2 className={styles.heading2}>
-                Tome controle do Game <br className="sm:block hidden" /> Compre
-                Nossos Serviços da loja.
-              </h2>
-
-              <p className={`${styles.paragraph2} max-w-[650px] mt-5`}>
-                Procure pelos melhores items no nosso site
-              </p>
-            </div>
-
-            <div className="mt-4 flex flex-col gap-4 sm:w-3/5 h-full w-full sm:mt-0 sm:flex-row sm:items-center">
-              <SearchBar
-                searchTerm={searchItem}
-                changeFunction={handleInputChange}
-              />
-            </div>
-          </div>
-
-          <div className={layout.sectionInfo}>
-            <CarouselService slides={filteredProducts} />
-          </div>
+<section id="services" className={`relative`}>
+  <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className=" sm:flex  sm:items-center">
+        <div className=" text-left sm:text-left">
+          <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
+            Tome controle do Game <br className="sm:block hidden" /> Compre{" "}
+            <span className="text-yellow-400">Nossos Serviços</span>{" "}
+            da loja.
+          </h2>
+          <p className={`mt-4 ${game.fontFamily} ${styles.paragraphGame}`}>
+            Procure pelos melhores items no nosso site
+          </p>
         </div>
+        <div className="w-[350px]  lg:w-[550px]">
+          <SearchBar
+            searchTerm={searchItem}
+            changeFunction={handleInputChange}
+          />
+        </div>
+
       </div>
-    </section>
+
+      <div className={`${styles.boxWidth}`}>
+        <CarouselService slides={filteredProducts} game={game} />
+      </div>
+    </div>
+</section>
   );
 };
 

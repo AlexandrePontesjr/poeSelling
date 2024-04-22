@@ -36,7 +36,6 @@
 
 * {
   scroll-behavior: smooth;
-  
 }
 section {
   min-height: 800px;
@@ -53,7 +52,6 @@ section {
 }
 
 .navbar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -150,7 +148,7 @@ section {
 }
 
 .bg-discount-gradient {
-  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+  background: linear-gradient(125.17deg, #272727 0%, #11101de7 100%);
 }
 
 .box-shadow {
@@ -240,7 +238,6 @@ section {
 }
 
 .bg-black-item {
-  
   border: 4px outset rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   box-shadow:
@@ -252,7 +249,6 @@ section {
   transition: background-color 459ms linear;
   backdrop-filter: grayscale(100%);
   -webkit-backdrop-filter: grayscale(100%);
-
 }
 
 .bg-black-items {
@@ -270,7 +266,6 @@ section {
   transition: background-color 459ms linear;
   backdrop-filter: grayscale(100%);
   -webkit-backdrop-filter: grayscale(100%);
-  
 
 }
 
@@ -327,6 +322,6 @@ box-shadow: var(--card-shadow);
   background-repeat: no-repeat;
   transform: rotate(180deg);
   z-index: 0;
- }
+}
 
 
