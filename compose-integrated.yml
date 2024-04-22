@@ -1,0 +1,34 @@
+version: "3.4"
+
+volumes:
+  pg-data:
+
+services:
+  tty_test:
+    image: ubuntu
+    command: tail -F /dev/null
+
+  database:
+    image: postgres:14-alpine
+    container_name: poe_selling_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg-data:/pgdata
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=sa
+      - POSTGRES_DB=poeselling
+      - PGDATA=/pgdata
+
+  frontend:
+      container_name: poe_selling_frontend
+      image: poe_selling_frontend:latest
+      ports:
+        - "8080:80"
+
+  backend:
+    container_name: poe_selling_backend
+    image: poe_selling_backend:latest
+    ports:
+     - "3601:3601"

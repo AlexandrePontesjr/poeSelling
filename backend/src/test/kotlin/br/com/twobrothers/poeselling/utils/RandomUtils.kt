@@ -2,6 +2,7 @@ package br.com.twobrothers.poeselling.utils
 
 import br.com.twobrothers.poeselling.domain.Product
 import br.com.twobrothers.poeselling.domain.QuestionAndAnswer
+import br.com.twobrothers.poeselling.domain.Tenant
 import br.com.twobrothers.poeselling.domain.User
 import java.math.BigDecimal
 import java.util.*
@@ -30,6 +31,13 @@ fun randomUserObject(): User {
     return User(
         username = randomString(),
         password = randomString(),
+    )
+}
+
+fun randomTenant(): Tenant {
+    return Tenant(
+        id = randomInt(),
+        name = randomString(),
     )
 }
 

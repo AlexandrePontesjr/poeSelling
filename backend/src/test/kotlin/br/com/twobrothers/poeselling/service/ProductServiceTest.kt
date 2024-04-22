@@ -4,6 +4,7 @@ import br.com.twobrothers.poeselling.domain.Product.Type.*
 import br.com.twobrothers.poeselling.repository.ProductRepository
 import br.com.twobrothers.poeselling.utils.randomProduct
 import br.com.twobrothers.poeselling.utils.randomString
+import br.com.twobrothers.poeselling.utils.randomTenant
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -18,20 +19,21 @@ class ProductServiceTest {
     private val productService = ProductService(productRepository)
 
     @Test
-    fun `should get all Products when exists from a specific type`() {
+    fun `should get all Products when exists from a specific type and Tenant`() {
         val pageable: Pageable = mock()
         val product = randomProduct()
         val page = PageImpl(listOf(product))
-        whenever(productRepository.findAllByType(any(), any())).thenReturn(page)
+        whenever(productRepository.findAllByTypeAndTenant(any(), any(), any())).thenReturn(page)
 
-        val result = productService.gelAll(pageable, product.type)
+        val result = productService.gelAll(pageable, product.type, product.tenant)
 
         assertEquals(1, result.content.size.toLong())
         assertEquals(product.id, result.content[0].id)
         assertEquals(product.type, result.content[0].type)
+        assertEquals(product.tenant, result.content[0].tenant)
         assertEquals(product.image, result.content[0].image)
         assertEquals(product.status, result.content[0].status)
-        verify(productRepository, times(1)).findAllByType(any(), any())
+        verify(productRepository, times(1)).findAllByTypeAndTenant(any(), any(), any())
     }
 
     @Test
@@ -42,14 +44,14 @@ class ProductServiceTest {
             randomProduct().copy(type = ITEM)
         ))
 
-        whenever(productRepository.findAll(eq(pageable))).thenReturn(page)
+        whenever(productRepository.findAllByTenant(eq(pageable), any())).thenReturn(page)
 
-        val result = productService.gelAll(pageable, ALL)
+        val result = productService.gelAll(pageable, ALL, randomTenant())
 
         assertEquals(2, result.content.size.toLong())
         assertEquals(SERVICE, result.content[0].type)
         assertEquals(ITEM, result.content[1].type)
-        verify(productRepository, times(1)).findAll(eq(pageable))
+        verify(productRepository, times(1)).findAllByTenant(eq(pageable), any())
     }
 
     @Test
@@ -101,7 +103,7 @@ class ProductServiceTest {
     fun delete() {
         doNothing().whenever(productRepository).delete(any())
 
-        productService.delete(randomProduct().id, randomString())
+        productService.delete(randomProduct().id, randomTenant().id, randomString())
 
         verify(productRepository, times(1)).delete(any())
     }
