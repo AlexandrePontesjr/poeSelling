@@ -12,7 +12,6 @@ import axios from "axios";
 //         console.log(error);
 //       });
 // }
-
 console.log(import.meta.env.VITE_BACKEND_URL);
 const baseURL = import.meta.env.VITE_BACKEND_URL;
 

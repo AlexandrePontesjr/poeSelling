@@ -3,13 +3,11 @@ package br.com.twobrothers.poeselling.service
 import br.com.twobrothers.poeselling.repository.QuestionAndAnswerRepository
 import br.com.twobrothers.poeselling.utils.randomQuestionAndAnswer
 import br.com.twobrothers.poeselling.utils.randomString
-import br.com.twobrothers.poeselling.utils.randomUserObject
+import br.com.twobrothers.poeselling.utils.randomTenant
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.assertThrows
 import org.mockito.kotlin.*
-import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
 import org.springframework.data.domain.Pageable
 import java.util.*
@@ -24,11 +22,13 @@ class QuestionAndAnswerServiceTest {
         val pageable = mock<Pageable>()
         val questionAndAnswer = randomQuestionAndAnswer()
         val page = PageImpl(listOf(questionAndAnswer))
-        whenever(questionAndAnswerRepository.findAll(pageable)).thenReturn(page)
+        val tenant = randomTenant()
 
-        val result = questionAndAnswerService.gelAll(pageable)
+        whenever(questionAndAnswerRepository.findAllByTenant(pageable, tenant)).thenReturn(page)
 
-        verify(questionAndAnswerRepository, times(1)).findAll(pageable)
+        val result = questionAndAnswerService.gelAll(pageable, tenant)
+
+        verify(questionAndAnswerRepository, times(1)).findAllByTenant(pageable, tenant)
         assertEquals(1, result.content.size.toLong())
         assertEquals(questionAndAnswer.id, result.content[0].id)
         assertEquals(questionAndAnswer.question, result.content[0].question)
@@ -76,7 +76,7 @@ class QuestionAndAnswerServiceTest {
     fun delete() {
         doNothing().whenever(questionAndAnswerRepository).delete(any())
 
-        questionAndAnswerService.delete(randomQuestionAndAnswer().id, randomString())
+        questionAndAnswerService.delete(randomQuestionAndAnswer().id, randomTenant().id, randomString())
 
         verify(questionAndAnswerRepository, times(1)).delete(any())
     }
