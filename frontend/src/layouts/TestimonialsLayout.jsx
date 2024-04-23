@@ -4,14 +4,21 @@ import {
   Package,
   Star,
 } from "lucide-react";
-import { useState, useEffect } from "react";
-import { Button, CrudModal, Sidebar, SidebarItem } from "../components";
-import QATableItem from "../components/QATableItem";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getQuestions } from "../api/qas/qas";
+import { ToastContainer } from "react-toastify";
+import { getTestimonials } from "../api/testimonials/testimonials";
 import { getGames } from "../api/game/games";
+import {
+  Button,
+  CrudModal,
+  ProductTableItem,
+  Sidebar,
+  SidebarItem,
+  TestimonialsTableItem,
+} from "../components";
 
-function QALayout() {
+function TestimonialsLayout() {
   const [modal, setModal] = useState(false);
   const [games, setGames] = useState(null);
   const [game, setGame] = useState(1);
@@ -20,15 +27,15 @@ function QALayout() {
   );
   const [modalAction, setModalAction] = useState("");
   const [action, setAction] = useState("");
-  const [questions, setQuestions] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
   const [modalEntity, setModalEntity] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchQuestions = async () => {
+    const fetchTestimonials = async () => {
       try {
-        const res = await getQuestions(game);
-        setQuestions(res.content);
+        const res = await getTestimonials(game);
+        setTestimonials(res.content);
       } catch (error) {
         console.log(error);
       }
@@ -43,9 +50,28 @@ function QALayout() {
       }
     };
 
-    fetchQuestions();
+    fetchTestimonials();
     fetchGames();
   }, [game]);
+
+  const contextClass = {
+    success: "bg-blue-600",
+    error: "bg-black",
+    info: "bg-gray-600",
+    warning: "bg-orange-400",
+    default: "bg-indigo-600",
+    dark: "bg-white-600 font-gray-300",
+  };
+
+  const onChangeHandler = (e) => {
+    const index = e.target.selectedIndex;
+    const el = e.target.childNodes[index];
+    const option = el.getAttribute("id");
+    console.log(option);
+    setGame(option);
+    console.log(games[index].image);
+    setGameLogo(games[index].image);
+  };
 
   function Toggle(action, entity) {
     setModal(!modal);
@@ -60,18 +86,8 @@ function QALayout() {
     }
   }
 
-  const onChangeHandler = (e) => {
-    const index = e.target.selectedIndex;
-    const el = e.target.childNodes[index];
-    const option = el.getAttribute("id");
-    console.log(option);
-    setGame(option);
-    console.log(games[index].image);
-    setGameLogo(games[index].image);
-  };
-
   return localStorage.token ? (
-    <div className="flex">
+    <div className="flex bg-slate-900">
       <Sidebar gameLogo={gameLogo}>
         <SidebarItem
           path={"/admin/services"}
@@ -87,15 +103,15 @@ function QALayout() {
           path={"/admin/testimonials"}
           icon={<Star size={20} />}
           text="Testimonials"
+          active
         />
         <SidebarItem
           path={"/admin/qas"}
           icon={<MessageCircleQuestion size={20} />}
           text="Q&A"
-          active
         />
       </Sidebar>
-      <div className="w-full bg-black overflow-scroll">
+      <div className="w-full overflow-hidden">
         <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
           <div className="flex flex-row justify-center items-center">
             <h1 className="text-white ">Game:</h1>
@@ -114,20 +130,17 @@ function QALayout() {
             </select>
           </div>
           <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-xl font-bold text-white">
-              Questions & Answers
-            </h1>
+            <h1 className="text-xl font-bold text-white">Testimonials</h1>
             <Button
-              color="bg-white"
-              textColor={"text-black"}
+              color="bg-green-400"
               className="w-full sm:w-auto"
-              onClickEvent={() => Toggle("Create Question & Answer")}
+              onClickEvent={() => Toggle("Create Testimonials")}
             >
-              New ++
+              ADICIONAR NOVO ITEM ++
             </Button>
           </div>
           <CrudModal
-            type="qa"
+            type="testimonials"
             show={modal}
             game={game}
             entity={modalEntity}
@@ -135,19 +148,22 @@ function QALayout() {
             action={action}
             close={(action) => Toggle(action, null)}
           >
-            Create Question & Answer
+            Create Testimonials
           </CrudModal>
           <div className="flex flex-col gap-10">
-            <div className="rounded-sm border border-stroke bg-black text-white px-5 pb-2.5 pt-6 shadow-default sm:px-7.5 xl:pb-1">
-              <div className="max-w-full overflow-x-auto">
-                <table className="w-full table-auto">
+            <div className="font-poppins text-[20px] rounded-sm border border-stroke bg-slate-900 px-5 pb-2.5 pt-6 shadow-default sm:px-7.5 xl:pb-1">
+              <div className="max-w-full overflow-x-auto overflow-y-auto max-h-[600px]">
+                <table className="min-w-full table-auto">
                   <thead>
-                    <tr className="bg-gray-2 text-left">
+                    <tr className="bg-gray-2 text-left ">
                       <th className="min-w-[220px] px-4 py-4 font-medium text-white xl:pl-11">
-                        Question
+                        Mensagem
                       </th>
                       <th className="min-w-[150px] px-4 py-4 font-medium text-white">
-                        Answer
+                        Nome
+                      </th>
+                      <th className="min-w-[120px] px-4 py-4 font-medium text-white">
+                        Status
                       </th>
                       <th className="px-4 py-4 font-medium text-white">
                         Actions
@@ -155,30 +171,30 @@ function QALayout() {
                     </tr>
                   </thead>
                   <tbody>
-                    {questions.map((question, index) =>
-                      index === questions.length - 1 ? (
-                        <QATableItem
-                          key={question.id}
-                          entityId={question.id}
-                          name={question.question}
-                          answer={question.answer}
-                          status="active"
+                    {testimonials.map((testimonial, index) =>
+                      index === testimonials.length - 1 ? (
+                        <TestimonialsTableItem
+                          key={testimonial.id}
+                          entityId={testimonial.id}
+                          name={testimonial.name}
+                          message={testimonial.message}
+                          status={testimonial.status}
                           gameId={game}
                           isLast={true}
                           openModal={() =>
-                            Toggle("Edit Question & Answer", question)
+                            Toggle("Edit Testimonials", testimonial)
                           }
                         />
                       ) : (
-                        <QATableItem
-                          key={question.id}
-                          entityId={question.id}
-                          name={question.question}
-                          answer={question.answer}
-                          status="active"
+                        <TestimonialsTableItem
+                          key={testimonial.id}
+                          entityId={testimonial.id}
+                          name={testimonial.name}
+                          message={testimonial.message}
+                          status={testimonial.status}
                           gameId={game}
                           openModal={() =>
-                            Toggle("Edit Question & Answer", question)
+                            Toggle("Edit Testimonials", testimonial)
                           }
                         />
                       )
@@ -189,6 +205,15 @@ function QALayout() {
             </div>
           </div>
         </div>
+        <ToastContainer
+          toastClassName={(context) =>
+            contextClass[context?.type || "default"] +
+            " relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer"
+          }
+          bodyClassName={() => "text-sm font-white font-med block p-3"}
+          position="bottom-left"
+          autoClose={3000}
+        />
       </div>
     </div>
   ) : (
@@ -196,4 +221,4 @@ function QALayout() {
   );
 }
 
-export default QALayout;
+export default TestimonialsLayout;

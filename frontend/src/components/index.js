@@ -23,6 +23,7 @@ import CarouselService from "./CarouselService";
 import ListService from "./ListService";
 import FAQ from "./FAQ";
 import GameIcon from "./GameIcon";
+import TestimonialsTableItem from "./TestimonialsTableItem";
 
 export {
   GameIcon,
@@ -50,4 +51,5 @@ export {
   Testimonials,
   Hero,
   FAQ,
+  TestimonialsTableItem,
 };

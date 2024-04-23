@@ -1,4 +1,9 @@
-import { HandPlatter, MessageCircleQuestion, Package } from "lucide-react";
+import {
+  HandPlatter,
+  MessageCircleQuestion,
+  Package,
+  Star,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -93,6 +98,11 @@ function ProductLayout() {
           icon={<Package size={20} />}
           text="Products"
           active
+        />
+        <SidebarItem
+          path={"/admin/testimonials"}
+          icon={<Star size={20} />}
+          text="Testimonials"
         />
         <SidebarItem
           path={"/admin/qas"}

@@ -4,7 +4,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App.jsx";
 import { AuthProvider } from "./backend/contexts/auth.jsx";
 import "./index.css";
-import { ProductLayout, QALayout, ServiceLayout } from "./layouts";
+import {
+  ProductLayout,
+  QALayout,
+  ServiceLayout,
+  TestimonialsLayout,
+} from "./layouts";
 import LoginAdmin from "./layouts/LoginAdmin.jsx";
 import { GameDetails } from "./constants";
 
@@ -24,6 +29,7 @@ export default function Main() {
         />
         <Route path="admin" element={<LoginAdmin />} />
         <Route path="admin/products" element={<ProductLayout />} />
+        <Route path="admin/testimonials" element={<TestimonialsLayout />} />
         <Route path="admin/services" element={<ServiceLayout />} />
         <Route path="admin/qas" element={<QALayout />} />
       </Routes>
