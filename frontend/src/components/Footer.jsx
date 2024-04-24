@@ -2,7 +2,7 @@ import { logo } from "../assets";
 import { footerLinks } from "../constants";
 
 const Footer = () => (
-  <div className={`flex gap-12 justify-center items-center w-full flex-col py-8`}>
+  <div className={`flex justify-center items-center w-full flex-col py-8`}>
     <img
       src={logo}
       alt="TradeRoom"

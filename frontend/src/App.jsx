@@ -41,7 +41,7 @@ const App = ({ game }) => {
             <FAQ game={game} />
           </div>
         </div>
-        <div className={`bg-discount-gradient${styles.flexCenter}`}>
+        <div className={`bg-discount-gradient ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth2}`}>
             <Footer game={game} />
           </div>
