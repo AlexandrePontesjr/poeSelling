@@ -22,10 +22,10 @@ const App = ({ game }) => {
           </video>
           <div className={`${styles.boxWidth2} relative`}>
             <Navbar game={game} />
-            <Hero game={game} />
+            {/* <Hero game={game} /> */}
           </div>
         </div>
-        <div className={` ${game.cssClassBG} ${styles.flexStart} `}>
+        {/* <div className={` ${game.cssClassBG} ${styles.flexStart} `}>
           <div className={` ${styles.boxWidth2} `}>
             <Billing game={game} />
           </div>
@@ -40,6 +40,15 @@ const App = ({ game }) => {
           ${styles.flexStart}`}>
           <div className={`${styles.boxWidth2}`}>
             <Testimonials game={game} />
+          </div>
+        </div> */}
+        <div className={`
+          bg-discount-gradient
+          ${styles.flexCenter}`}>
+          <div className={`
+          ${styles.boxWidth2}
+          `}>
+          <Footer game={game} />
           </div>
         </div>
 {/*
