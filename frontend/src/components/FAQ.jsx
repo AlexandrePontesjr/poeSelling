@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getQuestions } from "../api/qas/qas";
 
-const Faq = () => {
+const Faq = ({ game }) => {
   const toggleAccordion = (id) => {
     setQuestions(
       questions.map((q) =>
@@ -17,7 +17,6 @@ const Faq = () => {
     const fetchQuestions = async () => {
       try {
         const res = await getQuestions(1);
-        // Add isOpen attribute to each question object
         const questionsWithState = res.content.map((question) => ({
           ...question,
           isOpen: false,
@@ -33,7 +32,7 @@ const Faq = () => {
   return (
     <section
       id="faq"
-      className="font-pirata mt-4 h-full text-white md:text-4xl"
+      className={`${game.fontFamily} mt-4 h-full text-white md:text-4xl`}
     >
       <div id="title" className="flex flex-col-reverse md:flex-row">
         <h1 className="basis-1/4 text-xs mb-5 md:text-xl text-center">
@@ -45,7 +44,7 @@ const Faq = () => {
         <h1 className="basis-1/4"></h1>
       </div>
 
-      <div id="question-list" className="h-[300px] overflow-scroll">
+      <div id="question-list" className="overflow-scroll no-scrollbar">
         <div
           id="list-item-1"
           className="flex flex-col items-center justify-center mb-[100px]"

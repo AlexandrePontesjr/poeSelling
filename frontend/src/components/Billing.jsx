@@ -51,7 +51,7 @@ const Billing = ({ game }) => {
               Trade
             </p>
           </div>
-          <div className="lg:-mt-12">
+          <div className="">
             <SearchBar
               searchTerm={searchItem}
               changeFunction={handleInputChange}
