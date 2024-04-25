@@ -17,7 +17,7 @@ function ProductLayout() {
   const [games, setGames] = useState(null);
   const [game, setGame] = useState(1);
   const [gameLogo, setGameLogo] = useState(
-    "https://upload.wikimedia.org/wikipedia/en/0/08/Path_of_Exile_Logo.png"
+    "https://upload.wikimedia.org/wikipedia/en/0/08/Path_of_Exile_logo.svg"
   );
   const [modalAction, setModalAction] = useState("");
   const [action, setAction] = useState("");

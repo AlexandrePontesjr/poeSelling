@@ -23,8 +23,9 @@ import CarouselService from "./CarouselService";
 import ListService from "./ListService";
 import FAQ from "./FAQ";
 import GameIcon from "./GameIcon";
-
+import ScrollTop from "./ScrollTop";
 export {
+  ScrollTop,
   GameIcon,
   Navbar,
   Items,

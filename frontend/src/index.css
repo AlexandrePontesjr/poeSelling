@@ -44,11 +44,8 @@ section {
 
 
 .backgroundImage{
-  background-image: url("./assets/poe_bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
+  background-image: url("./assets/diabloIcon.svg");
+  background-repeat: repeat;
   background-color: #000000;
 }
 
@@ -325,4 +322,16 @@ box-shadow: var(--card-shadow);
   z-index: 0;
 }
 
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1; /* Inicialmente definido como transparente */
+  transition: opacity 1s ease; /* Adiciona uma transição suave */
+}
 
+.video.loaded {
+  opacity: 1;
+}

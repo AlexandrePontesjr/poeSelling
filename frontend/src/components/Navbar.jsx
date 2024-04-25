@@ -9,33 +9,9 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
-  const isHomeSection = location.pathname == "/" ? true : false;
-
   return (
-    <nav className="w-full flex py-6 lg:py-6 justify-between items-center navbar">
-      <img src={logo} alt="renew" className="w-[150px] h-[90px] ml-6 lg:ml-8" />
-      {/*GAME 1 PATH OF EXILE, 2 DIABLO, 3 LAST EPOCH*/}
-      {!isHomeSection && (
-        <div className="w-full flex justify-center">
-          {Object.entries(GameDetails).map((gameInfo, index) => (
-            <Link key={index} to={gameInfo.path} relative="path">
-              <Button
-                variant="plain"
-                color=""
-                size=""
-                sx={{
-                  transition: "transform 0.3s",
-                  "&:hover": {
-                    transform: "scale(1.3)",
-                  },
-                }}
-              >
-                <GameIcon game={gameInfo} />
-              </Button>
-            </Link>
-          ))}
-        </div>
-      )}
+    <nav className="py-2 w-full flex items-center justify-between navbar">
+      <img src={logo} alt="RealmXcoins" className="w-[100px] h-[70px] ml-6" />
 
       <ul className="mr-6 lg:mr-8 list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -62,7 +38,7 @@ const Navbar = () => {
         <div
           className={`${
             !toggle ? "hidden" : "flex"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          } z-[999] p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             {navLinks.map((nav, index) => (

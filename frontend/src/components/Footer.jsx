@@ -5,15 +5,15 @@ const Footer = () => (
   <div className={`flex justify-center items-center w-full flex-col py-8`}>
     <img
       src={logo}
-      alt="TradeRoom"
+      alt="ReamXcoins"
       className="w-[266px] h-[72.14px] object-contain"
     />
-    <div className="w-full">
+    <div className="py-3 w-full">
       <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white ">
         Copyright &copy; 2024 SkinD. All Rights Reserved.
       </p>
       {footerLinks.map((footerlink) => (
-        <div key={footerlink.title} className={`gap-16  flex ss:my-0 my-4 min-w-[150px]  justify-center py-8`}>
+        <div key={footerlink.title} className={`lg:gap-16 flex ss:my-0 my-4 min-w-[150px] items-center justify-center py-8 ${'lg:flex-row flex-col'}`}>
           <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
             RealmXcoins
           </h4>
