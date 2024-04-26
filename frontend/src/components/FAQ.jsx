@@ -16,19 +16,18 @@ const Faq = ({ game }) => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const res = await getQuestions(1);
+        const res = await getQuestions(game.id);
         const questionsWithState = res.content.map((question) => ({
           ...question,
           isOpen: false,
         }));
-        console.log(questionsWithState);
         setQuestions(questionsWithState);
       } catch (error) {
         console.log(error);
       }
     };
     fetchQuestions();
-  }, []);
+  }, [game]);
 
   return (
     <section
@@ -48,11 +47,11 @@ const Faq = ({ game }) => {
       <div id="question-list" className="overflow-scroll no-scrollbar">
         <div
           id="list-item-1"
-          className="flex flex-col items-center justify-center mb-[100px]"
+          className="bg-white flex flex-col items-center justify-center mb-[100px]"
         >
           {questions.map((question) => {
             return (
-              <div key={question.id} className="w-[80%] md:w-[50%] mb-4">
+              <div key={question.id} className="w-[70%] md:w-[70%] mb-4">
                 <div
                   className="flex justify-between items-center bg-black shadow-md px-4 py-2 rounded cursor-pointer"
                   onClick={() => toggleAccordion(question.id)}
