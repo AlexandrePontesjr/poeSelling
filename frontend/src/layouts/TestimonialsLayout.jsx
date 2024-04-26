@@ -7,12 +7,11 @@ import {
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { getTestimonials } from "../api/testimonials/testimonials";
 import { getGames } from "../api/game/games";
+import { getTestimonials } from "../api/testimonials/testimonials";
 import {
   Button,
   CrudModal,
-  ProductTableItem,
   Sidebar,
   SidebarItem,
   TestimonialsTableItem,

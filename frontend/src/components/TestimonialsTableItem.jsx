@@ -1,5 +1,8 @@
-import { PencilLine, Trash2 } from "lucide-react";
-import { deleteTestimonialsById } from "../api/testimonials/testimonials";
+import { PencilLine, ThumbsDown, ThumbsUp, Trash2 } from "lucide-react";
+import {
+  deleteTestimonialsById,
+  updateStatusTestimonial,
+} from "../api/testimonials/testimonials";
 
 //{`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
 export default function TestimonialsTableItem({
@@ -13,6 +16,10 @@ export default function TestimonialsTableItem({
 }) {
   function deleteClicked() {
     deleteTestimonialsById(entityId, gameId);
+  }
+
+  function approveItem(decision) {
+    updateStatusTestimonial(entityId, gameId, decision);
   }
 
   return (
@@ -38,8 +45,26 @@ export default function TestimonialsTableItem({
       </td>
       <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5`}>
         <div className="flex items-center space-x-3.5">
+          {status == "PENDING" ? (
+            <div>
+              <button
+                title="Aprovar"
+                className="hover:text-primary"
+                onClick={() => approveItem("APPROVED")}
+              >
+                <ThumbsUp className="w-6 h-6 text-white hover:text-yellow-500" />
+              </button>
+              <button
+                title="Rejeitar"
+                className="hover:text-primary"
+                onClick={() => approveItem("REJECTED")}
+              >
+                <ThumbsDown className="w-6 h-6 text-red hover:text-yellow-500" />
+              </button>
+            </div>
+          ) : null}
           <button
-            title="Salvar"
+            title="Editar"
             className="hover:text-primary"
             onClick={openModal}
           >
