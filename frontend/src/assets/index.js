@@ -43,7 +43,12 @@ import ShopItemCoin from "./ShopItemCoin.png";
 import shop_item_bg from "./shop_item_bg.webp";
 import arrowNotch from "./arrowNotch.webp";
 import bullet from "./bullet.webp";
+import mercadoPagoIcone from "./mercadoPago.svg";
+import MuitosCurrencys from "./MuitosCurrencys.svg";
+
 export {
+  MuitosCurrencys,
+  mercadoPagoIcone,
   arrowNotch,
   payPal,
   bullet,

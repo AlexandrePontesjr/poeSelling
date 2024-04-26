@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { GameDetails } from "../constants";
 
 import {
-  itemsHero,
+  MuitosCurrencys,
   servicesImage,
 } from "../assets";
 
@@ -50,7 +50,7 @@ const Hero = ({game}) => {
           >
             <div className="relative inline-block group">
               <a href="#items">
-                <img className="block " src={itemsHero} alt="" />
+                <img className="block " src={MuitosCurrencys} alt="" />
                 <span className={`${game.fontFamily} font-bold absolute top-0 left-1 px-3 ml-2 text-yellow-500 text-[16px]  lg:text-[28px] transition-opacity duration-300 opacity-100 group-hover:opacity-0`}>
                   Compre Items
                 </span>

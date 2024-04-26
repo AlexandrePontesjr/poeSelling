@@ -1,4 +1,4 @@
-import { ShopItemCoin, logoPoe, pix, whatsapp, payPal } from "../assets";
+import { ShopItemCoin, logoPoe, pix, mercadoPagoIcone, payPal } from "../assets";
 import Box from "@mui/joy/Box";
 
 const Items = ({ product , game }) => {
@@ -52,7 +52,7 @@ const Items = ({ product , game }) => {
         </div>
           <div style={{ maxHeight: 40 }} className=" w-full  justify-between flex">
           <img style={{ maxHeight: 40 }} className="" src={pix} alt="" />
-          <img style={{ maxHeight: 40 }} className="" src={whatsapp} alt="" />
+          <img style={{ maxHeight: 40 }} className="" src={mercadoPagoIcone} alt="" />
           <img style={{ maxHeight: 40 }} className="" src={payPal} alt="" />
           </div>
         </div>
