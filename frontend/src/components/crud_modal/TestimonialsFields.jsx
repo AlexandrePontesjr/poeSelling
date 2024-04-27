@@ -1,81 +1,157 @@
-import Rating from "../Rating";
+import {
+  Rating,
+  FormControl,
+  InputLabel,
+  TextField,
+  Select,
+  MenuItem,
+} from "@mui/material";
+
 const TestimonialsFields = ({
   entity,
   setMessage,
   setAvatarId,
   setRating,
   setStatus,
+  setName,
 }) => {
-  // Catch Rating value
-  const handleRating = (rate) => {
-    setRating(rate);
-  };
-
-  const onPointerEnter = () => console.log("Enter");
-  const onPointerLeave = () => console.log("Leave");
-  const onPointerMove = (value, index) => console.log(value, index);
-
   return (
     <div className="grid gap-4">
       <div className="grid gap-1.5">
-        <label
-          className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
-          htmlFor="name"
-        >
-          Message
-        </label>
         {entity != null ? (
-          <input
+          <TextField
+            id="message-input"
             onChange={(e) => {
               setMessage(e.target.value);
               entity.message = e.target.value;
             }}
-            className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            id="message"
             value={entity.message}
-            placeholder="Enter the message"
+            label="Message"
+            variant="outlined"
           />
         ) : (
-          <input
-            onChange={(e) => setMessage(e.target.value)}
-            className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            id="message"
-            placeholder="Enter the message"
+          <TextField
+            id="message-input"
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+            label="Message"
+            variant="outlined"
           />
+        )}
+      </div>
+      <div className="grid gap-1.5">
+        {entity != null ? (
+          <TextField
+            id="name-input"
+            onChange={(e) => {
+              setName(e.target.value);
+              entity.name = e.target.value;
+            }}
+            value={entity.name}
+            label="Name (Nick)"
+            variant="outlined"
+          />
+        ) : (
+          <TextField
+            id="name-input"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            label="Name (Nick)"
+            variant="outlined"
+          />
+        )}
+      </div>
+      {entity != null ? (
+        <FormControl fullWidth>
+          <InputLabel id="avatar-label">Avatar</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={entity.avatarId}
+            label="Age"
+            onChange={(e) => {
+              setAvatarId(e.target.value);
+              entity.avatarId = e.target.value;
+            }}
+          >
+            <MenuItem value={1}>Ten</MenuItem>
+            <MenuItem value={2}>Twenty</MenuItem>
+            <MenuItem value={3}>Thirty</MenuItem>
+          </Select>
+        </FormControl>
+      ) : (
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Avatar</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="Age"
+            onChange={(e) => {
+              setAvatarId(e.target.value);
+            }}
+          >
+            <MenuItem value={1}>Ten</MenuItem>
+            <MenuItem value={2}>Twenty</MenuItem>
+            <MenuItem value={3}>Thirty</MenuItem>
+          </Select>
+        </FormControl>
+      )}
+      <div className="grid gap-1.5">
+        {entity != null ? (
+          <FormControl fullWidth>
+            <InputLabel id="avatar-label">Status</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={entity.status}
+              label="Status"
+              onChange={(e) => {
+                setStatus(e.target.value);
+                entity.status = e.target.value;
+              }}
+            >
+              <MenuItem value={"PENDING"}>PENDING</MenuItem>
+              <MenuItem value={"APPROVED"}>APPROVED</MenuItem>
+              <MenuItem value={"REJECTED"}>REJECTED</MenuItem>
+            </Select>
+          </FormControl>
+        ) : (
+          <FormControl fullWidth>
+            <InputLabel id="status-label">Status</InputLabel>
+            <Select
+              labelId="status-select-label"
+              id="status"
+              label="Status"
+              onChange={(e) => {
+                setAvatarId(e.target.value);
+              }}
+            >
+              <MenuItem value={1}>PENDING</MenuItem>
+              <MenuItem value={2}>APPROVED</MenuItem>
+              <MenuItem value={3}>REJECTED</MenuItem>
+            </Select>
+          </FormControl>
         )}
       </div>
       <div className="grid gap-1.5">
         <label className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm">
           Rating
         </label>
-        <Rating />
-      </div>
-      <div className="grid gap-1.5">
-        <label
-          className="font-medium text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
-          htmlFor="email"
-        >
-          Answer
-        </label>
         {entity != null ? (
-          <input
-            onChange={(e) => {
-              setAnswer(e.target.value);
-              entity.answer = e.target.value;
+          <Rating
+            onChange={(event, newValue) => {
+              setRating(newValue);
+              entity.rating = newValue;
             }}
-            className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            id="answer"
-            value={entity.answer}
-            placeholder="Enter the answer"
-            type="text"
+            value={entity.rating}
           />
         ) : (
-          <input
-            onChange={(e) => setAnswer(e.target.value)}
-            className="flex h-10 w-full rounded-md border border-input text-white bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            id="answer"
-            placeholder="Enter the answer"
-            type="text"
+          <Rating
+            onChange={(event, newValue) => {
+              setRating(newValue);
+            }}
           />
         )}
       </div>

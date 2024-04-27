@@ -3,6 +3,7 @@ import {
   deleteTestimonialsById,
   updateStatusTestimonial,
 } from "../api/testimonials/testimonials";
+import Rating from "@mui/material/Rating";
 
 //{`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
 export default function TestimonialsTableItem({
@@ -10,6 +11,8 @@ export default function TestimonialsTableItem({
   name,
   message,
   status,
+  avatarId,
+  rating,
   openModal,
   entityId,
   gameId,
@@ -35,6 +38,12 @@ export default function TestimonialsTableItem({
         <p className="text-white">{name}</p>
       </td>
       <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5 `}>
+        <p className="text-white">{avatarId}</p>
+      </td>
+      <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5 `}>
+        <Rating className="!static" name="read-only" value={rating} readOnly />
+      </td>
+      <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5 `}>
         {status == "APPROVED" ? (
           <p className="text-green-500">{status}</p>
         ) : status == "PENDING" ? (
@@ -46,7 +55,7 @@ export default function TestimonialsTableItem({
       <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5`}>
         <div className="flex items-center space-x-3.5">
           {status == "PENDING" ? (
-            <div>
+            <div className=" space-x-3.5">
               <button
                 title="Aprovar"
                 className="hover:text-primary"
@@ -59,7 +68,7 @@ export default function TestimonialsTableItem({
                 className="hover:text-primary"
                 onClick={() => approveItem("REJECTED")}
               >
-                <ThumbsDown className="w-6 h-6 text-red hover:text-yellow-500" />
+                <ThumbsDown className="w-6 h-6 text-white hover:text-yellow-500" />
               </button>
             </div>
           ) : null}

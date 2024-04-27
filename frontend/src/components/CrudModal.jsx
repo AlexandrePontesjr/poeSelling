@@ -16,7 +16,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
   const [message, setMessage] = useState("");
   const [avatarId, setAvatarId] = useState("");
   const [rating, setRating] = useState(0);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState(1);
   const [price, setPrice] = useState("");
   const [image_url, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
@@ -48,7 +48,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
         setMessage("");
         setAvatarId("");
         setRating(0);
-        setStatus("");
+        setStatus(1);
       }
     };
     fetchEntity();
@@ -103,6 +103,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
             id: id,
             message: message,
             avatarId: avatarId,
+            name: name,
             rating: rating,
             status: status,
             gameId: game,
@@ -126,6 +127,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
       : createTestimonials({
           message: message,
           avatarId: avatarId,
+          name: name,
           rating: rating,
           status: status,
           gameId: game,
@@ -160,7 +162,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                     setQuestion={setQuestion}
                     setAnswer={setAnswer}
                   />
-                ) : type == "product" ? (
+                ) : type == "product" || type == "service" ? (
                   <ProductFields
                     entity={entity}
                     setName={setName}
@@ -175,6 +177,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                     setMessage={setMessage}
                     setAvatarId={setAvatarId}
                     setRating={setRating}
+                    setName={setName}
                     setStatus={setStatus}
                   />
                 )}

@@ -159,7 +159,13 @@ function TestimonialsLayout() {
                         Mensagem
                       </th>
                       <th className="min-w-[150px] px-4 py-4 font-medium text-white">
-                        Nome
+                        Name (Nick)
+                      </th>
+                      <th className="min-w-[150px] px-4 py-4 font-medium text-white">
+                        Avatar ID
+                      </th>
+                      <th className="min-w-[150px] px-4 py-4 font-medium text-white">
+                        Rating
                       </th>
                       <th className="min-w-[120px] px-4 py-4 font-medium text-white">
                         Status
@@ -176,6 +182,8 @@ function TestimonialsLayout() {
                           key={testimonial.id}
                           entityId={testimonial.id}
                           name={testimonial.name}
+                          avatarId={testimonial.avatarId}
+                          rating={testimonial.rating}
                           message={testimonial.message}
                           status={testimonial.status}
                           gameId={game}
@@ -189,6 +197,8 @@ function TestimonialsLayout() {
                           key={testimonial.id}
                           entityId={testimonial.id}
                           name={testimonial.name}
+                          avatarId={testimonial.avatarId}
+                          rating={testimonial.rating}
                           message={testimonial.message}
                           status={testimonial.status}
                           gameId={game}

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App.jsx";
 import { AuthProvider } from "./backend/contexts/auth.jsx";
+import { GameDetails } from "./constants";
 import "./index.css";
 import {
   ProductLayout,
@@ -11,7 +12,6 @@ import {
   TestimonialsLayout,
 } from "./layouts";
 import LoginAdmin from "./layouts/LoginAdmin.jsx";
-import { GameDetails } from "./constants";
 
 export default function Main() {
   return (
