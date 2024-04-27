@@ -1,7 +1,6 @@
 import { feedback } from "../constants";
 import styles from "../styles";
 import FeedbackCard from "./FeedbackCard";
-import Avatar from '@mui/joy/Avatar';
 
 const Testimonials = ({game}) => (
   <section id="clients" className="w-full py-12 md:py-24 lg:py-32">
