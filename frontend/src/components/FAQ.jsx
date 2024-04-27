@@ -16,7 +16,7 @@ const Faq = ({ game }) => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const res = await getQuestions(1);
+        const res = await getQuestions(game.id);
         const questionsWithState = res.content.map((question) => ({
           ...question,
           isOpen: false,
@@ -28,7 +28,7 @@ const Faq = ({ game }) => {
       }
     };
     fetchQuestions();
-  }, []);
+  }, [game]);
 
   return (
     <section
