@@ -23,10 +23,12 @@ import CarouselService from "./CarouselService";
 import ListService from "./ListService";
 import FAQ from "./FAQ";
 import GameIcon from "./GameIcon";
+import ScrollTop from "./ScrollTop";
 import TestimonialsTableItem from "./TestimonialsTableItem";
 import AvatarFromSprite from "./AvatarFromSprite";
 
 export {
+  ScrollTop,
   GameIcon,
   Navbar,
   Items,

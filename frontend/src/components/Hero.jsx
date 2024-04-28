@@ -3,11 +3,10 @@ import style , { layout } from "../styles";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import { Link } from "react-router-dom";
+import { GameDetails } from "../constants";
+
 import {
-  diabloIcon,
   itemsHero,
-  lastEpocIcon,
-  poeIcon,
   servicesImage,
 } from "../assets";
 
@@ -19,7 +18,7 @@ const Hero = ({game}) => {
       style={{ position: "relative" }}
     >
       <div className="flex-col">
-        <div className={`py-20 xl:px-0 sm:px-16 px-6 opacity-70 `}>
+        <div className={`xl:px-0 sm:px-16 px-6`}>
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -28,11 +27,11 @@ const Hero = ({game}) => {
             <h1 className={`${game.fontFamily} flex-1 font-semibold md:text-[58px] lg:text-[78px] text-[38px]  text-yellow-400 ss:leading-[100.8px] lg:leading-[75px] hover:text-sky-200`}>
               Bem Vindo <br />
               <span className="text-sky-100 hover:text-yellow-400">
-                Renewal Trade Shop
+                Realm Exchange coins
               </span>{" "}
               <br />
             </h1>
-            <p className={`${style.paragraphGame} ${game.fontFamily} `}>
+            <p className={`${style.paragraphGame} ${game.fontFamily} mt-2 `}>
               Somos veteranos no ramo de vendas de jogos online,
               oferecendo serviços e venda <br /> de items dos ARPGs mais jogados do<br />
               mercado, garantindo transações seguras e suporte dedicado.
@@ -40,7 +39,7 @@ const Hero = ({game}) => {
           </motion.div>
         </div>
 
-        <div className="justify-center px-2 gap-2 flex lg:mt-[205px] lg:gap-20  lg:justify-center">
+        <div className="py-16 lg:py-0 justify-center flex lg:flex-col-1 gap-6 px-5 lg:px-2 lg:flex lg:mt-[205px] lg:gap-20  lg:justify-center">
           <Box
             sx={{
               transition: "transform 0.3s",
@@ -85,8 +84,9 @@ const Hero = ({game}) => {
           </Box>
         </div>
       </div>
-      <div className="flex justify-between  lg:ml-80 lg:flex lg:flex-col lg:gap-16 lg:-px-28 lg:py-28 ">
-        <Link to={"/diablo-4"} reloadDocument relative="path">
+      <div className="sm:py-10 items-center justify-center flex gap-10 lg:gap-24 lg:ml-80 lg:flex lg:flex-col">
+        {Object.values(GameDetails).map((game, index) => (
+        <Link key={index} to={game.path} reloadDocument relative="path">
           <Button
             variant="solid"
             color=""
@@ -98,39 +98,10 @@ const Hero = ({game}) => {
               },
             }}
           >
-            <img className="h-24 mx-2" src={diabloIcon} alt="" />
+            <img className="h-24 mx-2" src={game.icon} alt="" />
           </Button>
         </Link>
-        <Link to={"/path-of-exile"} reloadDocument relative="path">
-          <Button
-            variant="solid"
-            color=""
-            size="lg"
-            sx={{
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.3)",
-              },
-            }}
-          >
-            <img className="h-24 mx-2" src={poeIcon} alt="" />
-          </Button>
-        </Link>
-        <Link to={"/last-epoch"} reloadDocument relative="path">
-          <Button
-            variant="solid"
-            color=""
-            size="lg"
-            sx={{
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.3)",
-              },
-            }}
-          >
-            <img className="h-24 mx-2" src={lastEpocIcon} alt="" />
-          </Button>
-        </Link>
+        ))}
       </div>
     </section>
   );

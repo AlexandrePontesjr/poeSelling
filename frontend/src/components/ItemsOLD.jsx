@@ -1,7 +1,7 @@
 {
   /* <Card variant="plain" size="sm" sx={{ backgroundColor: "transparent" }}>
   <CardContent>
-    <Typography textColor="white" level="body-xs">Renewal</Typography>
+    <Typography textColor="white" level="body-xs">RealmXcoins</Typography>
     <Link
       href={
         `https://api.whatsapp.com/send?` +
