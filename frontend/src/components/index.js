@@ -24,6 +24,7 @@ import ListService from "./ListService";
 import FAQ from "./FAQ";
 import GameIcon from "./GameIcon";
 import TestimonialsTableItem from "./TestimonialsTableItem";
+import AvatarFromSprite from "./AvatarFromSprite";
 
 export {
   GameIcon,
@@ -52,4 +53,5 @@ export {
   Hero,
   FAQ,
   TestimonialsTableItem,
+  AvatarFromSprite,
 };

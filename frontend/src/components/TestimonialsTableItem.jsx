@@ -1,9 +1,11 @@
+import Rating from "@mui/material/Rating";
 import { PencilLine, ThumbsDown, ThumbsUp, Trash2 } from "lucide-react";
 import {
   deleteTestimonialsById,
   updateStatusTestimonial,
 } from "../api/testimonials/testimonials";
-import Rating from "@mui/material/Rating";
+import { getGameDetailsById } from "../constants";
+import AvatarFromSprite from "./AvatarFromSprite";
 
 //{`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
 export default function TestimonialsTableItem({
@@ -24,7 +26,6 @@ export default function TestimonialsTableItem({
   function approveItem(decision) {
     updateStatusTestimonial(entityId, gameId, decision);
   }
-
   return (
     <tr>
       <td
@@ -38,7 +39,13 @@ export default function TestimonialsTableItem({
         <p className="text-white">{name}</p>
       </td>
       <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5 `}>
-        <p className="text-white">{avatarId}</p>
+        {avatarId != null ? (
+          <AvatarFromSprite
+            name={getGameDetailsById(gameId).avatars[avatarId].name}
+            imageClass={getGameDetailsById(gameId).avatars[avatarId].image}
+            position={getGameDetailsById(gameId).avatars[avatarId].position}
+          />
+        ) : null}
       </td>
       <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5 `}>
         <Rating className="!static" name="read-only" value={rating} readOnly />

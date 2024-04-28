@@ -179,6 +179,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
                     setRating={setRating}
                     setName={setName}
                     setStatus={setStatus}
+                    game={game}
                   />
                 )}
               </div>

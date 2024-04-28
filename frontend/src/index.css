@@ -51,6 +51,37 @@ section {
   background-color: #000000;
 }
 
+.backgroundAvatarPathOfExile{
+  background-image: url("./assets/avatars/sprite_poe.png");
+}
+
+.bgAvatarDiabloBarbarian{
+  background-image: url("./assets/avatars/barbarian_logo.png");
+  background-size: contain;
+}
+.bgAvatarDiabloDruid{
+  background-image: url("./assets/avatars/druid_logo.png");
+  background-size: contain;
+}
+.bgAvatarDiabloNecromancer{
+  background-image: url("./assets/avatars/necromancer_logo.png");
+  background-size: contain;
+}
+.bgAvatarDiabloRogue{
+  background-image: url("./assets/avatars/rogue_logo.png");
+  background-size: contain;
+}
+.bgAvatarDiabloSorcerer{
+  background-image: url("./assets/avatars/sorcerer_logo.png");
+  background-size: contain;
+}
+
+.poeNecromancerLogoPosition{background-position: left -190px bottom -12px;}
+.poeChampionLogoPosition{background-position: right -119px top -15px}
+.poeSlayerLogoPosition{background-position: right -18px top -15px}
+.poeTrickerLogoPosition{background-position: right 162px top 263px}
+.poeElementalistLogoPosition{background-position: left -110px bottom -12px}
+
 .navbar {
   top: 0;
   left: 0;
