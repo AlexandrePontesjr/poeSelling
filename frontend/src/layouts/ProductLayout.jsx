@@ -1,3 +1,9 @@
+import {
+  HandPlatter,
+  MessageCircleQuestion,
+  Package,
+  Star,
+} from "lucide-react";
 import CircularProgress from "@mui/material/CircularProgress";
 import {
   HandPlatter,

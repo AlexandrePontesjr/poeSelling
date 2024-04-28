@@ -12,6 +12,7 @@ import {
   TestimonialsLayout,
 } from "./layouts";
 import LoginAdmin from "./layouts/LoginAdmin.jsx";
+import { GameDetails } from "./constants";
 
 export default function Main() {
   return (
