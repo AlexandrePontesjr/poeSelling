@@ -1,3 +1,4 @@
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   HandPlatter,
   MessageCircleQuestion,
@@ -27,27 +28,29 @@ function ServiceLayout() {
   const [action, setAction] = useState("");
   const [services, setServices] = useState([]);
   const [modalEntity, setModalEntity] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await getServices(game);
-        setServices(res.content);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    const fetchGames = async () => {
-      try {
-        const gameRes = await getGames();
-        setGames(gameRes);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const fetchServices = async (game) => {
+    try {
+      const res = await getServices(game);
+      setServices(res.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const fetchGames = async () => {
+    try {
+      const gameRes = await getGames();
+      setGames(gameRes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    fetchProducts();
+  useEffect(() => {
+    fetchServices(game);
     fetchGames();
   }, [game]);
 
@@ -61,7 +64,19 @@ function ServiceLayout() {
     setGameLogo(games[index].image);
   };
 
+  const refreshScope = () => {
+    setRefresh(!refresh);
+    setServices([]);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      fetchServices(game);
+      fetchGames();
+    }, 500);
+  };
+
   function Toggle(action, entity) {
+    if (modal == true) refreshScope();
     setModal(!modal);
     if (action != "cancel") {
       setModalAction(action);
@@ -158,30 +173,38 @@ function ServiceLayout() {
                     </tr>
                   </thead>
                   <tbody>
-                    {services.map((service, index) =>
-                      index === services.length - 1 ? (
-                        <ProductTableItem
-                          key={service.id}
-                          entityId={service.id}
-                          name={service.name}
-                          price={service.price}
-                          gameId={game}
-                          image={service.image}
-                          status="active"
-                          isLast={true}
-                          openModal={() => Toggle("Edit Service", service)}
-                        />
-                      ) : (
-                        <ProductTableItem
-                          key={service.id}
-                          entityId={service.id}
-                          name={service.name}
-                          gameId={game}
-                          price={service.price}
-                          image={service.image}
-                          status="active"
-                          openModal={() => Toggle("Edit Service", service)}
-                        />
+                    {isLoading ? (
+                      <div className="w-full items-center justify-center">
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      services.map((service, index) =>
+                        index === services.length - 1 ? (
+                          <ProductTableItem
+                            key={service.id}
+                            entityId={service.id}
+                            name={service.name}
+                            price={service.price}
+                            gameId={game}
+                            image={service.image}
+                            status="active"
+                            isLast={true}
+                            openModal={() => Toggle("Edit Service", service)}
+                            refresh={refreshScope}
+                          />
+                        ) : (
+                          <ProductTableItem
+                            key={service.id}
+                            entityId={service.id}
+                            name={service.name}
+                            gameId={game}
+                            price={service.price}
+                            image={service.image}
+                            status="active"
+                            openModal={() => Toggle("Edit Service", service)}
+                            refresh={refreshScope}
+                          />
+                        )
                       )
                     )}
                   </tbody>

@@ -10,9 +10,11 @@ export default function ProductTableItem({
   openModal,
   entityId,
   gameId,
+  refresh,
 }) {
   function deleteClicked() {
     deleteProductById(entityId, gameId);
+    refresh();
   }
 
   return (
@@ -34,10 +36,18 @@ export default function ProductTableItem({
       </td>
       <td className={`${isLast ? " " : "border-b border-[#eee]"} px-4 py-5`}>
         <div className="flex items-center space-x-3.5">
-          <button title="Salvar" className="hover:text-primary" onClick={openModal}>
+          <button
+            title="Salvar"
+            className="hover:text-primary"
+            onClick={openModal}
+          >
             <PencilLine className="w-6 h-6 text-white hover:text-yellow-500" />
           </button>
-          <button title="Deletar" onClick={deleteClicked}  className="hover:text-primary">
+          <button
+            title="Deletar"
+            onClick={deleteClicked}
+            className="hover:text-primary"
+          >
             <Trash2 className="w-6 h-6 text-white hover:text-red-500" />
           </button>
         </div>

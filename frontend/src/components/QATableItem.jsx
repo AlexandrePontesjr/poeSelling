@@ -9,10 +9,11 @@ export default function QATableItem({
   answer,
   openModal,
   gameId,
+  refresh,
 }) {
   function deleteClicked() {
     deleteQuestionById(entityId, gameId);
-    // window.location.reload();
+    refresh();
   }
 
   return (

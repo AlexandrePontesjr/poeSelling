@@ -58,27 +58,27 @@ export const GameDetails = {
         avatars: [
             {
                 name: "Necromancer",
-                image: "backgroundAvatarPathOfExile",
+                image: "bgAvatarPathOfExile",
                 position: "poeNecromancerLogoPosition",
             },
             {
                 name: "Champion",
-                image: "backgroundAvatarPathOfExile",
+                image: "bgAvatarPathOfExile",
                 position: "poeChampionLogoPosition",
             },
             {
                 name: "Slayer",
-                image: "backgroundAvatarPathOfExile",
+                image: "bgAvatarPathOfExile",
                 position: "poeSlayerLogoPosition",
             },
             {
                 name: "Trickster",
-                image: "backgroundAvatarPathOfExile",
+                image: "bgAvatarPathOfExile",
                 position: "poeTricksterLogoPosition",
             },
             {
                 name: "Elementalist",
-                image: "backgroundAvatarPathOfExile",
+                image: "bgAvatarPathOfExile",
                 position: "poeElementalistLogoPosition",
             }
         ],
@@ -93,29 +93,29 @@ export const GameDetails = {
         fontFamily: "font-lastEpoch",
         avatars: [
             {
-                name: "Necromancer",
-                image: "backgroundAvatarPathOfExile",
-                position: "left_-190px_bottom_-12px",
+                name: "Sentinel",
+                image: "bgAvatarLastEpoch",
+                position: "leSentinelLogoPosition",
             },
             {
-                name: "Champion",
-                image: "backgroundAvatarPathOfExile",
-                position: "right_-119px_top_-15px",
+                name: "Mage",
+                image: "bgAvatarLastEpoch",
+                position: "leMageLogoPosition",
             },
             {
-                name: "Slayer",
-                image: "backgroundAvatarPathOfExile",
-                position: "right_-18px_top_-15px",
+                name: "Acolyte",
+                image: "bgAvatarLastEpoch",
+                position: "leAcolyteLogoPosition",
             },
             {
-                name: "Trickster",
-                image: "backgroundAvatarPathOfExile",
-                position: "right_162px_top_263px",
+                name: "Primalist",
+                image: "bgAvatarLastEpoch",
+                position: "lePrimalistLogoPosition",
             },
             {
-                name: "Elementalist",
-                image: "backgroundAvatarPathOfExile",
-                position: "left_-110px_bottom_-12px",
+                name: "Rogue",
+                image: "bgAvatarLastEpoch",
+                position: "leRogueLogoPosition",
             }
         ],
     }

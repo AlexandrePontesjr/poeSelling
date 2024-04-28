@@ -18,13 +18,16 @@ export default function TestimonialsTableItem({
   openModal,
   entityId,
   gameId,
+  refresh,
 }) {
   function deleteClicked() {
     deleteTestimonialsById(entityId, gameId);
+    refresh();
   }
 
   function approveItem(decision) {
     updateStatusTestimonial(entityId, gameId, decision);
+    refresh();
   }
   return (
     <tr>

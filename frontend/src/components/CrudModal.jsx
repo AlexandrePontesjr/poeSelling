@@ -80,6 +80,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
   function handleSubmit() {
     console.log("action: " + action);
     console.log("game" + game);
+    console.log(show);
     action == "edit"
       ? type == "qa"
         ? editQuestion({
@@ -132,6 +133,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
           status: status,
           gameId: game,
         });
+    close("success");
   }
 
   return (

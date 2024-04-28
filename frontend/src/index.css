@@ -51,8 +51,12 @@ section {
   background-color: #000000;
 }
 
-.backgroundAvatarPathOfExile{
+.bgAvatarPathOfExile{
   background-image: url("./assets/avatars/sprite_poe.png");
+}
+
+.bgAvatarLastEpoch{
+  background-image: url("./assets/avatars/sprite_last_epoch.webp");
 }
 
 .bgAvatarDiabloBarbarian{
@@ -81,6 +85,12 @@ section {
 .poeSlayerLogoPosition{background-position: right -18px top -15px}
 .poeTrickerLogoPosition{background-position: right 162px top 263px}
 .poeElementalistLogoPosition{background-position: left -110px bottom -12px}
+
+.leMageLogoPosition{background-position: left -136px top -5px;}
+.leSentinelLogoPosition{background-position: right -75px top -71px;}
+.leAcolyteLogoPosition{background-position: right -7px top -134px;}
+.lePrimalistLogoPosition{background-position: right -8px bottom -14px;}
+.leRogueLogoPosition{background-position: left -2px bottom -85px;}
 
 .navbar {
   top: 0;

@@ -31,14 +31,19 @@ export async function deleteProductById(id, gameId) {
       },
     })
     .then(function (response) {
-      window.location.reload();
+      toast(id + " deleted successfully", {
+        bodyClassName: "font-pirata bg-black text-white text-center",
+
+        type: "success",
+        draggable: true,
+        position: "bottom-center",
+      });
       return response.data;
     })
     .catch(function (error) {
       axiosInstance.console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
         toast("user session expire", {
           bodyClassName: "font-pirata bg-black text-white text-center",
           type: "error",
@@ -58,7 +63,7 @@ export async function createProduct(data) {
       },
     })
     .then(function (response) {
-      window.location.reload();
+      console.log(data);
       toast(data.type + " created successfully", {
         bodyClassName: "font-pirata bg-black text-white text-center",
 
@@ -72,7 +77,6 @@ export async function createProduct(data) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
         toast("user session expire", {
           bodyClassName: "font-pirata bg-black text-white text-center",
           type: "error",
@@ -93,8 +97,7 @@ export async function editProduct(data) {
       },
     })
     .then(function (response) {
-      window.location.reload();
-      toast(data.type + " created successfully", {
+      toast(data.type + " edited successfully", {
         bodyClassName: "font-pirata bg-black text-white text-center",
 
         type: "success",
@@ -107,7 +110,6 @@ export async function editProduct(data) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
         toast("user session expire", {
           bodyClassName: "font-pirata bg-black text-white text-center",
           type: "error",

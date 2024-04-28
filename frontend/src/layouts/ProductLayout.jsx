@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { getProducts } from "../api/products/products";
 import { getGames } from "../api/game/games";
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   Button,
   CrudModal,
@@ -27,31 +28,44 @@ function ProductLayout() {
   const [modalAction, setModalAction] = useState("");
   const [action, setAction] = useState("");
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const [modalEntity, setModalEntity] = useState(null);
   const navigate = useNavigate();
 
+  const fetchProducts = async (game) => {
+    try {
+      const res = await getProducts(game);
+      setProducts(res.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchGames = async () => {
+    try {
+      const gameRes = await getGames();
+      setGames(gameRes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await getProducts(game);
-        setProducts(res.content);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const fetchGames = async () => {
-      try {
-        const gameRes = await getGames();
-        setGames(gameRes);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchProducts();
+    fetchProducts(game);
     fetchGames();
   }, [game]);
+
+  const refreshScope = () => {
+    setRefresh(!refresh);
+    setProducts([]);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      fetchProducts(game);
+      fetchGames();
+    }, 500);
+  };
 
   const contextClass = {
     success: "bg-blue-600",
@@ -73,6 +87,7 @@ function ProductLayout() {
   };
 
   function Toggle(action, entity) {
+    if (modal == true) refreshScope();
     setModal(!modal);
     if (action != "cancel") {
       setModalAction(action);
@@ -170,30 +185,38 @@ function ProductLayout() {
                     </tr>
                   </thead>
                   <tbody>
-                    {products.map((product, index) =>
-                      index === products.length - 1 ? (
-                        <ProductTableItem
-                          key={product.id}
-                          entityId={product.id}
-                          name={product.name}
-                          price={product.price}
-                          image={product.image}
-                          gameId={game}
-                          status="active"
-                          isLast={true}
-                          openModal={() => Toggle("Edit Product", product)}
-                        />
-                      ) : (
-                        <ProductTableItem
-                          key={product.id}
-                          entityId={product.id}
-                          name={product.name}
-                          price={product.price}
-                          image={product.image}
-                          gameId={game}
-                          status="active"
-                          openModal={() => Toggle("Edit Product", product)}
-                        />
+                    {isLoading ? (
+                      <div className="w-full items-center justify-center">
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      products.map((product, index) =>
+                        index === products.length - 1 ? (
+                          <ProductTableItem
+                            key={product.id}
+                            entityId={product.id}
+                            name={product.name}
+                            price={product.price}
+                            image={product.image}
+                            gameId={game}
+                            status="active"
+                            isLast={true}
+                            openModal={() => Toggle("Edit Product", product)}
+                            refresh={refreshScope}
+                          />
+                        ) : (
+                          <ProductTableItem
+                            key={product.id}
+                            entityId={product.id}
+                            name={product.name}
+                            price={product.price}
+                            image={product.image}
+                            gameId={game}
+                            status="active"
+                            openModal={() => Toggle("Edit Product", product)}
+                            refresh={refreshScope}
+                          />
+                        )
                       )
                     )}
                   </tbody>

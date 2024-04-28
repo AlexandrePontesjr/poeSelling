@@ -10,7 +10,6 @@ export default function Sidebar({ gameLogo, children }) {
 
   function logout() {
     localStorage.removeItem("token");
-    window.location.reload();
   }
 
   return (

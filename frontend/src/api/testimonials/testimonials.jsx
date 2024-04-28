@@ -16,14 +16,19 @@ export async function deleteTestimonialsById(id, gameId) {
   return axiosInstance
     .delete(`/testimonials/${id}?gameId=${gameId}`)
     .then(function (response) {
-      window.location.reload();
+      toast("Testimonial deleted successfully", {
+        bodyClassName: "font-pirata bg-black text-white text-center",
+
+        type: "success",
+        draggable: true,
+        position: "bottom-center",
+      });
       return response.data;
     })
     .catch(function (error) {
       axiosInstance.console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
         toast("user session expire", {
           bodyClassName: "font-pirata bg-black text-white text-center",
           type: "error",
@@ -39,14 +44,19 @@ export async function updateStatusTestimonial(id, gameId, status) {
   return axiosInstance
     .patch(`/testimonials/${id}?gameId=${gameId}&status=${status}`)
     .then(function (response) {
-      window.location.reload();
+      toast("Testimonial status updated successfully", {
+        bodyClassName: "font-pirata bg-black text-white text-center",
+
+        type: "success",
+        draggable: true,
+        position: "bottom-center",
+      });
       return response.data;
     })
     .catch(function (error) {
       axiosInstance.console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
         toast("user session expire", {
           bodyClassName: "font-pirata bg-black text-white text-center",
           type: "error",
@@ -62,8 +72,8 @@ export async function createTestimonials(data) {
   return axiosInstance
     .post(`/testimonials`, data)
     .then(function (response) {
-      window.location.reload();
-      toast(data + " created successfully", {
+      console.log(data);
+      toast("Testimonial created successfully", {
         bodyClassName: "font-pirata bg-black text-white text-center",
 
         type: "success",
@@ -76,7 +86,6 @@ export async function createTestimonials(data) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
         toast("user session expire", {
           bodyClassName: "font-pirata bg-black text-white text-center",
           type: "error",
@@ -93,8 +102,8 @@ export async function editTestimonials(data) {
   return axiosInstance
     .put(`/testimonials/${data.id}`, data)
     .then(function (response) {
-      window.location.reload();
-      toast(data + " created successfully", {
+      console.log(data);
+      toast("Testimonial edited successfully", {
         bodyClassName: "font-pirata bg-black text-white text-center",
 
         type: "success",
@@ -107,7 +116,6 @@ export async function editTestimonials(data) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
         toast("user session expire", {
           bodyClassName: "font-pirata bg-black text-white text-center",
           type: "error",

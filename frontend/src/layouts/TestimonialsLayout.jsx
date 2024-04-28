@@ -1,3 +1,4 @@
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   HandPlatter,
   MessageCircleQuestion,
@@ -28,30 +29,44 @@ function TestimonialsLayout() {
   const [action, setAction] = useState("");
   const [testimonials, setTestimonials] = useState([]);
   const [modalEntity, setModalEntity] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate();
 
+  const fetchTestimonials = async (game) => {
+    try {
+      const res = await getTestimonials(game);
+      setTestimonials(res.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchGames = async () => {
+    try {
+      const gameRes = await getGames();
+      setGames(gameRes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        const res = await getTestimonials(game);
-        setTestimonials(res.content);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const fetchGames = async () => {
-      try {
-        const gameRes = await getGames();
-        setGames(gameRes);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchTestimonials();
+    console.log("use effect");
+    fetchTestimonials(game);
     fetchGames();
   }, [game]);
+
+  const refreshScope = () => {
+    setRefresh(!refresh);
+    setTestimonials([]);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      fetchTestimonials(game);
+      fetchGames();
+    }, 500);
+  };
 
   const contextClass = {
     success: "bg-blue-600",
@@ -73,6 +88,7 @@ function TestimonialsLayout() {
   };
 
   function Toggle(action, entity) {
+    if (modal == true) refreshScope();
     setModal(!modal);
     if (action != "cancel") {
       setModalAction(action);
@@ -176,36 +192,44 @@ function TestimonialsLayout() {
                     </tr>
                   </thead>
                   <tbody>
-                    {testimonials.map((testimonial, index) =>
-                      index === testimonials.length - 1 ? (
-                        <TestimonialsTableItem
-                          key={testimonial.id}
-                          entityId={testimonial.id}
-                          name={testimonial.name}
-                          avatarId={testimonial.avatarId}
-                          rating={testimonial.rating}
-                          message={testimonial.message}
-                          status={testimonial.status}
-                          gameId={game}
-                          isLast={true}
-                          openModal={() =>
-                            Toggle("Edit Testimonials", testimonial)
-                          }
-                        />
-                      ) : (
-                        <TestimonialsTableItem
-                          key={testimonial.id}
-                          entityId={testimonial.id}
-                          name={testimonial.name}
-                          avatarId={testimonial.avatarId}
-                          rating={testimonial.rating}
-                          message={testimonial.message}
-                          status={testimonial.status}
-                          gameId={game}
-                          openModal={() =>
-                            Toggle("Edit Testimonials", testimonial)
-                          }
-                        />
+                    {isLoading ? (
+                      <div className="w-full items-center justify-center">
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      testimonials.map((testimonial, index) =>
+                        index === testimonials.length - 1 ? (
+                          <TestimonialsTableItem
+                            key={testimonial.id}
+                            entityId={testimonial.id}
+                            name={testimonial.name}
+                            avatarId={testimonial.avatarId}
+                            rating={testimonial.rating}
+                            message={testimonial.message}
+                            status={testimonial.status}
+                            gameId={game}
+                            isLast={true}
+                            openModal={() =>
+                              Toggle("Edit Testimonials", testimonial)
+                            }
+                            refresh={refreshScope}
+                          />
+                        ) : (
+                          <TestimonialsTableItem
+                            key={testimonial.id}
+                            entityId={testimonial.id}
+                            name={testimonial.name}
+                            avatarId={testimonial.avatarId}
+                            rating={testimonial.rating}
+                            message={testimonial.message}
+                            status={testimonial.status}
+                            gameId={game}
+                            openModal={() =>
+                              Toggle("Edit Testimonials", testimonial)
+                            }
+                            refresh={refreshScope}
+                          />
+                        )
                       )
                     )}
                   </tbody>

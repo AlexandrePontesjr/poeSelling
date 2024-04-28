@@ -1,3 +1,4 @@
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   HandPlatter,
   MessageCircleQuestion,
@@ -21,33 +22,47 @@ function QALayout() {
   const [modalAction, setModalAction] = useState("");
   const [action, setAction] = useState("");
   const [questions, setQuestions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const [modalEntity, setModalEntity] = useState(null);
   const navigate = useNavigate();
 
+  const fetchQuestions = async (game) => {
+    try {
+      const res = await getQuestions(game);
+      setQuestions(res.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchGames = async () => {
+    try {
+      const gameRes = await getGames();
+      setGames(gameRes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const res = await getQuestions(game);
-        setQuestions(res.content);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const fetchGames = async () => {
-      try {
-        const gameRes = await getGames();
-        setGames(gameRes);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchQuestions();
+    fetchQuestions(game);
     fetchGames();
   }, [game]);
 
+  const refreshScope = () => {
+    setRefresh(!refresh);
+    setQuestions([]);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      fetchQuestions(game);
+      fetchGames();
+    }, 500);
+  };
+
   function Toggle(action, entity) {
+    if (modal == true) refreshScope();
     setModal(!modal);
     if (action != "cancel") {
       setModalAction(action);
@@ -155,32 +170,40 @@ function QALayout() {
                     </tr>
                   </thead>
                   <tbody>
-                    {questions.map((question, index) =>
-                      index === questions.length - 1 ? (
-                        <QATableItem
-                          key={question.id}
-                          entityId={question.id}
-                          name={question.question}
-                          answer={question.answer}
-                          status="active"
-                          gameId={game}
-                          isLast={true}
-                          openModal={() =>
-                            Toggle("Edit Question & Answer", question)
-                          }
-                        />
-                      ) : (
-                        <QATableItem
-                          key={question.id}
-                          entityId={question.id}
-                          name={question.question}
-                          answer={question.answer}
-                          status="active"
-                          gameId={game}
-                          openModal={() =>
-                            Toggle("Edit Question & Answer", question)
-                          }
-                        />
+                    {isLoading ? (
+                      <div className="w-full items-center justify-center">
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      questions.map((question, index) =>
+                        index === questions.length - 1 ? (
+                          <QATableItem
+                            key={question.id}
+                            entityId={question.id}
+                            name={question.question}
+                            answer={question.answer}
+                            status="active"
+                            gameId={game}
+                            isLast={true}
+                            openModal={() =>
+                              Toggle("Edit Question & Answer", question)
+                            }
+                            refresh={refreshScope}
+                          />
+                        ) : (
+                          <QATableItem
+                            key={question.id}
+                            entityId={question.id}
+                            name={question.question}
+                            answer={question.answer}
+                            status="active"
+                            gameId={game}
+                            openModal={() =>
+                              Toggle("Edit Question & Answer", question)
+                            }
+                            refresh={refreshScope}
+                          />
+                        )
                       )
                     )}
                   </tbody>
