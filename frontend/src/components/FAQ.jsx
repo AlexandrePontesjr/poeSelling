@@ -22,7 +22,6 @@ const Faq = () => {
           ...question,
           isOpen: false,
         }));
-        console.log(questionsWithState);
         setQuestions(questionsWithState);
       } catch (error) {
         console.log(error);

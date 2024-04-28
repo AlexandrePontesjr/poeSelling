@@ -24,8 +24,6 @@ const TestimonialsFields = ({
   setName,
   game,
 }) => {
-  console.log("game: " + game);
-  console.log(game);
   return (
     <ThemeProvider theme={darkTheme}>
       <div className="grid gap-4">

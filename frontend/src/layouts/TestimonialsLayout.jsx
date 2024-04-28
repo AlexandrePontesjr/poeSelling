@@ -52,7 +52,6 @@ function TestimonialsLayout() {
   };
 
   useEffect(() => {
-    console.log("use effect");
     fetchTestimonials(game);
     fetchGames();
   }, [game]);
@@ -81,9 +80,7 @@ function TestimonialsLayout() {
     const index = e.target.selectedIndex;
     const el = e.target.childNodes[index];
     const option = el.getAttribute("id");
-    console.log(option);
     setGame(option);
-    console.log(games[index].image);
     setGameLogo(games[index].image);
   };
 
@@ -93,8 +90,6 @@ function TestimonialsLayout() {
     if (action != "cancel") {
       setModalAction(action);
       setAction(action.includes("Edit") ? "edit" : "create");
-      console.log("Is edit? " + action + " and entity " + entity);
-      console.log(entity);
       if (action.includes("Create")) setModalEntity(null);
       else if (action !== null && action.includes("Edit"))
         setModalEntity(entity);

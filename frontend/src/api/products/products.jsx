@@ -63,7 +63,6 @@ export async function createProduct(data) {
       },
     })
     .then(function (response) {
-      console.log(data);
       toast(data.type + " created successfully", {
         bodyClassName: "font-pirata bg-black text-white text-center",
 
@@ -89,7 +88,6 @@ export async function createProduct(data) {
 }
 
 export async function editProduct(data) {
-  console.log("starting to edit product");
   return axiosInstance
     .put(`/products/${data.id}`, data, {
       headers: {

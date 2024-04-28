@@ -5,12 +5,12 @@ import {
   Package,
   Star,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getGames } from "../api/game/games";
+import { getQuestions } from "../api/qas/qas";
 import { Button, CrudModal, Sidebar, SidebarItem } from "../components";
 import QATableItem from "../components/QATableItem";
-import { useNavigate } from "react-router-dom";
-import { getQuestions } from "../api/qas/qas";
-import { getGames } from "../api/game/games";
 
 function QALayout() {
   const [modal, setModal] = useState(false);
@@ -67,8 +67,6 @@ function QALayout() {
     if (action != "cancel") {
       setModalAction(action);
       setAction(action.includes("Edit") ? "edit" : "create");
-      console.log("Is edit? " + action + " and entity " + entity);
-      console.log(entity);
       if (action.includes("Create")) setModalEntity(null);
       else if (action !== null && action.includes("Edit"))
         setModalEntity(entity);
@@ -79,9 +77,7 @@ function QALayout() {
     const index = e.target.selectedIndex;
     const el = e.target.childNodes[index];
     const option = el.getAttribute("id");
-    console.log(option);
     setGame(option);
-    console.log(games[index].image);
     setGameLogo(games[index].image);
   };
 

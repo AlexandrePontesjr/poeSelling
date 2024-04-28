@@ -44,7 +44,6 @@ export async function createQuestion(data) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        console.log("token removed");
       }
       throw error.response.data.message;
     });

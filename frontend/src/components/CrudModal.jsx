@@ -72,15 +72,11 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
   // }, []);
 
   function getPrice() {
-    console.log(price);
     if (Number(price)) return price;
     else return price.split("$")[1];
   }
 
   function handleSubmit() {
-    console.log("action: " + action);
-    console.log("game" + game);
-    console.log(show);
     action == "edit"
       ? type == "qa"
         ? editQuestion({

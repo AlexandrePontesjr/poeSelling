@@ -1,3 +1,4 @@
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   HandPlatter,
   MessageCircleQuestion,
@@ -7,9 +8,8 @@ import {
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { getProducts } from "../api/products/products";
 import { getGames } from "../api/game/games";
-import CircularProgress from "@mui/material/CircularProgress";
+import { getProducts } from "../api/products/products";
 import {
   Button,
   CrudModal,
@@ -80,9 +80,7 @@ function ProductLayout() {
     const index = e.target.selectedIndex;
     const el = e.target.childNodes[index];
     const option = el.getAttribute("id");
-    console.log(option);
     setGame(option);
-    console.log(games[index].image);
     setGameLogo(games[index].image);
   };
 
@@ -92,8 +90,6 @@ function ProductLayout() {
     if (action != "cancel") {
       setModalAction(action);
       setAction(action.includes("Edit") ? "edit" : "create");
-      console.log("Is edit? " + action + " and entity " + entity);
-      console.log(entity);
       if (action.includes("Create")) setModalEntity(null);
       else if (action !== null && action.includes("Edit"))
         setModalEntity(entity);
