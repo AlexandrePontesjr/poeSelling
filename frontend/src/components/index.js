@@ -27,6 +27,7 @@ import SelectAvatar from "./SelectAvatar";
 import FeedbackCard from "./FeedbackCard";
 import Modal from "./Modal";
 
+import AvatarFromSprite from "./AvatarFromSprite";
 export {
   Modal,
   ScrollTop,
@@ -56,4 +57,5 @@ export {
   Hero,
   FAQ,
   TestimonialsTableItem,
+  AvatarFromSprite,
 };

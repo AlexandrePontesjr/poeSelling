@@ -7,6 +7,7 @@ import br.com.twobrothers.poeselling.controller.response.TestimonialsResponse
 import br.com.twobrothers.poeselling.domain.Product
 import br.com.twobrothers.poeselling.domain.Product.Type.ALL
 import br.com.twobrothers.poeselling.domain.Testimonials
+import br.com.twobrothers.poeselling.domain.Testimonials.TestimonialStatus.EMPTY
 import br.com.twobrothers.poeselling.exception.ExceptionAdviceController.Companion.logger
 import br.com.twobrothers.poeselling.mapper.decodeUsernameFromJWT
 import br.com.twobrothers.poeselling.mapper.toDomain
@@ -27,9 +28,9 @@ class TestimonialsController (
 ) {
 
     @GetMapping
-    fun listAll (pageable: Pageable, gameId: Int) : ResponseEntity<Page<TestimonialsResponse>> {
+    fun listAll (pageable: Pageable, gameId: Int, status: Testimonials.TestimonialStatus = EMPTY) : ResponseEntity<Page<TestimonialsResponse>> {
         logger.info("Starting to list all testimonials by gameId: $gameId")
-        return ResponseEntity.ok(testimonialsService.gelAll(pageable, gameId.toDomain()).map { it.toResponse() }).also {
+        return ResponseEntity.ok(testimonialsService.gelAll(pageable, gameId.toDomain(), status).map { it.toResponse() }).also {
             logger.info("Done to list testimonials count: ${it.body?.totalElements}")
         }
     }
