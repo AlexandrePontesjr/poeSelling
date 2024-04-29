@@ -23,7 +23,6 @@ const Billing = ({ game }) => {
 
   const handleInputChange = (e) => {
     const searchTerm = e.target.value;
-    console.log(searchTerm);
     setSearchTerm(searchTerm);
 
     const filteredItems = products.filter((product) =>

@@ -21,7 +21,7 @@ const Faq = ({ game }) => {
           ...question,
           isOpen: false,
         }));
-        // console.log(questionsWithState);
+        console.log(questionsWithState);
         setQuestions(questionsWithState);
       } catch (error) {
         console.log(error);

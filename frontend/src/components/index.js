@@ -22,6 +22,7 @@ import ListService from "./ListService";
 import FAQ from "./FAQ";
 import GameIcon from "./GameIcon";
 import ScrollTop from "./ScrollTop";
+import TestimonialsTableItem from "./TestimonialsTableItem";
 import SelectAvatar from "./SelectAvatar";
 import FeedbackCard from "./FeedbackCard";
 import Modal from "./Modal";
@@ -54,4 +55,5 @@ export {
   Testimonials,
   Hero,
   FAQ,
+  TestimonialsTableItem,
 };

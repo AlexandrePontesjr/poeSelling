@@ -19,14 +19,12 @@ export async function deleteQuestionById(id, gameId) {
       },
     })
     .then(function (response) {
-      window.location.reload();
       return response.data;
     })
     .catch(function (error) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
       }
       throw error.response.data.message;
     });
@@ -40,15 +38,12 @@ export async function createQuestion(data) {
       },
     })
     .then(function (response) {
-      window.location.reload();
       return response.data;
     })
     .catch(function (error) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        console.log("token removed");
-        window.location.reload();
       }
       throw error.response.data.message;
     });
@@ -63,14 +58,12 @@ export async function editQuestion(data) {
       },
     })
     .then(function (response) {
-      window.location.reload();
       return response.data;
     })
     .catch(function (error) {
       console.log(error);
       if (error.response.status === 401) {
         localStorage.removeItem("token");
-        window.location.reload();
       }
       throw error.response.data.message;
     });

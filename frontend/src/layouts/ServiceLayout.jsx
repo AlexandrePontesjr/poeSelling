@@ -1,8 +1,14 @@
-import { HandPlatter, MessageCircleQuestion, Package } from "lucide-react";
+import CircularProgress from "@mui/material/CircularProgress";
+import {
+  HandPlatter,
+  MessageCircleQuestion,
+  Package,
+  Star,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getServices } from "../api/products/products";
 import { getGames } from "../api/game/games";
+import { getServices } from "../api/products/products";
 import {
   CrudModal,
   ProductTableItem,
@@ -22,27 +28,29 @@ function ServiceLayout() {
   const [action, setAction] = useState("");
   const [services, setServices] = useState([]);
   const [modalEntity, setModalEntity] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await getServices(game);
-        setServices(res.content);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    const fetchGames = async () => {
-      try {
-        const gameRes = await getGames();
-        setGames(gameRes);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const fetchServices = async (game) => {
+    try {
+      const res = await getServices(game);
+      setServices(res.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const fetchGames = async () => {
+    try {
+      const gameRes = await getGames();
+      setGames(gameRes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    fetchProducts();
+  useEffect(() => {
+    fetchServices(game);
     fetchGames();
   }, [game]);
 
@@ -50,19 +58,27 @@ function ServiceLayout() {
     const index = e.target.selectedIndex;
     const el = e.target.childNodes[index];
     const option = el.getAttribute("id");
-    console.log(option);
     setGame(option);
-    console.log(games[index].image);
     setGameLogo(games[index].image);
   };
 
+  const refreshScope = () => {
+    setRefresh(!refresh);
+    setServices([]);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      fetchServices(game);
+      fetchGames();
+    }, 500);
+  };
+
   function Toggle(action, entity) {
+    if (modal == true) refreshScope();
     setModal(!modal);
     if (action != "cancel") {
       setModalAction(action);
       setAction(action.includes("Edit") ? "edit" : "create");
-      console.log("Is edit? " + action + " and entity " + entity);
-      console.log(entity);
       if (action.includes("Create")) setModalEntity(null);
       else if (action !== null && action.includes("Edit"))
         setModalEntity(entity);
@@ -82,6 +98,11 @@ function ServiceLayout() {
           path={"/admin/products"}
           icon={<Package size={20} />}
           text="Products"
+        />
+        <SidebarItem
+          path={"/admin/testimonials"}
+          icon={<Star size={20} />}
+          text="Testimonials"
         />
         <SidebarItem
           path={"/admin/qas"}
@@ -148,30 +169,38 @@ function ServiceLayout() {
                     </tr>
                   </thead>
                   <tbody>
-                    {services.map((service, index) =>
-                      index === services.length - 1 ? (
-                        <ProductTableItem
-                          key={service.id}
-                          entityId={service.id}
-                          name={service.name}
-                          price={service.price}
-                          gameId={game}
-                          image={service.image}
-                          status="active"
-                          isLast={true}
-                          openModal={() => Toggle("Edit Service", service)}
-                        />
-                      ) : (
-                        <ProductTableItem
-                          key={service.id}
-                          entityId={service.id}
-                          name={service.name}
-                          gameId={game}
-                          price={service.price}
-                          image={service.image}
-                          status="active"
-                          openModal={() => Toggle("Edit Service", service)}
-                        />
+                    {isLoading ? (
+                      <div className="w-full items-center justify-center">
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      services.map((service, index) =>
+                        index === services.length - 1 ? (
+                          <ProductTableItem
+                            key={service.id}
+                            entityId={service.id}
+                            name={service.name}
+                            price={service.price}
+                            gameId={game}
+                            image={service.image}
+                            status="active"
+                            isLast={true}
+                            openModal={() => Toggle("Edit Service", service)}
+                            refresh={refreshScope}
+                          />
+                        ) : (
+                          <ProductTableItem
+                            key={service.id}
+                            entityId={service.id}
+                            name={service.name}
+                            gameId={game}
+                            price={service.price}
+                            image={service.image}
+                            status="active"
+                            openModal={() => Toggle("Edit Service", service)}
+                            refresh={refreshScope}
+                          />
+                        )
                       )
                     )}
                   </tbody>
