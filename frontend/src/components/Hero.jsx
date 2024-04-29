@@ -18,6 +18,7 @@ const Hero = ({game}) => {
       style={{ position: "relative" }}
     >
       <div className="flex-col">
+      <script src="http://code.jivosite.com/widget/BMqDK3dM6K" async></script>
         <div className={`xl:px-0 sm:px-16 px-6`}>
           <motion.div
             initial={{ x: -100, opacity: 0 }}

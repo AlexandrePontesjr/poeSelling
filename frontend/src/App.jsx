@@ -13,6 +13,7 @@ const App = ({ game }) => {
   return (
     <>
       <div className="bg-primary w-full">
+      
         <div className={`bg-slate-950 ${styles.flexCenter} relative`}>
           <video
           className={`hidden md:block video ${loaded ? "loaded" : ""}`}
@@ -33,7 +34,7 @@ const App = ({ game }) => {
           </div>
         </div>
         <ScrollTop game={game}/>
-        <div className={` ${game.cssClassBG} ${styles.flexStart} `}>
+        <div className={` ${game.cssClassBG} ${styles.flexStart}`}>
           <div className={`${styles.boxWidth2} `}>
             <Billing game={game} />
           </div>

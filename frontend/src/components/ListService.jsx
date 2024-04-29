@@ -19,7 +19,7 @@ const ServicesList = ({ product, game }) => {
       >
         <div className={`${game.fontFamily} grid  rounded-lg bg-items-name-bottom  bg-card-items`}>
           <div className="white__gradient rounded-sm text-center">
-              <span className="text-[36px] text-white ">
+              <span className="text-[36px] text-white overflow-scroll">
                 {product ? product.name : "Product Name"}
               </span>
           </div>
