@@ -76,7 +76,7 @@ export const feedback = [
       "Nunca pensei que jogos online poderiam ser tão envolventes! Estou impressionado com o serviço.",
     name: "Mariana Santos",
     title: "Designer",
-    img: people03,
+    img: people02,
     star: 5,
   },
   {
@@ -94,7 +94,7 @@ export const feedback = [
       "Estou completamente viciado nos serviços oferecidos! Melhor investimento que fiz.",
     name: "Rafael Junior",
     title: "Founder & Leader",
-    img: people03,
+    img: people02,
     star: 5,
   },
   {
@@ -103,7 +103,7 @@ export const feedback = [
       "Estou completamente viciado nos serviços oferecidos! Melhor investimento que fiz.",
     name: "Pedro Teixeira",
     title: "Founder & Leader",
-    img: people03,
+    img: people01,
     star: 5,
   },
 ];

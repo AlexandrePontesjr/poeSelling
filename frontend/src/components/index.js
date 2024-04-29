@@ -16,15 +16,21 @@ import SearchBar from "./SearchBar";
 import Items from "./Items";
 import Carousel from "./Carousel";
 import DoubleButton from "./DoubleButton";
-import Cta from "./CTA";
 import Services from "./Services";
 import CarouselService from "./CarouselService";
 import ListService from "./ListService";
 import FAQ from "./FAQ";
 import GameIcon from "./GameIcon";
 import ScrollTop from "./ScrollTop";
+import SelectAvatar from "./SelectAvatar";
+import FeedbackCard from "./FeedbackCard";
+import Modal from "./Modal";
+
 export {
+  Modal,
   ScrollTop,
+  FeedbackCard,
+  SelectAvatar,
   GameIcon,
   Navbar,
   Items,
@@ -40,7 +46,6 @@ export {
   DoubleButton,
   CrudModal,
   Button,
-  Cta,
   Stats,
   Sidebar,
   SidebarItem,
