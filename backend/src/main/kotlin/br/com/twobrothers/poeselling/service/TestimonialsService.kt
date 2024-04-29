@@ -2,6 +2,8 @@ package br.com.twobrothers.poeselling.service
 
 import br.com.twobrothers.poeselling.domain.Tenant
 import br.com.twobrothers.poeselling.domain.Testimonials
+import br.com.twobrothers.poeselling.domain.Testimonials.TestimonialStatus
+import br.com.twobrothers.poeselling.domain.Testimonials.TestimonialStatus.EMPTY
 import br.com.twobrothers.poeselling.repository.TestimonialsRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -11,8 +13,11 @@ import org.springframework.stereotype.Service
 class TestimonialsService(
     val testimonialsRepository: TestimonialsRepository
 ) {
-    fun gelAll (pageable: Pageable, tenant: Tenant) : Page<Testimonials> {
-        return testimonialsRepository.findAllByGame(pageable, tenant)
+    fun gelAll (pageable: Pageable, tenant: Tenant, status: TestimonialStatus) : Page<Testimonials> {
+        return when(status){
+            EMPTY -> testimonialsRepository.findAllByGame(pageable, tenant)
+            else -> testimonialsRepository.findAllByGameAndStatus(pageable, tenant, status)
+        }
     }
 
     fun save (testimonials: Testimonials) : Testimonials {
@@ -30,7 +35,7 @@ class TestimonialsService(
         )
     }
 
-    fun updateStatus(id: Int, gameId: Int, status: Testimonials.TestimonialStatus): Testimonials {
+    fun updateStatus(id: Int, gameId: Int, status: TestimonialStatus): Testimonials {
         val haveTestimonials = testimonialsRepository.findById(id)
         val testimonials = when (haveTestimonials.isPresent) {
             true -> haveTestimonials.get()

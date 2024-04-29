@@ -12,6 +12,17 @@ export async function getTestimonials(gameId) {
     });
 }
 
+export async function getApprovedTestimonials(gameId) {
+  return axiosInstance
+    .get("/testimonials?status=APPROVED&gameId=" + gameId)
+    .then(function (response) {
+      return response.data;
+    })
+    .catch(function (error) {
+      throw error.response.data.message;
+    });
+}
+
 export async function deleteTestimonialsById(id, gameId) {
   return axiosInstance
     .delete(`/testimonials/${id}?gameId=${gameId}`)
