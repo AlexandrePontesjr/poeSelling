@@ -23,6 +23,7 @@ import ListService from "./ListService";
 import FAQ from "./FAQ";
 import GameIcon from "./GameIcon";
 import ScrollTop from "./ScrollTop";
+import TestimonialsTableItem from "./TestimonialsTableItem";
 export {
   ScrollTop,
   GameIcon,
@@ -49,4 +50,5 @@ export {
   Testimonials,
   Hero,
   FAQ,
+  TestimonialsTableItem,
 };

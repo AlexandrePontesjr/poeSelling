@@ -1,9 +1,6 @@
 import { useState } from "react";
-import Button from "@mui/joy/Button";
-import { Link } from "react-router-dom";
 import { close, logo, menu } from "../assets";
-import { navLinks, GameDetails } from "../constants";
-import { GameIcon } from "../components";
+import { navLinks } from "../constants";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
