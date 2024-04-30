@@ -148,7 +148,6 @@ const Testimonials = ({ game }) => {
                   name="simple-controlled"
                   id="rating"
                   value={rating}
-                  precision={0.5}
                   onChange={(event, newValue) => {
                     setRating(newValue);
                   }}
