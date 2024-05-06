@@ -64,7 +64,7 @@ function ProductLayout() {
       setIsLoading(false);
       fetchProducts(game);
       fetchGames();
-    }, 500);
+    }, 2000);
   };
 
   const contextClass = {

@@ -58,7 +58,7 @@ function QALayout() {
       setIsLoading(false);
       fetchQuestions(game);
       fetchGames();
-    }, 500);
+    }, 2000);
   };
 
   function Toggle(action, entity) {

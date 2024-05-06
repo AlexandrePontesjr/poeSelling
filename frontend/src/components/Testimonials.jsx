@@ -66,7 +66,7 @@ const Testimonials = ({ game }) => {
     setFeedbackSent(true);
     setTimeout(() => {
       setFeedbackSent(false);
-    }, 4000);
+    }, 2000);
   };
 
   return (
