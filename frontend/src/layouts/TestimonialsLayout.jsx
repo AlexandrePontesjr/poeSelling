@@ -64,7 +64,7 @@ function TestimonialsLayout() {
       setIsLoading(false);
       fetchTestimonials(game);
       fetchGames();
-    }, 500);
+    }, 2000);
   };
 
   const contextClass = {

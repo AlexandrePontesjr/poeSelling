@@ -85,7 +85,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
             answer: answer,
             gameId: game,
           })
-        : type == "product"
+        : type == "product" || type == "service"
         ? editProduct({
             id: id,
             name: name,
@@ -111,7 +111,7 @@ const CrudModal = ({ show, type, game, close, nameAction, action, entity }) => {
           answer: answer,
           gameId: game,
         })
-      : type == "product"
+      : type == "product" || type == "service"
       ? createProduct({
           name: name,
           price: getPrice(),
