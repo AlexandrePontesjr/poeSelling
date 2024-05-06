@@ -70,7 +70,7 @@ function ServiceLayout() {
       setIsLoading(false);
       fetchServices(game);
       fetchGames();
-    }, 500);
+    }, 2000);
   };
 
   function Toggle(action, entity) {
