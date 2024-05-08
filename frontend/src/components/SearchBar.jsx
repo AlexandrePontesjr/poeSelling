@@ -9,11 +9,11 @@ const SearchBar = ({ searchTerm, changeFunction }) => {
       >
         <div className="flex w-[550px] mx-auto items-center">
           <div className=" relative flex-1">
-            <di
+            <div
               className={`ml-1 h-[70px] justify-center inline-flex items-center rounded-full  w-[40px] absolute`}
             >
               <img src={search} className={`p-1`} />
-            </di>
+            </div>
             <div className="left-3  text-gray-700" />
             <input id="search-input"
               type="text"

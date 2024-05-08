@@ -2,12 +2,14 @@ import { ChevronFirst, ChevronLast, DoorOpen } from "lucide-react";
 import { createContext, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import { GameDetails } from "../constants/games";
 
 const SidebarContext = createContext();
 
 export default function Sidebar({ gameLogo, children }) {
   const [expanded, setExpanded] = useState(true);
-
+  // console.log(children);
+  // console.log(GameDetails.diablo);
   function logout() {
     localStorage.removeItem("token");
   }
@@ -15,7 +17,7 @@ export default function Sidebar({ gameLogo, children }) {
   return (
     <aside className="h-screen">
       <nav
-        className={`h-full flex flex-col bg-slate-950 border-r shadow-sm ${
+        className={`h-full flex flex-col bg-slate-500 border-r shadow-sm ${
           expanded ? "wl-52" : "w-21"
         }`}
       >
@@ -38,7 +40,7 @@ export default function Sidebar({ gameLogo, children }) {
         </SidebarContext.Provider>
 
         <div className="border-t flex p-3">
-          <img src={gameLogo} alt="" className="w-14 h-10 rounded-md" />
+          <img src={gameLogo} alt="" className="w-14 h-12 rounded-md" />
           <div
             className={`
               flex justify-between items-center

@@ -1,41 +1,46 @@
-import { ShopItemCoin, logoPoe, pix, whatsapp, payPal } from "../assets";
+import { ShopItemCoin, logoPoe, pix, mercadoIcone, payPal } from "../assets";
 import Box from "@mui/joy/Box";
 const ServicesList = ({ product, game }) => {
 
     return (
+  <div className=" min-w-[350px] max-w-[350px] rounded-lg">
       <Box
       sx={{
-        maxWidth: "336px",
-        maxHeight: "216px",
+        maxWidth: "100%",
+        maxHeight: "100%",
         transition: "transform 0.3s",
         "&:hover": {
-          transform: "scale(1.1)",
+          transform: "scale(1.05)",
         },
       }}
         >
-          <a className="relative" href={`https://api.whatsapp.com/send?` +
+          <a className="" href={`https://api.whatsapp.com/send?` +
       `phone=559285896410&` +
       `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`}
       >
-        <div className={`${game.fontFamily} grid  rounded-lg bg-items-name-bottom  bg-card-items`}>
-          <div className="white__gradient rounded-sm text-center">
-              <span className="text-[36px] text-white overflow-scroll">
+        <div className={`${game.fontFamily}`}>
+        <div className={`bg-items-name-top  bg-card-items grid grid-cols px-2 rounded-lg bg-items-name-bottom`}>
+          <div className="white__gradient rounded-sm text-center h-16 overflow-scroll no-scrollbar">
+              <span className="text-[30px] font-semibold text-yellow-400 shadow-lg">
                 {product ? product.name : "Product Name"}
               </span>
           </div>
+          <div>
             <img
               className="object-cover w-full h-[calc(100% - 2px)] rounded-lg"
-              height="216"
               src={product ? product.image : logoPoe}
               srcSet={product ? product.image : logoPoe}
+              loading="lazy"
               style={{
                 aspectRatio: "160/90",
                 objectFit: "cover",
+                maxBlockSize: 180,
+                padding: 4,
               }}
-              width="160"
             />
-          <div className="w-52 h-[120px] py-1 px-1">
-            <p className="text-white line-clamp-3    text-[16px] h-[120px]  max-h-[120px]">
+          </div>
+          <div className="h-[140px] py-1 px-1 bg-slate-700/20">
+            <p className="text-white line-clamp-3 font-poppins   text-[16px]">
               {product ? product.description : "Product description"}
             </p>
           </div>
@@ -48,13 +53,15 @@ const ServicesList = ({ product, game }) => {
             </div>
             <div style={{ maxHeight: 40 }} className=" w-full  justify-between flex">
               <img style={{ maxHeight: 40 }} className="" src={pix} alt="" />
-              <img style={{ maxHeight: 40 }} className="" src={whatsapp} alt="" />
+              <img style={{ maxHeight: 40 }} className="" src={mercadoIcone} alt="" />
               <img style={{ maxHeight: 40 }} className="" src={payPal} alt="" />
             </div>
           </div>
         </div>
+        </div>
         </a>
   </Box>
+</div>
   );
 };
 

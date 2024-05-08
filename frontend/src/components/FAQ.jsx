@@ -33,7 +33,7 @@ const Faq = ({ game }) => {
   return (
     <section
       id="faq"
-      className={`${game.fontFamily} mt-4 h-full text-white md:text-4xl`}
+      className={`font-poppins mt-4 h-full text-white md:text-4xl`}
     >
       <div id="title" className="flex flex-col-reverse md:flex-row">
         <h1 className="basis-1/4 text-xs mb-5 md:text-xl text-center">

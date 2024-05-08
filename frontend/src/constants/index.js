@@ -136,15 +136,7 @@ export const footerLinks = [
         link: "",
       },
       {
-        name: "Instagram",
-        link: "https://www.instagram.com/danilorosa_6/",
-      },
-      {
         name: "WhatsApp",
-        link: "",
-      },
-      {
-        name: "Suporte",
         link: "",
       },
       {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Carousel, SearchBar } from ".";
 import { getProducts } from "../api/products/products";
-import styles from "../styles";
+import styles, {layout} from "../styles";
 
 const Billing = ({ game }) => {
   const [products, setProducts] = useState([]);
@@ -37,8 +37,8 @@ const Billing = ({ game }) => {
   };
 
   return (
-    <section id="items" className={`relative`}>
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <section id="items" >
+      <div className=" mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mb-6 lg:mb-8  sm:items-center sm:justify-between">
           <div className="mt-12 lg:mt-20  text-left sm:text-left">
             <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
@@ -58,10 +58,10 @@ const Billing = ({ game }) => {
             />
           </div>
         </div>
+      </div>
         <div className={`${styles.boxWidth}`}>
           <Carousel slides={filteredProducts} game={game} />
         </div>
-      </div>
     </section>
   );
 };

@@ -37,7 +37,7 @@ const Services = ({ game }) => {
   };
 
   return (
-    <section id="services" className={`relative`}>
+    <section id="services"  >
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mb-6 lg:mb-8  sm:items-center sm:justify-between">
           <div className="lg:mt-6  text-left sm:text-left">
@@ -58,8 +58,8 @@ const Services = ({ game }) => {
           </div>
         </div>
 
-        <div className={`${styles.boxWidth}`}>
-          <CarouselService slides={filteredProducts} game={game} />
+        <div className={``}>
+        <CarouselService slides={filteredProducts} game={game} />
         </div>
       </div>
     </section>
