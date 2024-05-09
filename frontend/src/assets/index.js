@@ -47,9 +47,12 @@ import mercadoIcone from "./mercado-icone.svg";
 import CurrencyItems from "./MuitosCurrencysItems.svg";
 import espada from "./espada.svg";
 import espadaPB from "./espadaPB.svg";
-
+import bgCurrency from "./bg-currency.svg";
+import whatsappBt from "./whatsapp_bt.png";
 export {
   arrowNotch,
+  whatsappBt,
+  bgCurrency,
   espadaPB,
   espada,
   CurrencyItems,

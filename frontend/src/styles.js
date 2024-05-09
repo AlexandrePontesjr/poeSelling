@@ -31,7 +31,7 @@ export const layout = {
 
     sectionInfo: `flex-1 ${styles.flexStart} flex-col`,
 
-    section2: `flex lg:flex-row flex-col ${styles.paddingY}`,
+    section2: `flex lg:flex-row flex-col sm:py-4`,
 };
 
 export default styles;

@@ -20,9 +20,14 @@ const Items = ({ product, game }) => {
         >
           <div className={`${game.fontFamily}`}>
             <div className={`bg-items-name-top  bg-card-items grid grid-cols px-2 rounded-lg bg-items-name-bottom`}>
+              <div className="text-center">
+                  <span className="relative z-1 text-[28px] font-semibold text-yellow-400  shadow-lg">
+                    {product ? product.name : "Product Name"}
+                  </span>
+              </div>
               <div className="items-center justify-center flex flex-col h-[155px]">
                 <img
-                  className="bg-white/10 mx-auto absolute inset-0 h-[150px] mt-3 rounded-lg"
+                  className="mx-auto absolute h-[150px] mt-3 rounded-lg"
                   src={product ? product.image : logoPoe}
                   srcSet={product ? product.image : logoPoe}
                   loading="lazy"
@@ -30,15 +35,12 @@ const Items = ({ product, game }) => {
                     maxWidth: "100%",
                   }}
                 />
-                <span className="relative z-1 text-[26px] font-semibold text-yellow-400 mt-28 shadow-lg">
-                  {product ? product.name : "Product Name"}
-                </span>
               </div>
-              <div className="h-[140px] py-1 px-1 bg-slate-700/20">
+              {/* <div className="h-[140px] py-1 px-1 bg-slate-700/20">
                 <p className="text-white line-clamp-3 font-poppins   text-[14px]">
                   {product ? product.description : "Product description"}
                 </p>
-              </div>
+              </div> */}
               <div style={{ maxHeight: 40 }} className=" white__gradient flex gap-2 mt-3 items-center relative">
                 <div style={{ maxHeight: 40 }} className=" flex w-full  justify-center">
                   <img style={{ maxHeight: 40 }} className="" src={ShopItemCoin} alt="" />

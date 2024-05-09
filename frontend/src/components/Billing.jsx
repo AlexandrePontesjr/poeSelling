@@ -40,7 +40,7 @@ const Billing = ({ game }) => {
     <section id="items" >
       <div className=" mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mb-6 lg:mb-8  sm:items-center sm:justify-between">
-          <div className="mt-12 lg:mt-20  text-left sm:text-left">
+          <div className=" mt-12 lg:mt-20  text-left sm:text-left">
             <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
               Tome controle{" "}
               <span className="text-yellow-400">Compre & Use</span> Items da

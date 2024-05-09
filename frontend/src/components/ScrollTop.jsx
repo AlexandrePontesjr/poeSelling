@@ -36,7 +36,7 @@ const ScrollTopButton = ({game}) => {
     return (
         <div>
             { isVisible &&
-                <div className="fixed justify-center flex bottom-6 right-36 items-center z-50">
+                <div className="fixed justify-start flex bottom-6 right-36 items-center z-50">
                     {Object.values(GameDetails).map((game, index) => (
                         <Link key={index} to={game.path} relative="path">
                             <Button
@@ -46,7 +46,7 @@ const ScrollTopButton = ({game}) => {
                                 sx={{
                                     transition: "transform 0.3s",
                                     "&:hover": {
-                                        transform: "scale(1.3)",
+                                        transform: "scale(1.5)",
                                     },
                                 }}
                             >
