@@ -1,4 +1,4 @@
-import { ShopItemCoin, logoPoe, pix, mercadoIcone, payPal } from "../assets";
+import { ShopItemCoin, logoPoe, pix, mercadoIcone, whatsapp } from "../assets";
 import Box from "@mui/joy/Box";
 
 const Items = ({ product, game }) => {
@@ -51,9 +51,15 @@ const Items = ({ product, game }) => {
                 <div style={{ maxHeight: 40 }} className=" w-full  justify-between flex">
                   <img style={{ maxHeight: 40 }} className="" src={pix} alt="" />
                   <img style={{ maxHeight: 40 }} className="" src={mercadoIcone} alt="" />
-                  <img style={{ maxHeight: 40 }} className="" src={payPal} alt="" />
+                  <img style={{ maxHeight: 40 }} className="" src={whatsapp} alt="" />
                 </div>
+                
               </div>
+              <p className=" text-dimWhite mt-1 text-center text-[16px]">
+              {/* R${product ? product.price : "--"} */}
+              {/* 6% desconto no Pix, valor ja incluso */}
+              Pix 6% desconto <br />  desconto ja aplicado
+                  </p>
             </div>
           </div>
         </a>

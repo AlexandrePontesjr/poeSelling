@@ -35,11 +35,11 @@ const Faq = ({ game }) => {
       id="faq"
       className={`font-poppins mt-4 h-full text-white md:text-4xl`}
     >
-      <div id="title" className="flex flex-col-reverse md:flex-row">
-        <h1 className="basis-1/4 text-xs mb-5 md:text-xl text-center">
+      <div id="title" className="py-20 flex flex-col-reverse md:flex-row">
+        <h1 className="basis-1/4 text-xs mb-5 sm:text-xl text-center">
           Have some doubt?
         </h1>
-        <h1 className="basis-1/2 text-sm md:mb-10 md:text-6xl text-center">
+        <h1 className="basis-1/2 text-sm md:mb-10 sm:text-6xl text-center">
           FAQ
         </h1>
         <h1 className="basis-1/4"></h1>

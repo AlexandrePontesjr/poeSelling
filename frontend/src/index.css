@@ -57,7 +57,7 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("./assets/logo.svg");
+  background-image: url("./assets/logoNovo.svg");
   background-repeat: repeat;
   filter: blur(5px);
   opacity: 0.2;
@@ -87,10 +87,12 @@ section {
  
 
 .navbar {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
+  
 }
 
 .backgroundImageItemsDiablo {
@@ -106,12 +108,31 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('./assets/diabloIcon.svg');
+  background-image: url('./assets/d4Banner.jpg');
   background-repeat: repeat;
-  filter: blur(5px);
-  opacity: 0.2;
+  opacity: 0.9;
   z-index: -1;
 }
+
+.backgroundD4Preto {
+  position: relative;
+  background-color: #080705ee;
+  z-index: 0;
+}
+
+.backgroundD4Preto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/d4Preto.jpg');
+  background-repeat: repeat;
+  opacity: 0.9;
+  z-index: -1;
+}
+
 
 .backgroundImagePathExile {
   position: relative;
@@ -126,12 +147,18 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("./assets/PathOfExile.svg");
+  background-image: url('./assets/poeYellow.jpg');
   background-repeat: repeat;
-  filter: blur(5px);
-  opacity: 0.2;
+  opacity: 0.9;
   z-index: -1;
 }
+
+/* .backgroundFundoPreto {
+  position: relative;
+  background-image: url("./assets/sombreamento_png.png");
+  z-index: 2;
+} */
+
 
 .backgroundImageLastEpoch {
   position: relative;
@@ -146,12 +173,31 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("./assets/lastEpocIcon.svg");
+  background-image: url('./assets/bannerRoxo.jpg');
   background-repeat: repeat;
-  filter: blur(5px);
-  opacity: 0.2;
+  opacity: 0.9;
   z-index: -1;
 }
+
+.bannerPrata {
+  position: relative;
+  background-color: #080705ee;
+  z-index: 0;
+}
+
+.bannerPrata::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/bannerPrata.jpg');
+  background-repeat: repeat;
+  opacity: 0.7;
+  z-index: -1;
+}
+
 
 
 .bgAvatarPathOfExile{
@@ -439,15 +485,14 @@ box-shadow: var(--card-shadow);
 }
 
 .video {
-  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  opacity: 0;
   transition: opacity 1s ease;
-  z-index: 1;
-
 }
 
 .video.loaded {
-  opacity: 0.7;
-  filter: blur(2px);
-  z-index: 1;
+  opacity: 1;
 }

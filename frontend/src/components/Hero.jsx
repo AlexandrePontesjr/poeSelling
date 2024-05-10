@@ -4,13 +4,11 @@ import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import { Link } from "react-router-dom";
 import { GameDetails } from "../constants";
-import { pix, mercadoIcone, payPal } from "../assets";
-
 import {
-  espada,
-  espadaPB,
-  servicesImage,
-  whatsappBt
+  currencys,
+  whatsapp,
+  pix,
+  mercadoIcone
 } from "../assets";
 
 const Hero = ({game}) => {
@@ -21,13 +19,13 @@ const Hero = ({game}) => {
       style={{ position: "relative" }}
     >
       <div className="flex-col  md:w-[1450px]" style={{ textShadow: '0 0 10px black' }}>
-        <div className={`xl:px-0 sm:px-16 px-6`}>
+        <div className={`py-14 lg:py-16 xl:px-0 sm:px-16 px-6`}>
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className={`${game.fontFamily} flex-1 font-semibold md:text-[58px] lg:text-[65px] text-[32px]  text-yellow-400 ss:leading-[100.8px] lg:leading-[75px] hover:text-sky-200`}>
+            <h1 className={`${game.fontFamily} flex-1 font-semibold sm:text-[58px] lg:text-[65px] text-[32px]  text-yellow-400 ss:leading-[100.8px] lg:leading-[75px] hover:text-sky-200`}>
               Bem Vindo <br />
               <span className="text-sky-100 hover:text-yellow-400">
                 Realm Exchange coins
@@ -40,15 +38,15 @@ const Hero = ({game}) => {
               oferecendo serviços e venda <br /> de items dos ARPGs mais jogados do<br />
               mercado, garantindo transações seguras e suporte dedicado.
             </p>
-            <div className={`${game.fontFamily} font-semibold mt-2 text-center text-[28px] lg:text-[58px]`}>
-              <span className="text-sky-100 hover:text-yellow-400">
-                  Temporada VII
+            <div className={`${game.fontFamily} font-semibold mt-16 text-center text-[28px] sm:text-[58px]`}>
+              <span className="  text-sky-100 hover:text-yellow-400">
+                  {game.tituloTemporada}
                 </span>{" "}
                 <br />
             </div>
           </motion.div>
         </div>
-        <div className="flex place-content-center md:place-content-end">
+        {/* <div className="flex place-content-center md:place-content-center">
         <Button
             variant="solid"
             color=""
@@ -60,10 +58,10 @@ const Hero = ({game}) => {
               },
             }}
           >
-            <img className="h-16 md:h-40 mx-2" src={whatsappBt} alt="" />
+            <img className="h-12 md:h-32" src={whatsappBt} alt="" />
           </Button>
-      </div>
-        <div className=" lg:py-0 justify-center flex lg:flex-col-1 gap-6 px-5 lg:px-2 lg:flex lg:gap-20  lg:justify-center">
+      </div> */}
+        <div className=" lg:py-0 justify-center  flex lg:flex-col-1 gap-6 px-5 lg:px-2 lg:flex lg:gap-20  lg:justify-start">
           <Box
             sx={{
               transition: "transform 0.3s",
@@ -74,27 +72,27 @@ const Hero = ({game}) => {
           >
             <div className="relative inline-block group">
               <a href="#items">
-              <img style={{ maxHeight: 160 }} className=" mt-10 transition-opacity duration-300 opacity-100 group-hover:opacity-0" src={espadaPB} alt="" />
-              <img style={{ maxHeight: 160 }} className=" top-10 absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300" src={espadaPB} alt="" />
-                <div className={` ${game.fontFamily} flex-col font-bold absolute inset-0 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[18px]  lg:text-[36px] transition-opacity duration-300 opacity-100 group-hover:opacity-0`}>
-                  <span>
+              <img style={{ maxHeight: 160 }} className="mt-14 transition-opacity duration-300 opacity-100 group-hover:opacity-0" src={currencys} alt="" />
+              <img style={{ maxHeight: 160 }} className="top-14 absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300" src={currencys} alt="" />
+                <div className={` ${game.fontFamily} flex-col font-bold absolute inset-0 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[16px]  sm:text-[36px] transition-opacity duration-300 opacity-100 group-hover:opacity-0`}>
+                  <span className="mt-8 md:mt-0">
                     Compre currency
                   </span>
-                  <div className="lg:w-full flex lg:justify-center lg:gap-10 opacity-100 group-hover:opacity-100">
-                    <img className="max-h-8 lg:max-h-20" src={pix} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={mercadoIcone} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={payPal} alt="" />
+                  <div className="gap-1 sm:w-full mt-1 sm:mt-5 ml-4  md:ml-11 flex sm:justify-center sm:gap-10 opacity-100 group-hover:opacity-100">
+                    <img className="max-h-5 sm:max-h-10" src={pix} alt="" />
+                    <img className="max-h-5 sm:max-h-10" src={mercadoIcone} alt="" />
+                    <img className="max-h-5 sm:max-h-10" src={whatsapp} alt="" />
                   </div>
                 </div>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center gold-gradient bg-opacity-50 text-yellow-500  transition-opacity duration-300" />
-                <div className={`${game.fontFamily} flex-col font-bold absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[18px]  lg:text-[36px] transition-opacity duration-300`}>
-                  <span>
+                <div className={`${game.fontFamily} flex-col font-bold absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[16px]  sm:text-[36px] transition-opacity duration-300`}>
+                <span className="mt-8 md:mt-0">
                     Compre currency
                   </span>
-                  <div className="lg:w-full flex lg:justify-center lg:gap-10 opacity-100 group-hover:opacity-100">
-                    <img className="max-h-8 lg:max-h-20" src={pix} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={mercadoIcone} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={payPal} alt="" />
+                  <div className="gap-1 sm:w-full mt-1 sm:mt-5 ml-4  md:ml-11 flex sm:justify-center sm:gap-10 opacity-100 group-hover:opacity-100">
+                    <img className="max-h-5 sm:max-h-10" src={pix} alt="" />
+                    <img className="max-h-5 sm:max-h-10" src={mercadoIcone} alt="" />
+                    <img className="max-h-5 sm:max-h-10" src={whatsapp} alt="" />
                   </div>
                 </div>
               </a>
@@ -110,27 +108,27 @@ const Hero = ({game}) => {
           >
             <div className="relative inline-block group">
               <a href="#services">
-              <img style={{ maxHeight: 160 }} className=" mt-10 transition-opacity duration-300 opacity-100 group-hover:opacity-0" src={espadaPB} alt="" />
-              <img style={{ maxHeight: 160 }} className=" top-10 absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300" src={espadaPB} alt="" />
-                <div className={` ${game.fontFamily} flex-col font-bold absolute inset-0 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[18px]  lg:text-[36px] transition-opacity duration-300 opacity-100 group-hover:opacity-0`}>
+              <img style={{ maxHeight: 160 }} className=" mt-14 transition-opacity duration-300 opacity-100 group-hover:opacity-0" src={currencys} alt="" />
+              <img style={{ maxHeight: 160 }} className=" top-14 absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300" src={currencys} alt="" />
+                <div className={` ${game.fontFamily} flex-col font-bold absolute inset-0 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[18px]  sm:text-[36px] transition-opacity duration-300 opacity-100 group-hover:opacity-0`}>
                   <span>
                   Nossos Serviços
                   </span>
-                  <div className="lg:w-full flex lg:justify-center lg:gap-10 opacity-100 group-hover:opacity-100">
-                    <img className="max-h-8 lg:max-h-20" src={pix} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={mercadoIcone} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={payPal} alt="" />
+                  <div className="lg:w-full flex ml-4  md:ml-11  sm:w-full sm:justify-center sm:gap-10 opacity-100 group-hover:opacity-100">
+                    <img className="max-h-8 sm:max-h-10" src={pix} alt="" />
+                    <img className="max-h-8 sm:max-h-10" src={mercadoIcone} alt="" />
+                    <img className="max-h-8 sm:max-h-10" src={whatsapp} alt="" />
                   </div>
                 </div>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center gold-gradient bg-opacity-50 text-yellow-500  transition-opacity duration-300" />
-                <div className={`${game.fontFamily} flex-col font-bold absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[18px]  lg:text-[36px] transition-opacity duration-300`}>
+                <div className={`${game.fontFamily} flex-col font-bold absolute inset-0 opacity-0 group-hover:opacity-100 flex items-center justify-center bg-opacity-50 text-yellow-500 text-[18px]  sm:text-[36px] transition-opacity duration-300`}>
                   <span>
                     Nossos Serviços
                   </span>
-                  <div className="lg:w-full flex lg:justify-center lg:gap-10 opacity-100 group-hover:opacity-100">
-                    <img className="max-h-8 lg:max-h-20" src={pix} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={mercadoIcone} alt="" />
-                    <img className="max-h-8 lg:max-h-20" src={payPal} alt="" />
+                  <div className="lg:w-full flex ml-4  md:ml-11 sm:w-full sm:justify-center sm:gap-10 opacity-100 group-hover:opacity-100">
+                    <img className="max-h-8 sm:max-h-10" src={pix} alt="" />
+                    <img className="max-h-8 sm:max-h-10" src={mercadoIcone} alt="" />
+                    <img className="max-h-8 sm:max-h-10" src={whatsapp} alt="" />
                   </div>
                 </div>
               </a>

@@ -18,6 +18,8 @@ export const GameDetails = {
         path: "/diablo-4",
         icon: diabloIcon,
         cssClassBG: "backgroundImageItemsDiablo",
+        cssClassBgFaq: "backgroundD4Preto",
+        tituloTemporada: "Renascer do Sangue Temporada IV",
         fontFamily: "font-diablo",
         avatars: [
             {
@@ -54,6 +56,8 @@ export const GameDetails = {
         path: "/path-of-exile",
         icon: poeIcon,
         cssClassBG: "backgroundImagePathExile",
+        cssClassBgFaq: "backgroundD4Preto",
+        tituloTemporada: "Patch Of Exile Necropolis",
         fontFamily: "font-pathOfExile",
         avatars: [
             {
@@ -90,6 +94,8 @@ export const GameDetails = {
         path: "/last-epoch",
         icon: lastEpocIcon,
         cssClassBG: "backgroundImageLastEpoch",
+        cssClassBgFaq: "bannerPrata",
+        tituloTemporada: "Temporada I",
         fontFamily: "font-lastEpoch",
         avatars: [
             {

@@ -1,10 +1,10 @@
-import { logo } from "../assets";
+import { logoNovo } from "../assets";
 import { footerLinks } from "../constants";
 
 const Footer = () => (
   <div className={`flex justify-center items-center w-full flex-col py-8 relative text-center`}>
     <img
-      src={logo}
+      src={logoNovo}
       alt="ReamXcoins"
       className="w-[266px] h-[72.14px] object-contain"
     />

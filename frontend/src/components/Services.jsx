@@ -39,7 +39,7 @@ const Services = ({ game }) => {
   return (
     <section id="services"  >
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        <div className="mb-6 lg:mb-8  sm:items-center sm:justify-between">
+        <div className="py-8 mb-6 lg:mb-8  sm:items-center sm:justify-between">
           <div className="lg:mt-6  text-left sm:text-left">
             <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
             {/* <br className="sm:block hidden" /> */}

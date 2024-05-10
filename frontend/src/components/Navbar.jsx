@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { close, logo, menu } from "../assets";
+import { close, logoNovo, menu } from "../assets";
 import { navLinks } from "../constants";
+import styles from "../styles";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="py-2 w-full flex items-center justify-between navbar">
-      <img src={logo} alt="RealmXcoins" className="w-[100px] h-[70px] ml-6" />
+    <nav className={`${styles.boxWidth2} py-2 w-full flex items-center justify-between navbar`}>
+      <img src={logoNovo} alt="RealmXcoins" className="w-[100px] h-[70px] ml-6" />
 
       <ul className="mr-6 lg:mr-8 list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (

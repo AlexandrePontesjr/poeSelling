@@ -24,7 +24,7 @@ import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
 import logoPoe from "./logoPoe.png";
-import poe_bg_hb from "./poe_bg_hb.png";
+import poebgs from "./poe_bg_s.jpeg";
 import search from "./search.svg";
 import BackgroundServices from "./BackgroundServices.jpg";
 import BackgroundItems from "./BackgroundItems.jpg";
@@ -49,7 +49,18 @@ import espada from "./espada.svg";
 import espadaPB from "./espadaPB.svg";
 import bgCurrency from "./bg-currency.svg";
 import whatsappBt from "./whatsapp_bt.png";
+import currencys from "./currencys.svg";
+import servicesCard from "./services.svg";
+import logoNovo from "./logoNovo.svg";
+import d4Banner from "./d4Banner.jpg";
+import d4Preto from "./d4Preto.jpg";
+
 export {
+  d4Banner,
+  currencys,
+  d4Preto,
+  logoNovo,
+  servicesCard,
   arrowNotch,
   whatsappBt,
   bgCurrency,
@@ -75,7 +86,7 @@ export {
   search,
   BackgroundServices,
   BackgroundItems,
-  poe_bg_hb,
+  poebgs,
   airbnb,
   bill,
   binance,
