@@ -37,7 +37,7 @@ const Faq = ({ game }) => {
     >
       <div id="title" className="py-20 flex flex-col-reverse md:flex-row">
         <h1 className="basis-1/4 text-xs mb-5 sm:text-xl text-center">
-          Have some doubt?
+          Tem alguma duvida?
         </h1>
         <h1 className="basis-1/2 text-sm md:mb-10 sm:text-6xl text-center">
           FAQ

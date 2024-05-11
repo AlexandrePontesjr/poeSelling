@@ -14,6 +14,8 @@ const styles = {
     flexTop: "flex justify-center items-top",
     flexStart: "flex justify-center items-start",
 
+    overlay: "bg-gradient-to-r from-cyan-500 to-blue-500 opacity-[0.5]  z-1",
+
     paddingX: "sm:px-16 px-6",
     paddingY: "sm:py-16 py-6",
     padding: "sm:px-16 px-6 sm:py-12 py-4",

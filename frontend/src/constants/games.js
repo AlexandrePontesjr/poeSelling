@@ -57,7 +57,7 @@ export const GameDetails = {
         icon: poeIcon,
         cssClassBG: "backgroundImagePathExile",
         cssClassBgFaq: "backgroundD4Preto",
-        tituloTemporada: "Patch Of Exile Necropolis",
+        tituloTemporada: "Path Of Exile Necropolis",
         fontFamily: "font-pathOfExile",
         avatars: [
             {

@@ -1,38 +1,54 @@
-import { useState } from "react";
-import { ScrollTop, Billing, Hero, Navbar, Services, Testimonials, Footer, FAQ } from "./components";
+import { useState, useEffect } from "react";
+import {
+  ScrollTop,
+  Billing,
+  Hero,
+  Navbar,
+  Services,
+  Testimonials,
+  Footer,
+  FAQ,
+} from "./components";
 import styles from "./styles";
 
 const App = ({ game }) => {
-
   const [loaded, setLoaded] = useState(false);
 
   const handleVideoLoaded = () => {
     setLoaded(true);
   };
 
+  useEffect(() => {
+    document.title = "RealmXcoins - " + game.name;
+  });
+
   return (
     <>
       <div className="bg-black w-full">
         <div className="backgroundFundoPreto">
-        <div className={` ${styles.flexCenter}`}>
-          <video
-            className={`hidden md:block video ${loaded ? "loaded" : ""}`}
-            autoPlay muted loop
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              zIndex: 0,
-            }}
-            onLoadedData={handleVideoLoaded}
-          ><source src={game.videoSrc} type="" />
-          </video>
-          <div className={`${styles.boxWidth2} relative`}>
-            <Navbar game={game} />
-            <Hero game={game} />
+          <div className={` ${styles.flexCenter} `}>
+            <video
+              className={`hidden md:block video ${loaded ? "loaded" : ""} `}
+              autoPlay
+              muted
+              loop
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: 0,
+              }}
+              onLoadedData={handleVideoLoaded}
+            >
+              <source src={game.videoSrc} type="" />
+            </video>
+
+            <div className={`${styles.boxWidth2}`}>
+              <Navbar game={game} />
+              <Hero game={game} />
+            </div>
           </div>
-        </div>
         </div>
         <ScrollTop game={game} />
         <div className={`${styles.flexStart}`}>
