@@ -1,4 +1,4 @@
-import { people01, people02, people03, instagram, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { people01, people02, people03, send, shield, star  } from "../assets";
 import { GameDetails, getGameDetailsById } from "./games.js"
 
 export {
@@ -12,8 +12,8 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "items",
-    title: "Items",
+    id: "Currency",
+    title: "Currency",
   },
   {
     id: "services",
@@ -137,7 +137,7 @@ export const footerLinks = [
       },
       {
         name: "WhatsApp",
-        link: "",
+        link: "+55 31 7107-4838",
       },
       {
         name: "Terms & Services",
@@ -145,74 +145,13 @@ export const footerLinks = [
       },
     ],
   },
-  // {
-  //   title: "Community",
-  //   links: [
-  //     {
-  //       name: "Help Center",
-  //       link: "https://www.hoobank.com/help-center/",
-  //     },
-  //     {
-  //       name: "Partners",
-  //       link: "https://www.hoobank.com/partners/",
-  //     },
-  //     {
-  //       name: "Suggestions",
-  //       link: "https://www.hoobank.com/suggestions/",
-  //     },
-  //     {
-  //       name: "Blog",
-  //       link: "https://www.hoobank.com/blog/",
-  //     },
-  //     {
-  //       name: "Newsletters",
-  //       link: "https://www.hoobank.com/newsletters/",
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Partner",
-  //   links: [
-  //     {
-  //       name: "Our Partner",
-  //       link: "https://www.hoobank.com/our-partner/",
-  //     },
-  //     {
-  //       name: "Become a Partner",
-  //       link: "https://www.hoobank.com/become-a-partner/",
-  //     },
-  //   ],
-  // },
+
 ];
 
 export const socialMedia = [
-  {
-    id: "social-media-1",
-    icon: instagram,
-    link: "https://www.instagram.com/danilorosa_6/",
-  },
-  {
-    id: "social-media-3",
-    icon: twitter,
-    link: "https://www.twitter.com/",
-  },
+
 ];
 
 export const clients = [
-  {
-    id: "client-1",
-    logo: airbnb,
-  },
-  {
-    id: "client-2",
-    logo: binance,
-  },
-  {
-    id: "client-3",
-    logo: coinbase,
-  },
-  {
-    id: "client-4",
-    logo: dropbox,
-  },
+
 ];

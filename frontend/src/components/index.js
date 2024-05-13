@@ -26,10 +26,11 @@ import TestimonialsTableItem from "./TestimonialsTableItem";
 import SelectAvatar from "./SelectAvatar";
 import FeedbackCard from "./FeedbackCard";
 import Modal from "./Modal";
-
+import HeroOfferBox from "./HeroOfferBox";
 import AvatarFromSprite from "./AvatarFromSprite";
 export {
   Modal,
+  HeroOfferBox,
   ScrollTop,
   FeedbackCard,
   SelectAvatar,

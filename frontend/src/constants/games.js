@@ -19,7 +19,7 @@ export const GameDetails = {
         icon: diabloIcon,
         cssClassBG: "backgroundImageItemsDiablo",
         cssClassBgFaq: "backgroundD4Preto",
-        tituloTemporada: "Renascer do Sangue Temporada IV",
+        tituloTemporada: "Renascer do Sangue T-IV",
         fontFamily: "font-diablo",
         avatars: [
             {

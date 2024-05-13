@@ -26,7 +26,6 @@ const Testimonials = ({ game }) => {
 
   const fetchTestimonials = async (game) => {
     try {
-      console.log(game.id);
       const res = await getApprovedTestimonials(game.id);
       setFeedback(res.content);
     } catch (error) {

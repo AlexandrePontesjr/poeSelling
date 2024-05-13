@@ -1,12 +1,8 @@
-import airbnb from "./airbnb.png";
-import bill from "./bill.png";
 import binance from "./binance.png";
-import card from "./card.png";
 import coinbase from "./coinbase.png";
 import dropbox from "./dropbox.png";
 import logo from "./logo.svg";
 import quotes from "./quotes.svg";
-import robot from "./robot.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
@@ -24,32 +20,27 @@ import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
 import logoPoe from "./logoPoe.png";
-import poebgs from "./poe_bg_s.jpeg";
 import search from "./search.svg";
-import BackgroundServices from "./BackgroundServices.jpg";
-import BackgroundItems from "./BackgroundItems.jpg";
-import loots from "./loots.png";
 import whatsapp from "./whatsapp.svg";
 import moneyBag from "./moneyBag.svg";
 import payPal from "./payPal.svg";
-import diabloIcon from "./diabloIcon.svg";
-import lastEpocIcon from "./lastEpocIcon.svg";
-import poeIcon from "./poeIcon.svg";
+import diabloIcon from "./diabloIcon.png";
+import lastEpocIcon from "./lastEpocIcon.png";
+import poeIcon from "./poeIcon.png";
 import carrinho from "./carrinho.svg";
 import dealItems from "./dealItems.png";
 import itemsHero from "./itemsHero.webp";
 import servicesImage from "./servicesImage.webp";
 import ShopItemCoin from "./ShopItemCoin.png";
-import shop_item_bg from "./shop_item_bg.webp";
+import shop_item_bg from "./shop_item_bg.png";
 import arrowNotch from "./arrowNotch.webp";
 import bullet from "./bullet.webp";
 import mercadoIcone from "./mercado-icone.svg";
 import CurrencyItems from "./MuitosCurrencysItems.svg";
 import espada from "./espada.svg";
-import espadaPB from "./espadaPB.svg";
 import bgCurrency from "./bg-currency.svg";
 import whatsappBt from "./whatsapp_bt.png";
-import currencys from "./currencys.svg";
+import currencys from "./currencys.png";
 import servicesCard from "./services.svg";
 import logoNovo from "./logoNovo.svg";
 import d4Banner from "./d4Banner.jpg";
@@ -64,7 +55,6 @@ export {
   arrowNotch,
   whatsappBt,
   bgCurrency,
-  espadaPB,
   espada,
   CurrencyItems,
   mercadoIcone,
@@ -82,20 +72,12 @@ export {
   diabloIcon,
   moneyBag,
   whatsapp,
-  loots,
   search,
-  BackgroundServices,
-  BackgroundItems,
-  poebgs,
-  airbnb,
-  bill,
   binance,
-  card,
   coinbase,
   dropbox,
   logo,
   quotes,
-  robot,
   send,
   shield,
   star,

@@ -1,4 +1,4 @@
-import { card } from "../assets";
+// import { card } from "../assets";
 import styles, { layout } from "../styles";
 import Button from "./Button";
 

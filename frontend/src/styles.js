@@ -5,7 +5,7 @@ const styles = {
     heading2: "font-poppins font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] w-full",
     headingGame: "font-bold text-[20px] lg:text-[40px] text-white xs:leading-[76.8px] lg:leading-[66.8px] w-full",
     paragraph: "font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]",
-    paragraphGame: " font-normal text-white text-[14px] lg:text-[30px] lg:leading-[30.8px]",
+    paragraphGame: " font-normal text-white text-[14px] lg:text-[24px] lg:leading-[30.8px]",
     paragraph2: "font-pirata font-normal text-white text-[26px] leading-[30.8px]",
     paragraphTestemonials: "text-[18px] text-center font-semibold  text-dimWhite leading-snug",
     testemonialsName: "text-[14px] font-bold text-white leading-snug",

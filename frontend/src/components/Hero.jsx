@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import style, { layout } from "../styles";
-import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import { Link } from "react-router-dom";
 import { GameDetails } from "../constants";
-import { currencys, whatsapp, pix, mercadoIcone } from "../assets";
-import HeroOfferBox from "./HeroOfferBox";
+import {HeroOfferBox} from "../components";
+
 
 const Hero = ({ game }) => {
   return (
@@ -33,16 +32,16 @@ const Hero = ({ game }) => {
               </span>{" "}
               <br />
             </h1>
-            <p className={`${style.paragraphGame} ${game.fontFamily} mt-2 `}>
+            <p className={`${style.paragraphGame} font-poppins mt-2 `}>
               Somos veteranos no ramo de vendas de jogos online, oferecendo
               serviços e venda <br /> de items dos ARPGs mais jogados do
               <br />
               mercado, garantindo transações seguras e suporte dedicado.
             </p>
             <div
-              className={`${game.fontFamily} font-semibold mt-16 text-center text-[28px] sm:text-[58px]`}
+              className={`${game.fontFamily} font-semibold mt-10 text-center text-[20px] sm:text-[58px]`}
             >
-              <span className="  text-sky-100 hover:text-yellow-400">
+              <span className=" text-sky-100 hover:text-yellow-400">
                 {game.tituloTemporada}
               </span>{" "}
               <br />
@@ -64,12 +63,12 @@ const Hero = ({ game }) => {
             <img className="h-12 md:h-32" src={whatsappBt} alt="" />
           </Button>
       </div> */}
-        <div className=" lg:py-0 justify-center  flex lg:flex-col-1 gap-6 px-5 lg:px-2 lg:flex lg:gap-20  lg:justify-start">
-          <HeroOfferBox game={game} goto="#items">
-            Compre currency
+        <div className="lg:py-0 justify-center  flex lg:flex-col-1 gap-6 px-5 lg:px-2 lg:flex lg:gap-20  lg:justify-start">
+          <HeroOfferBox game={game} goto="#Currency">
+            Compre Currency
           </HeroOfferBox>
           <HeroOfferBox game={game} goto="#services">
-            Nossos serviços
+            Nossos Serviços
           </HeroOfferBox>
         </div>
       </div>
