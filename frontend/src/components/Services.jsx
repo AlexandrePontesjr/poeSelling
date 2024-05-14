@@ -42,12 +42,11 @@ const Services = ({ game }) => {
         <div className="py-8 mb-6 lg:mb-8  sm:items-center sm:justify-between">
           <div className="lg:mt-6  text-left sm:text-left">
             <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
-            {/* <br className="sm:block hidden" /> */}
-              Tome controle do Game  Compre{" "}
-              <span className="text-yellow-400">Nossos Serviços</span> da loja.
+            Aqui está a lista dos  {" "}
+              <span className="text-yellow-400">nossos serviços</span>{" "} para o jogo selecionado! Gostou de algum e quer contratá-lo?
             </h2>
             <p className={`mt-4 ${game.fontFamily} ${styles.paragraphGame}`}>
-              Procure pelos melhores items no nosso site
+            Entre em contato conosco clicando no card ou pelo chatbot. Precisa de algum serviço que não temos? Chame a gente! Obrigado.
             </p>
           </div>
           <div className="">

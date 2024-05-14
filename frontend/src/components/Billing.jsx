@@ -42,12 +42,11 @@ const Billing = ({ game }) => {
         <div className="mb-6 lg:mb-8  sm:items-center sm:justify-between">
           <div className=" mt-12 lg:mt-20  text-left sm:text-left">
             <h2 className={`${game.fontFamily} ${styles.headingGame}`}>
-              Escolha o Card{" "}
-              <span className="text-yellow-400">Compre & Use</span> Items e Currency da loja.
+            Encontre aqui nossas{" "}
+              <span className="text-yellow-400">Currencys</span>
             </h2>
             <p className={`mt-4 ${game.fontFamily} ${styles.paragraphGame}`}>
-              Ao clicar em comprar voce será redirecionado para o responsável do
-              Trade
+            Clique no card e compre diretamente conosco em nosso chat do WhatsApp ou, se preferir, pelo chatbot da nossa página! Obrigadoooooooo!
             </p>
           </div>
           <div className="">

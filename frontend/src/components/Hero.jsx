@@ -24,19 +24,17 @@ const Hero = ({ game }) => {
             transition={{ duration: 0.8 }}
           >
             <h1
-              className={`${game.fontFamily} flex-1 font-semibold sm:text-[58px] lg:text-[65px] text-[32px]  text-yellow-400 ss:leading-[100.8px] lg:leading-[75px] hover:text-sky-200`}
+              className={`${game.fontFamily} text-sky-100 flex-1 font-semibold sm:text-[58px] lg:text-[65px] text-[32px]   ss:leading-[100.8px] lg:leading-[75px] hover:text-yellow-400`}
             >
-              Bem Vindo <br />
-              <span className="text-sky-100 hover:text-yellow-400">
-                Realm Exchange coins
+              Bem vindo a<br />
+              <span className="text-yellow-400 hover:text-sky-200">
+              Realm Exchange Coins
               </span>{" "}
               <br />
             </h1>
             <p className={`${style.paragraphGame} font-poppins mt-2 `}>
-              Somos veteranos no ramo de vendas de jogos online, oferecendo
-              serviços e venda <br /> de items dos ARPGs mais jogados do
-              <br />
-              mercado, garantindo transações seguras e suporte dedicado.
+              Somos veteramos no ramo de venda em jogos online, oferencendo serviços e venda de currency / itens <br/> dos ARPGs mais jogados do momento
+              Entregamos o item desejado em 5 - 15 minutos !<br/> Garantindo transações seguras e suporte dedicado.
             </p>
             <div
               className={`${game.fontFamily} font-semibold mt-10 text-center text-[20px] sm:text-[58px]`}
@@ -48,37 +46,22 @@ const Hero = ({ game }) => {
             </div>
           </motion.div>
         </div>
-        {/* <div className="flex place-content-center md:place-content-center">
-        <Button
-            variant="solid"
-            color=""
-            size="lg"
-            sx={{
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.07)",
-              },
-            }}
-          >
-            <img className="h-12 md:h-32" src={whatsappBt} alt="" />
-          </Button>
-      </div> */}
         <div className="lg:py-0 justify-center  flex lg:flex-col-1 gap-6 px-5 lg:px-2 lg:flex lg:gap-20  lg:justify-start">
           <HeroOfferBox game={game} goto="#Currency">
             Compre Currency
           </HeroOfferBox>
           <HeroOfferBox game={game} goto="#services">
-            Nossos Serviços
+            Contrate Serviços
           </HeroOfferBox>
         </div>
       </div>
-      <div className="sm:py-10 mt-9 lg:mt-0 place-content-center md:place-content-start flex lg:gap-24  lg:flex lg:flex-col">
+      <div className="sm:py-10 mt-9 lg:mt-12 place-content-center md:place-content-start flex lg:gap-24  lg:flex lg:flex-col">
         {Object.values(GameDetails).map((game, index) => (
           <Link key={index} to={game.path} reloadDocument relative="path">
             <Button
               variant="solid"
               color=""
-              size="sm"
+              size="lg"
               sx={{
                 transition: "transform 0.3s",
                 "&:hover": {

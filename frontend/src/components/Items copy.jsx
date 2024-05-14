@@ -9,7 +9,7 @@ const Items = ({ product }) => {
         className="mt-4 w-full absolute text-white text-center"
         href={
           `https://api.whatsapp.com/send?` +
-          `phone=559285896410&` +
+          `phone=553171074838&` +
           `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`
         }
       >
