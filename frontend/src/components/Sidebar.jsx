@@ -1,7 +1,7 @@
 import { ChevronFirst, ChevronLast, DoorOpen } from "lucide-react";
 import { createContext, useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import { GameDetails } from "../constants/games";
 
 const SidebarContext = createContext();

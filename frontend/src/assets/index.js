@@ -1,7 +1,7 @@
 import binance from "./binance.png";
 import coinbase from "./coinbase.png";
 import dropbox from "./dropbox.png";
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import quotes from "./quotes.svg";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
@@ -42,7 +42,7 @@ import bgCurrency from "./bg-currency.svg";
 import whatsappBt from "./whatsapp_bt.png";
 import currencys from "./currencys.png";
 import servicesCard from "./services.svg";
-import logoNovo from "./logoNovo.svg";
+import logoNovo from "./logo.png";
 import d4Banner from "./d4Banner.jpg";
 import d4Preto from "./d4Preto.jpg";
 
