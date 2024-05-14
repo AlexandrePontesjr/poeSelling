@@ -17,7 +17,7 @@ export default function Main() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App game={GameDetails.pathOfExile} />} />
+        <Route path="/" element={<App game={GameDetails.diablo} />} />
         <Route
           path="/path-of-exile"
           element={<App game={GameDetails.pathOfExile} />}

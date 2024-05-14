@@ -36,7 +36,7 @@ const ScrollTopButton = ({game}) => {
     return (
         <div>
             { isVisible &&
-                <div className="fixed justify-start flex bottom-6 right-36 items-center z-50">
+                <div className="fixed justify-start flex bottom-6 right-40 md:right-56 items-center z-50">
                     {Object.values(GameDetails).map((game, index) => (
                         <Link key={index} to={game.path} relative="path">
                             <Button
@@ -50,7 +50,7 @@ const ScrollTopButton = ({game}) => {
                                     },
                                 }}
                             >
-                                <img className="h-10 mx-2" src={game.icon} alt="" />
+                                <img className="max-h-10 mx-2" src={game.icon} alt="" />
                             </Button>
                         </Link>
                     ))}
@@ -58,7 +58,7 @@ const ScrollTopButton = ({game}) => {
             }
             {isVisible && (
                 <button
-                    className="fixed bottom-5 lg:bottom-10 right-1 lg:right-10 bg-slate-950 hover:bg-slate-800 text-dimWhite font-bold py-2 px-4 rounded-full z-50"
+                    className="fixed bottom-6 lg:bottom-6 right-24 md:right-28 bg-slate-950 hover:bg-slate-800 text-dimWhite font-bold py-2 px-4 rounded-full z-50"
                     onClick={scrollToTop}
                 >
                     <i className="">

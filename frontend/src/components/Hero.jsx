@@ -24,7 +24,7 @@ const Hero = ({ game }) => {
             transition={{ duration: 0.8 }}
           >
             <h1
-              className={`${game.fontFamily} text-sky-100 flex-1 font-semibold sm:text-[58px] lg:text-[65px] text-[32px]   ss:leading-[100.8px] lg:leading-[75px] hover:text-yellow-400`}
+              className={`${game.fontFamily} mt-5 text-sky-100 flex-1 font-semibold sm:text-[58px] lg:text-[65px] text-[30px]   ss:leading-[100.8px] lg:leading-[75px] hover:text-yellow-400`}
             >
               Bem vindo a<br />
               <span className="text-yellow-400 hover:text-sky-200">
