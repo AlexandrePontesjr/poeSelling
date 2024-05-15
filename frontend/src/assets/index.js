@@ -41,7 +41,6 @@ import espada from "./espada.svg";
 import bgCurrency from "./bg-currency.svg";
 import whatsappBt from "./whatsapp_bt.png";
 import currencys from "./currencys.png";
-import servicesCard from "./services.svg";
 import logoNovo from "./logo.png";
 import d4Banner from "./d4Banner.jpg";
 import d4Preto from "./d4Preto.jpg";
@@ -51,7 +50,6 @@ export {
   currencys,
   d4Preto,
   logoNovo,
-  servicesCard,
   arrowNotch,
   whatsappBt,
   bgCurrency,
