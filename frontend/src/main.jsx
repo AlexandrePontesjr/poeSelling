@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga4";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App.jsx";
@@ -13,7 +14,11 @@ import {
 } from "./layouts";
 import LoginAdmin from "./layouts/LoginAdmin.jsx";
 
+
 export default function Main() {
+
+  ReactGA.initialize("G-M2DYTTP2CN");
+
   return (
     <BrowserRouter>
       <Routes>
@@ -21,7 +26,7 @@ export default function Main() {
         <Route
           path="/path-of-exile"
           element={<App game={GameDetails.pathOfExile} />}
-        />
+          />
         <Route path="/diablo-4" element={<App game={GameDetails.diablo} />} />
         <Route
           path="/last-epoch"

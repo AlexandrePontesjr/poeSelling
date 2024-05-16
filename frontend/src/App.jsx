@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import ReactGA from "react-ga4";
+
 import {
   ScrollTop,
   Billing,
@@ -11,16 +13,21 @@ import {
 } from './components';
 import styles from './styles';
 
+
+
 const App = ({ game }) => {
   const [loaded, setLoaded] = useState(false);
+
+  ReactGA.initialize("G-M2DYTTP2CN");
+
 
   const handleVideoLoaded = () => {
     setLoaded(true);
   };
 
-  useEffect(() => {
-    document.title = 'RealmXcoins - ' + game.name;
-  });
+  // useEffect(() => {
+  //   document.title = 'RealmXcoins - ' + game.name;
+  // });
 
   return (
     <>
