@@ -1,0 +1,10 @@
+User-agent: *
+Disallow:
+
+# Permitir todos os bots de busca a acessar todo o site
+User-agent: Googlebot
+Allow: /
+
+# Definir regras específicas para outros bots, se necessário
+User-agent: Bingbot
+Allow: /

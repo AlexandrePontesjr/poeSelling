@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- URL da página inicial -->
+    <url>
+        <loc>https://realmxcoins.com/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- URLs específicas do site -->
+    <url>
+        <loc>https://realmxcoins.com/diablo-4</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/last-epoch</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/path-of-exile</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Seções específicas na página de diablo-4 -->
+    <url>
+        <loc>https://realmxcoins.com/diablo-4#Currency</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/diablo-4#Services</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/diablo-4#Clients</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Seções específicas para last-epoch -->
+    <url>
+        <loc>https://realmxcoins.com/last-epoch#Currency</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/last-epoch#Services</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/last-epoch#Clients</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- Seções específicas para path-of-exile -->
+    <url>
+        <loc>https://realmxcoins.com/path-of-exile#Currency</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/path-of-exile#Services</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://realmxcoins.com/path-of-exile#Clients</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset>
