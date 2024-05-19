@@ -1,7 +1,18 @@
 import { ShopItemCoin, logoPoe, pix, mercadoIcone, whatsapp } from "../assets";
 import Box from "@mui/joy/Box";
+import ReactGA from "react-ga4";
+
 const ServicesList = ({ product, game }) => {
 
+  const handleClick = () => {
+    const eventParams = {
+      event_category: 'click',
+      event_label: product?.name,
+      value: product?.price,
+    };
+
+    ReactGA.event(eventParams);
+  };
   return (
     <div className="min-w-[300px] max-w-[300px] rounded-lg">
       <Box
@@ -14,7 +25,7 @@ const ServicesList = ({ product, game }) => {
           },
         }}
       >
-        <a className="" href={`https://api.whatsapp.com/send?` +
+        <a onClick={handleClick} className="" href={`https://api.whatsapp.com/send?` +
           `phone=553171074838&` +
           `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`}
         >

@@ -20,7 +20,7 @@ export const GameDetails = {
         cssClassBG: "backgroundImageItemsDiablo",
         cssClassBgFaq: "backgroundD4Preto",
         tituloTemporada: "Renascer do Saque T-IV",
-        fontFamily: "font-diablo",
+        fontFamily: "font-poppins",
         avatars: [
             {
                 name: "Barbarian",
