@@ -3,7 +3,7 @@ import axiosInstance from "../axios.jsx";
 
 export async function getProducts(gameId) {
   return axiosInstance
-    .get("/products?type=ITEM&gameId=" + gameId)
+    .get("/products?type=ITEM&size=2000&gameId=" + gameId)
     .then(function (response) {
       return response.data;
     })
@@ -14,7 +14,7 @@ export async function getProducts(gameId) {
 
 export async function getServices(gameId) {
   return axiosInstance
-    .get("/products?type=SERVICE&gameId=" + gameId)
+    .get("/products?type=SERVICE&size=2000&gameId=" + gameId)
     .then(function (response) {
       return response.data;
     })
