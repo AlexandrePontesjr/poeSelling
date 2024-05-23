@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import ReactGA from "react-ga4";
-
 import {
   ScrollTop,
   Billing,
@@ -25,12 +24,7 @@ const App = ({ game }) => {
     setLoaded(true);
   };
 
-  // useEffect(() => {
-  //   document.title = 'RealmXcoins - ' + game.name;
-  // });
-
   return (
-    <>
       <div className="bg-black w-full">
         <div className="video-container">
           <div className={` ${styles.flexCenter} `}>
@@ -82,7 +76,6 @@ const App = ({ game }) => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

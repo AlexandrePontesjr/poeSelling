@@ -4,15 +4,52 @@ import ReactGA from "react-ga4";
 
 const ServicesList = ({ product, game }) => {
 
-  const handleClick = () => {
-    const eventParams = {
-      event_category: 'click',
-      event_label: product?.name,
+  const sendAddPaymentInfoEvent = () => {
+    ReactGA.event({
+      action: 'add_payment_info',
+      category: 'Payment Information',
+      label: product?.name,
       value: product?.price,
-    };
-
-    ReactGA.event(eventParams);
+      currency: 'BRL',
+      coupon: '',
+      payment_type: 'WhatsAPP',
+      items: [
+        {
+          item_id: product?.id,
+          item_name: product?.name,
+          affiliation: 'RealmXCoins',
+          coupon: '',
+          discount: 0,
+          index: 0,
+          item_brand: product?.brand || 'Generic',
+          item_category: product?.category || 'General',
+          item_variant: product?.variant || 'Default',
+          location_id: '',
+          price: product?.price || 0,
+          quantity: 1,
+        }
+      ],
+    });
   };
+
+  const sendClickEvent = () => {
+    ReactGA.event({
+      action: 'click',
+      category: 'Product Click',
+      label: product?.name || 'Unknown Product',
+    });
+  };
+
+  // Manipulador de clique para enviar o evento e redirecionar
+  const handleClick = (event) => {
+    event.preventDefault();
+    sendAddPaymentInfoEvent();
+    sendClickEvent();
+    window.location.href = `https://api.whatsapp.com/send?phone=553171074838&text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}`; // Redireciona para o WhatsApp
+  };
+
+
+
   return (
     <div className="min-w-[300px] max-w-[300px] rounded-lg">
       <Box
@@ -25,10 +62,7 @@ const ServicesList = ({ product, game }) => {
           },
         }}
       >
-        <a onClick={handleClick} className="" href={`https://api.whatsapp.com/send?` +
-          `phone=553171074838&` +
-          `text=Olá, tenho interesse em comprar (${product?.name}) por $${product?.price}!`}
-        >
+        <a onClick={handleClick} className="" href="">
           <div className={`${game.fontFamily}  `}>
             <div className={`bg-items-name-top  bg-card-items grid grid-cols px-2 rounded-lg bg-items-name-bottom `}>
               <div className="text-center h-[90px]">
@@ -47,11 +81,6 @@ const ServicesList = ({ product, game }) => {
                   }}
                 />
               </div>
-              {/* <div className="h-[140px] py-1 px-1 bg-slate-700/20">
-                <p className="text-white line-clamp-3 font-poppins   text-[14px]">
-                  {product ? product.description : "Product description"}
-                </p>
-              </div> */}
               <div style={{ maxHeight: 40 }} className=" white__gradient flex gap-2 mt-3 items-center relative">
                 <div style={{ maxHeight: 40 }} className=" flex w-full  justify-center">
                   <img style={{ maxHeight: 40 }} className="" src={ShopItemCoin} alt="" />
