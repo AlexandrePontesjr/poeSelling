@@ -14,7 +14,7 @@ import styles from './styles';
 
 
 
-const App = ({ game }) => {
+const App = ({ game }) => {alterei algo
   const [loaded, setLoaded] = useState(false);
 
   ReactGA.initialize("G-M2DYTTP2CN");
