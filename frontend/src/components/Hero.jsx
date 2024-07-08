@@ -4,6 +4,7 @@ import Button from "@mui/joy/Button";
 import { Link } from "react-router-dom";
 import { GameDetails } from "../constants";
 import {HeroOfferBox} from "../components";
+import { useState } from "react";
 
 
 const Hero = ({ game }) => {

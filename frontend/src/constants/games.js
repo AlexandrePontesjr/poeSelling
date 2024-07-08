@@ -19,7 +19,7 @@ export const GameDetails = {
         icon: diabloIcon,
         cssClassBG: "backgroundImageItemsDiablo",
         cssClassBgFaq: "backgroundD4Preto",
-        tituloTemporada: "Renascer do Saque T-IV",
+        tituloTemporada: "DiabloIV - Renascer do Saque",
         fontFamily: "font-poppins",
         avatars: [
             {
@@ -95,7 +95,7 @@ export const GameDetails = {
         icon: lastEpocIcon,
         cssClassBG: "backgroundImageLastEpoch",
         cssClassBgFaq: "bannerPrata",
-        tituloTemporada: "Temporada I",
+        tituloTemporada: "Last Epoch - Harbinger of Ruin",
         fontFamily: "font-lastEpoch",
         avatars: [
             {

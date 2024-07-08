@@ -44,12 +44,13 @@ export default function Main() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App game={GameDetails.diablo} />} />
+        <Route path="/" element={<App game={GameDetails.lastEpoch} />} />
         <Route
           path="/path-of-exile"
           element={<App game={GameDetails.pathOfExile} />}
         />
-        <Route path="/diablo-4" element={<App game={GameDetails.diablo} />} />
+        <Route path="/diablo-4"
+          element={<App game={GameDetails.diablo} />} />
         <Route
           path="/last-epoch"
           element={<App game={GameDetails.lastEpoch} />}
