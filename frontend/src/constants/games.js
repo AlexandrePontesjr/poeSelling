@@ -52,12 +52,12 @@ export const GameDetails = {
     pathOfExile: {
         id: 1,
         name: "Path of Exile",
-        videoSrc: "/poe_necropolis_trailer.mp4",
+        videoSrc: "/pathofExileTrailer.mp4",
         path: "/path-of-exile",
         icon: poeIcon,
         cssClassBG: "backgroundImagePathExile",
         cssClassBgFaq: "backgroundD4Preto",
-        tituloTemporada: "Path Of Exile Necropolis",
+        tituloTemporada: "Path Of Exile Settlers of Kalguur",
         fontFamily: "font-pathOfExile",
         avatars: [
             {
