@@ -19,7 +19,7 @@ export const GameDetails = {
         icon: diabloIcon,
         cssClassBG: "backgroundImageItemsDiablo",
         cssClassBgFaq: "backgroundD4Preto",
-        tituloTemporada: "DiabloIV - Renascer do Saque",
+        tituloTemporada: "DiabloIV - Horda Infernal",
         fontFamily: "font-poppins",
         avatars: [
             {
